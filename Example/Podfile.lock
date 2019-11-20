@@ -1,5 +1,7 @@
 PODS:
-  - AJKit (0.1.0)
+  - AJKit (0.1.0):
+    - AJKit/UIKit (= 0.1.0)
+  - AJKit/UIKit (0.1.0)
 
 DEPENDENCIES:
   - AJKit (from `../`)
@@ -9,7 +11,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AJKit: 87722405657620b4918ef9be995fe3657132a252
+  AJKit: ec74310fcd063f79f9877bab416ef0a7ef136a75
 
 PODFILE CHECKSUM: 60c012922278efb359ecb12a183cc69afca723bf
 

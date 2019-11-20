@@ -18,5 +18,11 @@
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "AJKit/Classes/**/*"
+  "subspecs": [
+    {
+      "name": "UIKit",
+      "prefix_header_file": "AJKit/Classes/UIKit/DBUIKit.pch",
+      "source_files": "AJKit/Classes/UIKit/*.{h,m}"
+    }
+  ]
 }
