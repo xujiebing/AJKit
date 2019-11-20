@@ -11,18 +11,34 @@
 #endif
 
 //
-//  AJUIKit.pch
+//  AJFoundation.pch
 //  AJKit
 //
 //  Created by 徐结兵 on 2019/11/20.
 //
 
-#ifndef AJUIKit_pch
-#define AJUIKit_pch
+#ifndef AJFoundation_pch
+#define AJFoundation_pch
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#import <AJKit/UIViewController+AJKit.h>
+#import <AJKit/AJFoundation.h>
 
-#endif /* AJUIKit_pch */
+#endif /* AJFoundation_pch */
+//
+//  AJRuntime.pch
+//  AJKit
+//
+//  Created by 徐结兵 on 2019/11/20.
+//
+
+#ifndef AJRuntime_pch
+#define AJRuntime_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <AJKit/AJRuntime.h>
+
+#endif /* AJRunTime_pch */

@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AJKit'
-  s.version          = '0.1.0'
+  s.version          = '0.2.0'
   s.summary          = 'A short description of AJKit.'
 
   s.description      = <<-DESC
@@ -17,15 +17,22 @@ TODO: Add long description of the pod here.
 
   s.ios.deployment_target = '8.0'
 
-#  s.default_subspec = 'Foundation'
-#
-#  s.subspec 'Foundation' do |foundation|
-#    foundation.source_files = 'AJKit/Classes/Foundation/*.{h,m}'
-#  end
+  s.default_subspec = 'Foundation'
+
+  s.subspec 'Foundation' do |foundation|
+    foundation.prefix_header_file = 'AJKit/Classes/Foundation/AJFoundation.pch'
+    foundation.source_files = 'AJKit/Classes/Foundation/*.{h,m}'
+  end
   
   s.subspec 'UIKit' do |kit|
     kit.prefix_header_file = 'AJKit/Classes/UIKit/AJUIKit.pch'
     kit.source_files = 'AJKit/Classes/UIKit/*.{h,m}'
+  end
+  
+  s.subspec 'Runtime' do |runtime|
+    runtime.prefix_header_file = 'AJKit/Classes/Runtime/AJRuntime.pch'
+    runtime.source_files = 'AJKit/Classes/Runtime/*.{h,m}'
+    runtime.dependency 'AJKit/Foundation'
   end
   
 end

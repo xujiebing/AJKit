@@ -7,18 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		04C979F4EB9D46A40D176FD891E7EB5F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		063FDF4F0E08F54820F49F94D573272D /* Pods-AJKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CD414EADFC5D96F5F74DAF03D0DCC9 /* Pods-AJKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		09F4F6C2786878AA1D435735DFCDAEDF /* NSDictionary+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 705435A5BB9AC924A80B67F7F50B97A4 /* NSDictionary+AJKit.m */; };
+		1B3D05A8BC4A777C98BBCC89A93572C4 /* NSString+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D1B241859DFBF85C25D4C6E0D2B24840 /* NSString+AJKit.m */; };
+		27CA25588EEC27FBE0F840869427D0BE /* AJFoundationConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 0095A824684CD92EBBAF5D27BE328AEB /* AJFoundationConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		435C8487C999AFEA1168D273326E54B5 /* NSString+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 383CF37F03A66C8F8F051043E9A94A1C /* NSString+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48480E7F5A46E4383D099EAFB8B46514 /* NSObject+AJRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = AF9FC5FC6662810A5C2C21082EDA00BA /* NSObject+AJRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		48F6A973FB6BBA3BA560FD880BD290A6 /* Pods-AJKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C748543104084627E5DB3FC9ADDEAB5 /* Pods-AJKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		541C8B1FB4A9B3E796BD2F9505C2DB8C /* AJKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CD90711D8A3B02762EC9DC7E5FA227C6 /* AJKit-dummy.m */; };
+		527481E58F9A4336E835B740A95EA801 /* AJKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C16EB7D0FFEC8235088F260500135E17 /* AJKit-dummy.m */; };
+		598C70F1FD611328997ABDA2A38455D1 /* NSObject+AJRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 05CEC8D1DC5C837202AD53E0CC2E9DFF /* NSObject+AJRuntime.m */; };
 		5D4D70AC9B184F4098C26D5369BF24DC /* Pods-AJKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D007B3A30ED74255494F0256BED037F /* Pods-AJKit_Example-dummy.m */; };
 		658DBD9E2B50B7E3E025FCF356A77B4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		6A6BBB9A4F7FD2283B02478830B51F62 /* AJKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 70055A01C2F2C90988AE4BBC20B98996 /* AJKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		6B768274BFEFC156DEECB8830BAE9F6A /* UIViewController+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1BBFD06A74A061504DDFAA2CEEBCD016 /* UIViewController+AJKit.m */; };
-		7E2D3AF3F2F6D314F212BF39F4E776C0 /* UIViewController+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 824F5C921F9175A1B001FAD8CCE64EC5 /* UIViewController+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D64E30316E005D8BD09334D7F316B483 /* AJUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 336B5F3D82D4CE8486B32D917495425A /* AJUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9903F3BFD57D6A626F594F6C1D3C14E3 /* NSArray+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3B330E0CB1979710D1337086ABFC93A8 /* NSArray+AJKit.m */; };
+		9C27A0DA5B0A219E6DD373390DDDA12F /* AJFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 28F414ED42FED15E50AECD22C2836B0A /* AJFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		AD157090F997E7C28DC4DB16A68BB7F0 /* AJRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 5330573CF83AC91B71FE990EEADFED35 /* AJRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B6BAADFBBC6398CF9815D870FDED34C9 /* AJKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 99B814349975B50CBBF1ECE41EFC3AF6 /* AJKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BEEA92D4C99AFA97A9D2100111BCC12E /* NSDictionary+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BD30E97DFC5C49B1C578F71F6915E147 /* NSDictionary+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D9E88A2B325E928EDB42225F76D4FCAF /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		E80C93EDD8D75EAB8BA28AA25011B7B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
 		E8F2AFA4A4A70048D1E0651CA63CF6B5 /* Pods-AJKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFBAA8353E27734847F65E8CC251170 /* Pods-AJKit_Tests-dummy.m */; };
+		EB645F11C005E286785AA5762CC7A020 /* NSArray+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 86708994456AD3C71762D8EC5D85B801 /* NSArray+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,39 +47,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0095A824684CD92EBBAF5D27BE328AEB /* AJFoundationConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJFoundationConfig.h; path = AJKit/Classes/Foundation/AJFoundationConfig.h; sourceTree = "<group>"; };
+		05CEC8D1DC5C837202AD53E0CC2E9DFF /* NSObject+AJRuntime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+AJRuntime.m"; path = "AJKit/Classes/Runtime/NSObject+AJRuntime.m"; sourceTree = "<group>"; };
 		0C748543104084627E5DB3FC9ADDEAB5 /* Pods-AJKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AJKit_Tests-umbrella.h"; sourceTree = "<group>"; };
 		0D007B3A30ED74255494F0256BED037F /* Pods-AJKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AJKit_Example-dummy.m"; sourceTree = "<group>"; };
+		10274EB9AD048DAAC741B1D97A2B2AFB /* AJKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AJKit-Info.plist"; sourceTree = "<group>"; };
+		15EA41D0D9A57068BF54B1BC41618CCD /* AJKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AJKit.xcconfig; sourceTree = "<group>"; };
 		16B397886A3DB05EBCEEF089708735E2 /* Pods-AJKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AJKit_Example-Info.plist"; sourceTree = "<group>"; };
-		1BBFD06A74A061504DDFAA2CEEBCD016 /* UIViewController+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AJKit.m"; path = "AJKit/Classes/UIKit/UIViewController+AJKit.m"; sourceTree = "<group>"; };
-		20533322B0C0BE03B0D5A6DD3E46B1F5 /* AJKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AJKit-Info.plist"; sourceTree = "<group>"; };
+		16E516C421FF3F906769D6E77EAE073B /* AJRuntime.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJRuntime.pch; path = AJKit/Classes/Runtime/AJRuntime.pch; sourceTree = "<group>"; };
 		264E89D56AD94F0F45DC65E853FDC3B1 /* Pods-AJKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AJKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		28F414ED42FED15E50AECD22C2836B0A /* AJFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJFoundation.h; path = AJKit/Classes/Foundation/AJFoundation.h; sourceTree = "<group>"; };
 		31D19E3BDF5C506E11E4FF1CBCDA6F26 /* Pods-AJKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AJKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		336B5F3D82D4CE8486B32D917495425A /* AJUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJUIKit.h; path = AJKit/Classes/UIKit/AJUIKit.h; sourceTree = "<group>"; };
-		3D30AB8294CED22FA917C3DDCE9DBE55 /* AJKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AJKit.xcconfig; sourceTree = "<group>"; };
-		5CFF3B206E1C7D288DF131F1C7BD173E /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		35C36CA3C41D841DB36F46F5D067600B /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		383CF37F03A66C8F8F051043E9A94A1C /* NSString+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+AJKit.h"; path = "AJKit/Classes/Foundation/NSString+AJKit.h"; sourceTree = "<group>"; };
+		3B330E0CB1979710D1337086ABFC93A8 /* NSArray+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+AJKit.m"; path = "AJKit/Classes/Foundation/NSArray+AJKit.m"; sourceTree = "<group>"; };
+		47E12D7A280270463B9EFB57972B3319 /* AJKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AJKit.modulemap; sourceTree = "<group>"; };
+		5330573CF83AC91B71FE990EEADFED35 /* AJRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJRuntime.h; path = AJKit/Classes/Runtime/AJRuntime.h; sourceTree = "<group>"; };
+		55FB73C71FC03285FE1392CD9D77C303 /* AJFoundation.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJFoundation.pch; path = AJKit/Classes/Foundation/AJFoundation.pch; sourceTree = "<group>"; };
 		63A69363D55472DD08E5F087A4940C23 /* Pods-AJKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AJKit_Example.modulemap"; sourceTree = "<group>"; };
 		6858C0CD580C1C5D37310A9F13CD04EE /* Pods-AJKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AJKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		698FD86B984D3D3964D895C5CC8F76A5 /* Pods_AJKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AJKit_Example.framework; path = "Pods-AJKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		70055A01C2F2C90988AE4BBC20B98996 /* AJKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AJKit-umbrella.h"; sourceTree = "<group>"; };
-		824F5C921F9175A1B001FAD8CCE64EC5 /* UIViewController+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AJKit.h"; path = "AJKit/Classes/UIKit/UIViewController+AJKit.h"; sourceTree = "<group>"; };
+		705435A5BB9AC924A80B67F7F50B97A4 /* NSDictionary+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+AJKit.m"; path = "AJKit/Classes/Foundation/NSDictionary+AJKit.m"; sourceTree = "<group>"; };
+		86708994456AD3C71762D8EC5D85B801 /* NSArray+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+AJKit.h"; path = "AJKit/Classes/Foundation/NSArray+AJKit.h"; sourceTree = "<group>"; };
 		8F2ED391A2355DB3FC862F219467803E /* Pods-AJKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AJKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		918D857EDF3ADF20D753FCF1F9B87038 /* Pods-AJKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AJKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		9AC40F89B305A559629696A9F231CE40 /* AJKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AJKit.modulemap; sourceTree = "<group>"; };
+		99B814349975B50CBBF1ECE41EFC3AF6 /* AJKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AJKit-umbrella.h"; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0AB1F7D63B5FAC330C3C9D2E367D4AD /* Pods-AJKit_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AJKit_Tests-Info.plist"; sourceTree = "<group>"; };
 		A28EA98B83B8C7A438B856A01BE738BE /* Pods-AJKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AJKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A2B14F34CF67F244628EACC109DD66ED /* Pods-AJKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AJKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
 		AD2A5336D280768580DF01B617F59DA7 /* Pods-AJKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AJKit_Tests.modulemap"; sourceTree = "<group>"; };
 		AF07D9951016DA37B7F10B32C0A6019B /* Pods_AJKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AJKit_Tests.framework; path = "Pods-AJKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B60EA65DCE7E8A8058D8B86FBABDCECB /* AJUIKit.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJUIKit.pch; path = AJKit/Classes/UIKit/AJUIKit.pch; sourceTree = "<group>"; };
+		AF9FC5FC6662810A5C2C21082EDA00BA /* NSObject+AJRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+AJRuntime.h"; path = "AJKit/Classes/Runtime/NSObject+AJRuntime.h"; sourceTree = "<group>"; };
 		B702619F2A3E2046EADC1041F1F404B2 /* AJKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AJKit.framework; path = AJKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BD0CBF72A5B2C14CCA2ACA14D4D10D5D /* AJKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AJKit-prefix.pch"; sourceTree = "<group>"; };
+		BD30E97DFC5C49B1C578F71F6915E147 /* NSDictionary+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+AJKit.h"; path = "AJKit/Classes/Foundation/NSDictionary+AJKit.h"; sourceTree = "<group>"; };
+		C16EB7D0FFEC8235088F260500135E17 /* AJKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AJKit-dummy.m"; sourceTree = "<group>"; };
 		CCFBAA8353E27734847F65E8CC251170 /* Pods-AJKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AJKit_Tests-dummy.m"; sourceTree = "<group>"; };
-		CD90711D8A3B02762EC9DC7E5FA227C6 /* AJKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AJKit-dummy.m"; sourceTree = "<group>"; };
-		D4918D6B3C258EF01BA8DA2237C2F687 /* AJKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AJKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		D1B241859DFBF85C25D4C6E0D2B24840 /* NSString+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+AJKit.m"; path = "AJKit/Classes/Foundation/NSString+AJKit.m"; sourceTree = "<group>"; };
+		DED1F56DFCFD09B831F18325D0A8F6B2 /* AJKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AJKit-prefix.pch"; sourceTree = "<group>"; };
 		E1CD414EADFC5D96F5F74DAF03D0DCC9 /* Pods-AJKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AJKit_Example-umbrella.h"; sourceTree = "<group>"; };
-		E48E7F9D1D164A3BEAF78DBE4E31BE80 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		E63F7C4E43CB59DC99720A6E5A40B45D /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
+		E6A2C95EC1581C799BDBC606F723B320 /* AJKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AJKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		EBFA82AE4B03C7A85230B0A3ED5F5696 /* Pods-AJKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AJKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		EC4207BB340D64F3730E58491425AE06 /* Pods-AJKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AJKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -85,11 +102,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		4A29E4BA25AE2A53B50149D4D59212A3 /* Frameworks */ = {
+		36AD6D28BAD8DE099163BF10A8A5D504 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				04C979F4EB9D46A40D176FD891E7EB5F /* Foundation.framework in Frameworks */,
+				D9E88A2B325E928EDB42225F76D4FCAF /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +121,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		11740C6204E81F0B8A9004E543FF82DF /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				47E12D7A280270463B9EFB57972B3319 /* AJKit.modulemap */,
+				15EA41D0D9A57068BF54B1BC41618CCD /* AJKit.xcconfig */,
+				C16EB7D0FFEC8235088F260500135E17 /* AJKit-dummy.m */,
+				10274EB9AD048DAAC741B1D97A2B2AFB /* AJKit-Info.plist */,
+				DED1F56DFCFD09B831F18325D0A8F6B2 /* AJKit-prefix.pch */,
+				99B814349975B50CBBF1ECE41EFC3AF6 /* AJKit-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AJKit";
+			sourceTree = "<group>";
+		};
+		198844E829450BF40A12B6CF71174EFF /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				5330573CF83AC91B71FE990EEADFED35 /* AJRuntime.h */,
+				AF9FC5FC6662810A5C2C21082EDA00BA /* NSObject+AJRuntime.h */,
+				05CEC8D1DC5C837202AD53E0CC2E9DFF /* NSObject+AJRuntime.m */,
+			);
+			name = Runtime;
+			sourceTree = "<group>";
+		};
 		28BE5A3EF82EC69DAE791826E4D33C26 /* Pods-AJKit_Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -130,15 +171,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		48E296B0D960E837097928527B3F6C43 /* Pod */ = {
+		623292D58387444FDF85F2615667E23A /* Pod */ = {
 			isa = PBXGroup;
 			children = (
-				D4918D6B3C258EF01BA8DA2237C2F687 /* AJKit.podspec */,
-				B60EA65DCE7E8A8058D8B86FBABDCECB /* AJUIKit.pch */,
-				E48E7F9D1D164A3BEAF78DBE4E31BE80 /* LICENSE */,
-				5CFF3B206E1C7D288DF131F1C7BD173E /* README.md */,
+				55FB73C71FC03285FE1392CD9D77C303 /* AJFoundation.pch */,
+				E6A2C95EC1581C799BDBC606F723B320 /* AJKit.podspec */,
+				16E516C421FF3F906769D6E77EAE073B /* AJRuntime.pch */,
+				E63F7C4E43CB59DC99720A6E5A40B45D /* LICENSE */,
+				35C36CA3C41D841DB36F46F5D067600B /* README.md */,
 			);
 			name = Pod;
+			sourceTree = "<group>";
+		};
+		7682273ABFBCB943134C844671C09D76 /* AJKit */ = {
+			isa = PBXGroup;
+			children = (
+				9646B7762FF94A649E5320160DC26979 /* Foundation */,
+				623292D58387444FDF85F2615667E23A /* Pod */,
+				198844E829450BF40A12B6CF71174EFF /* Runtime */,
+				11740C6204E81F0B8A9004E543FF82DF /* Support Files */,
+			);
+			name = AJKit;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		7C84CFBD4D33AF646E95427D47C6AB84 /* Pods-AJKit_Example */ = {
@@ -158,47 +212,19 @@
 			path = "Target Support Files/Pods-AJKit_Example";
 			sourceTree = "<group>";
 		};
-		7FBBE36B7FB96E57BA84ECC44ACCCBF1 /* AJKit */ = {
+		9646B7762FF94A649E5320160DC26979 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				48E296B0D960E837097928527B3F6C43 /* Pod */,
-				AFA071DA186A1DA210DF7E5B6A639593 /* Support Files */,
-				950A2D76863692804E6C91B0F74A3F4E /* UIKit */,
+				28F414ED42FED15E50AECD22C2836B0A /* AJFoundation.h */,
+				0095A824684CD92EBBAF5D27BE328AEB /* AJFoundationConfig.h */,
+				86708994456AD3C71762D8EC5D85B801 /* NSArray+AJKit.h */,
+				3B330E0CB1979710D1337086ABFC93A8 /* NSArray+AJKit.m */,
+				BD30E97DFC5C49B1C578F71F6915E147 /* NSDictionary+AJKit.h */,
+				705435A5BB9AC924A80B67F7F50B97A4 /* NSDictionary+AJKit.m */,
+				383CF37F03A66C8F8F051043E9A94A1C /* NSString+AJKit.h */,
+				D1B241859DFBF85C25D4C6E0D2B24840 /* NSString+AJKit.m */,
 			);
-			name = AJKit;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		889CE4EC50CEDC3DD375EC11A3BFB070 /* Development Pods */ = {
-			isa = PBXGroup;
-			children = (
-				7FBBE36B7FB96E57BA84ECC44ACCCBF1 /* AJKit */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		950A2D76863692804E6C91B0F74A3F4E /* UIKit */ = {
-			isa = PBXGroup;
-			children = (
-				336B5F3D82D4CE8486B32D917495425A /* AJUIKit.h */,
-				824F5C921F9175A1B001FAD8CCE64EC5 /* UIViewController+AJKit.h */,
-				1BBFD06A74A061504DDFAA2CEEBCD016 /* UIViewController+AJKit.m */,
-			);
-			name = UIKit;
-			sourceTree = "<group>";
-		};
-		AFA071DA186A1DA210DF7E5B6A639593 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				9AC40F89B305A559629696A9F231CE40 /* AJKit.modulemap */,
-				3D30AB8294CED22FA917C3DDCE9DBE55 /* AJKit.xcconfig */,
-				CD90711D8A3B02762EC9DC7E5FA227C6 /* AJKit-dummy.m */,
-				20533322B0C0BE03B0D5A6DD3E46B1F5 /* AJKit-Info.plist */,
-				BD0CBF72A5B2C14CCA2ACA14D4D10D5D /* AJKit-prefix.pch */,
-				70055A01C2F2C90988AE4BBC20B98996 /* AJKit-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/AJKit";
+			name = Foundation;
 			sourceTree = "<group>";
 		};
 		B71CC3D909DD8BFF0EAF53BDAF928FA9 /* Targets Support Files */ = {
@@ -218,11 +244,19 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		C681F364986595CE7BA30552BC26A477 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7682273ABFBCB943134C844671C09D76 /* AJKit */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
-				889CE4EC50CEDC3DD375EC11A3BFB070 /* Development Pods */,
+				C681F364986595CE7BA30552BC26A477 /* Development Pods */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
 				2E23DFBE90A2928A755479A516C27DB6 /* Products */,
 				B71CC3D909DD8BFF0EAF53BDAF928FA9 /* Targets Support Files */,
@@ -248,13 +282,18 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		7C5E4D8B17250A01B27954D5E6599786 /* Headers */ = {
+		577CDB723319CD30316C7B04738C5028 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6A6BBB9A4F7FD2283B02478830B51F62 /* AJKit-umbrella.h in Headers */,
-				D64E30316E005D8BD09334D7F316B483 /* AJUIKit.h in Headers */,
-				7E2D3AF3F2F6D314F212BF39F4E776C0 /* UIViewController+AJKit.h in Headers */,
+				9C27A0DA5B0A219E6DD373390DDDA12F /* AJFoundation.h in Headers */,
+				27CA25588EEC27FBE0F840869427D0BE /* AJFoundationConfig.h in Headers */,
+				B6BAADFBBC6398CF9815D870FDED34C9 /* AJKit-umbrella.h in Headers */,
+				AD157090F997E7C28DC4DB16A68BB7F0 /* AJRuntime.h in Headers */,
+				EB645F11C005E286785AA5762CC7A020 /* NSArray+AJKit.h in Headers */,
+				BEEA92D4C99AFA97A9D2100111BCC12E /* NSDictionary+AJKit.h in Headers */,
+				48480E7F5A46E4383D099EAFB8B46514 /* NSObject+AJRuntime.h in Headers */,
+				435C8487C999AFEA1168D273326E54B5 /* NSString+AJKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,12 +329,12 @@
 		};
 		A6D38F6793FBA40CB1CF72858F765BBA /* AJKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 57BAC1DCB4C91B1DC492019614EC7DE9 /* Build configuration list for PBXNativeTarget "AJKit" */;
+			buildConfigurationList = AB5B646E255AE61DBBCBE7353B393569 /* Build configuration list for PBXNativeTarget "AJKit" */;
 			buildPhases = (
-				7C5E4D8B17250A01B27954D5E6599786 /* Headers */,
-				3BD052C4A637082B206E874193E4FC70 /* Sources */,
-				4A29E4BA25AE2A53B50149D4D59212A3 /* Frameworks */,
-				8C565EC660BE991ED2598F3B3706D01E /* Resources */,
+				577CDB723319CD30316C7B04738C5028 /* Headers */,
+				BAFA5E9FAA1D9AD3F6CBB21F49DA5594 /* Sources */,
+				36AD6D28BAD8DE099163BF10A8A5D504 /* Frameworks */,
+				3026822A8797FAE81667161E1F25AA4E /* Resources */,
 			);
 			buildRules = (
 			);
@@ -354,7 +393,7 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8C565EC660BE991ED2598F3B3706D01E /* Resources */ = {
+		3026822A8797FAE81667161E1F25AA4E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -386,12 +425,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		3BD052C4A637082B206E874193E4FC70 /* Sources */ = {
+		BAFA5E9FAA1D9AD3F6CBB21F49DA5594 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				541C8B1FB4A9B3E796BD2F9505C2DB8C /* AJKit-dummy.m in Sources */,
-				6B768274BFEFC156DEECB8830BAE9F6A /* UIViewController+AJKit.m in Sources */,
+				527481E58F9A4336E835B740A95EA801 /* AJKit-dummy.m in Sources */,
+				9903F3BFD57D6A626F594F6C1D3C14E3 /* NSArray+AJKit.m in Sources */,
+				09F4F6C2786878AA1D435735DFCDAEDF /* NSDictionary+AJKit.m in Sources */,
+				598C70F1FD611328997ABDA2A38455D1 /* NSObject+AJRuntime.m in Sources */,
+				1B3D05A8BC4A777C98BBCC89A93572C4 /* NSString+AJKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,38 +528,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		35E4FA6D077806E809AB61AF525C382C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D30AB8294CED22FA917C3DDCE9DBE55 /* AJKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AJKit/AJKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AJKit/AJKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AJKit/AJKit.modulemap";
-				PRODUCT_MODULE_NAME = AJKit;
-				PRODUCT_NAME = AJKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		43DC192CE106283B56359E24F130A536 /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -677,9 +687,41 @@
 			};
 			name = Debug;
 		};
-		98FD20B9B1B0438386F0A297DBE2CF07 /* Debug */ = {
+		D82C589E55053B8A65CC055CA19C574B /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3D30AB8294CED22FA917C3DDCE9DBE55 /* AJKit.xcconfig */;
+			baseConfigurationReference = 15EA41D0D9A57068BF54B1BC41618CCD /* AJKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AJKit/AJKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AJKit/AJKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AJKit/AJKit.modulemap";
+				PRODUCT_MODULE_NAME = AJKit;
+				PRODUCT_NAME = AJKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		F73A299DCDB48239DCF7EB3B4738AF47 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15EA41D0D9A57068BF54B1BC41618CCD /* AJKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -763,11 +805,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		57BAC1DCB4C91B1DC492019614EC7DE9 /* Build configuration list for PBXNativeTarget "AJKit" */ = {
+		AB5B646E255AE61DBBCBE7353B393569 /* Build configuration list for PBXNativeTarget "AJKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				98FD20B9B1B0438386F0A297DBE2CF07 /* Debug */,
-				35E4FA6D077806E809AB61AF525C382C /* Release */,
+				F73A299DCDB48239DCF7EB3B4738AF47 /* Debug */,
+				D82C589E55053B8A65CC055CA19C574B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

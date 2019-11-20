@@ -10,8 +10,13 @@
 #endif
 #endif
 
-#import "AJUIKit.h"
-#import "UIViewController+AJKit.h"
+#import "AJFoundation.h"
+#import "AJFoundationConfig.h"
+#import "NSArray+AJKit.h"
+#import "NSDictionary+AJKit.h"
+#import "NSString+AJKit.h"
+#import "AJRuntime.h"
+#import "NSObject+AJRuntime.h"
 
 FOUNDATION_EXPORT double AJKitVersionNumber;
 FOUNDATION_EXPORT const unsigned char AJKitVersionString[];

@@ -1,6 +1,6 @@
 {
   "name": "AJKit",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "summary": "A short description of AJKit.",
   "description": "TODO: Add long description of the pod here.",
   "homepage": "https://github.com/xujiebing/AJKit",
@@ -13,16 +13,32 @@
   },
   "source": {
     "git": "https://github.com/xujiebing/AJKit.git",
-    "tag": "0.1.0"
+    "tag": "0.2.0"
   },
   "platforms": {
     "ios": "8.0"
   },
+  "default_subspecs": "Foundation",
   "subspecs": [
+    {
+      "name": "Foundation",
+      "prefix_header_file": "AJKit/Classes/Foundation/AJFoundation.pch",
+      "source_files": "AJKit/Classes/Foundation/*.{h,m}"
+    },
     {
       "name": "UIKit",
       "prefix_header_file": "AJKit/Classes/UIKit/AJUIKit.pch",
       "source_files": "AJKit/Classes/UIKit/*.{h,m}"
+    },
+    {
+      "name": "Runtime",
+      "prefix_header_file": "AJKit/Classes/Runtime/AJRuntime.pch",
+      "source_files": "AJKit/Classes/Runtime/*.{h,m}",
+      "dependencies": {
+        "AJKit/Foundation": [
+
+        ]
+      }
     }
   ]
 }

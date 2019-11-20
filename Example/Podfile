@@ -3,7 +3,9 @@ use_frameworks!
 platform :ios, '8.0'
 
 target 'AJKit_Example' do
-  pod 'AJKit', :path => '../'
+  pod 'AJKit',
+  :subspecs => ['Foundation', 'UIKit', 'Runtime'],
+  :path => '../'
 
   target 'AJKit_Tests' do
     inherit! :search_paths
