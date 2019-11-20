@@ -1,6 +1,6 @@
 //
-//  UIViewController+DBKit.h
-//  DBKit
+//  UIViewController+AJKit.h
+//  AJKit
 //
 //  Created by 徐结兵 on 2019/11/20.
 //
@@ -9,7 +9,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface UIViewController (DBKit)
+@interface UIViewController (AJKit)
 
 /// 获取当前viewController
 + (UIViewController *)currentViewController;

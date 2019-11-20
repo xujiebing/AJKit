@@ -1,16 +1,16 @@
 //
-//  DBUIKit.pch
-//  DBKit
+//  AJUIKit.pch
+//  AJKit
 //
 //  Created by 徐结兵 on 2019/11/20.
 //
 
-#ifndef DBUIKit_pch
-#define DBUIKit_pch
+#ifndef AJUIKit_pch
+#define AJUIKit_pch
 
 // Include any system framework and library headers here that should be included in all compilation units.
 // You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
 
-#import <DBKit/UIViewController+DBKit.h>
+#import <AJKit/UIViewController+AJKit.h>
 
-#endif /* DBUIKit_pch */
+#endif /* AJUIKit_pch */

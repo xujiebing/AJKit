@@ -24,7 +24,7 @@ TODO: Add long description of the pod here.
 #  end
   
   s.subspec 'UIKit' do |kit|
-    kit.prefix_header_file = 'AJKit/Classes/UIKit/DBUIKit.pch'
+    kit.prefix_header_file = 'AJKit/Classes/UIKit/AJUIKit.pch'
     kit.source_files = 'AJKit/Classes/UIKit/*.{h,m}'
   end
   

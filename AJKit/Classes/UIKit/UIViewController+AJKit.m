@@ -1,13 +1,13 @@
 //
-//  UIViewController+DBKit.m
-//  DBKit
+//  UIViewController+AJKit.m
+//  AJKit
 //
 //  Created by 徐结兵 on 2019/11/20.
 //
 
-#import "UIViewController+DBKit.h"
+#import "UIViewController+AJKit.h"
 
-@implementation UIViewController (DBKit)
+@implementation UIViewController (AJKit)
 
 + (UIViewController *)currentViewController {
     UIViewController *viewController = nil;

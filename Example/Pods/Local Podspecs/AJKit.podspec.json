@@ -21,7 +21,7 @@
   "subspecs": [
     {
       "name": "UIKit",
-      "prefix_header_file": "AJKit/Classes/UIKit/DBUIKit.pch",
+      "prefix_header_file": "AJKit/Classes/UIKit/AJUIKit.pch",
       "source_files": "AJKit/Classes/UIKit/*.{h,m}"
     }
   ]
