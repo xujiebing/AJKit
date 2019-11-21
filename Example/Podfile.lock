@@ -1,18 +1,23 @@
 PODS:
+  - AJKit/Algorithm (0.2.0)
   - AJKit/Foundation (0.2.0)
   - AJKit/Runtime (0.2.0):
     - AJKit/Foundation
+  - AJKit/UIKit (0.2.0)
 
 DEPENDENCIES:
+  - AJKit/Algorithm (from `../`)
+  - AJKit/Foundation (from `../`)
   - AJKit/Runtime (from `../`)
+  - AJKit/UIKit (from `../`)
 
 EXTERNAL SOURCES:
   AJKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AJKit: 175dc8f1fb6a92fad98bbcb9d7117b11129523eb
+  AJKit: 40c8a52906727066cfa4f96b36ac0b22280342eb
 
-PODFILE CHECKSUM: f0a79c062fbbcbc91354c48f49a10a3228db0e17
+PODFILE CHECKSUM: 270c2df8e1b639f6d47fe868faaddd1f5f40aee7
 
 COCOAPODS: 1.7.5

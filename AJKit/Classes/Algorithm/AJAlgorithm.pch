@@ -1,0 +1,16 @@
+//
+//  AJAlgorithm.pch
+//  AJKit
+//
+//  Created by 徐结兵 on 2019/11/20.
+//
+
+#ifndef AJAlgorithm_pch
+#define AJAlgorithm_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <AJKit/AJAlgorithm.h>
+
+#endif /* AJAlgorithm_pch */

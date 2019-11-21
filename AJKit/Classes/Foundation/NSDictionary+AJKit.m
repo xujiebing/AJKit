@@ -9,7 +9,7 @@
 
 @implementation NSDictionary (AJKit)
 
-+ (BOOL (^)(NSDictionary * _Nonnull))ajIsEmpty {
++ (BOOL (^)(NSDictionary *))ajIsEmpty {
     BOOL (^block)(NSDictionary *) = ^(NSDictionary *dic) {
         if (![dic isKindOfClass:[NSDictionary class]]) {
             return YES;
@@ -38,6 +38,25 @@
         }
         value = [dic objectForKey:key];
         return value;
+    };
+    return block;
+}
+
+- (NSString *)ajJsonString {
+    if ([NSJSONSerialization isValidJSONObject:self]) {
+        NSError *error;
+        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:0 error:&error];
+        NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+        return json;
+    }
+    return nil;
+}
+
+- (BOOL (^)(NSString * _Nonnull))ajContainsObjectForKey {
+    BOOL (^block)(NSString *) = ^(NSString *key) {
+        NSArray *array = [self allKeys];
+        BOOL contains = [array containsObject:key];
+        return contains;
     };
     return block;
 }

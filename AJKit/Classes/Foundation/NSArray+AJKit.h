@@ -17,6 +17,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取数组中对象
 + (id (^)(NSArray *array, NSUInteger index))ajObjectAtIndex;
 
+/// json格式化
+- (NSString *)ajJsonString;
+
 @end
 
 @interface NSMutableArray (AJKit)

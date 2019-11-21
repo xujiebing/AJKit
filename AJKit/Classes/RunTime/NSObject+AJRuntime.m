@@ -42,7 +42,7 @@
     kAJWeakSelf
     BOOL (^block)(SEL, SEL) = ^(SEL origClassMethod, SEL withClassMethod){
         Class c = object_getClass((id)ajSelf);
-        return [c ajSwizzleMethod](origClassMethod, withClassMethod);
+        return c.ajSwizzleMethod(origClassMethod, withClassMethod);
     };
     return block;
 }
@@ -55,7 +55,7 @@
         }
         Class origClass = [ajSelf class];
         Class withClass = NSClassFromString(withClassName);
-        [ajSelf ajSwizzleMethodWithClass](origClass, origMethod, withClass, withMethod);
+        ajSelf.ajSwizzleMethodWithClass(origClass, origMethod, withClass, withMethod);
     };
     return block;
 }

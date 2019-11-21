@@ -9,7 +9,7 @@
 
 @implementation UIViewController (AJKit)
 
-+ (UIViewController *)currentViewController {
++ (UIViewController *)ajCurrentViewController {
     UIViewController *viewController = nil;
     
     UIViewController *vc = [UIApplication sharedApplication].keyWindow.rootViewController;

@@ -21,6 +21,12 @@ NS_ASSUME_NONNULL_BEGIN
  */
 + (id (^)(NSDictionary *dic, NSString *key))ajObjectForKey;
 
+/// json格式化
+- (NSString *)ajJsonString;
+
+/// 判断是否包含某个key对应的对象
+- (BOOL (^)(NSString * key))ajContainsObjectForKey;
+
 @end
 
 @interface NSMutableDictionary (AJKit)

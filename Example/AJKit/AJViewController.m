@@ -7,6 +7,7 @@
 //
 
 #import "AJViewController.h"
+#import <AJKit/AJFoundation.h>
 
 @interface AJViewController ()
 
@@ -18,6 +19,19 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    NSString *string = @"dajkla";
+//    string = [NSNull null];
+//    NSString *base64 = string.ajBase64Encoding;
+//    AJLog(base64)
+    id a = @[];
+    string = a;
+    string.ajUrlEncodeUTF8;
+    AJLog(@"")
+    
+    NSArray *array = @[];
+    array = nil;
+    [array objectAtIndex:1];
+    AJLog(@"")
 }
 
 - (void)didReceiveMemoryWarning

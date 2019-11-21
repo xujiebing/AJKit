@@ -39,6 +39,11 @@
 
         ]
       }
+    },
+    {
+      "name": "Algorithm",
+      "prefix_header_file": "AJKit/Classes/Algorithm/AJAlgorithm.pch",
+      "source_files": "AJKit/Classes/Algorithm/**/*.{h,m}"
     }
   ]
 }
