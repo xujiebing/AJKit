@@ -19,18 +19,10 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSString *string = @"dajkla";
-//    string = [NSNull null];
-//    NSString *base64 = string.ajBase64Encoding;
-//    AJLog(base64)
-    id a = @[];
-    string = a;
-    string.ajUrlEncodeUTF8;
-    AJLog(@"")
+    NSData *data = @"qqqq".ajDataValue;
     
-    NSArray *array = @[];
-    array = nil;
-    [array objectAtIndex:1];
+    NSString *q = NSData.ajHexString(data);
+    NSString *qq = NSData.ajStringValue(data);
     AJLog(@"")
 }
 
