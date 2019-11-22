@@ -11,14 +11,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (AJKit)
 
-/// 获取Class类名
-+ (NSString *)ajClassName;
-
 /// 判断对象是否是JSON对象
-- (BOOL)ajIsJSONObject;
++ (BOOL (^)(id))ajIsJSONObject;
 
 /// 获取Class类名
-- (NSString *)ajClassName;
++ (NSString *(^)(id))ajClassName;
+
+/// json格式化
++ (NSString *(^)(id))ajJsonString;
 
 @end
 

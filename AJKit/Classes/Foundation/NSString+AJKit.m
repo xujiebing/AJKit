@@ -85,8 +85,8 @@ static const short base64DecodingTable[256] = {
         if (NSString.ajIsEmpty(string)) {
             return complete;
         }
-        NSData *data = [string dataUsingEncoding:NSUTF8StringEncoding];
-        complete = data.ajJsonValueDecoded;
+        NSData *data = string.ajDataValue;
+        complete = NSData.ajJsonValueDecoded(data);
         return complete;
     };
     return block;

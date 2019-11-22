@@ -11,20 +11,20 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSData (AJKit)
 
-/// 将NSData对象转换为十六进制的字符串
-- (NSString *)ajHexString;
+/// 判断NSData是否为空
++ (BOOL (^)(NSData *))ajIsEmpty;
 
 /// 将NSData对象转换为十六进制的字符串
-- (NSString *)ajConvertDataToHexString;
++ (NSString *(^)(NSData *))ajHexString;
 
 /// 将NSData转换成一个base64格式的字符串
-- (NSString *)ajBase64Encoding;
++ (NSString *(^)(NSData *))ajBase64Encoding;
 
-/// 返回一个json格式的对象，如果不是json格式，则返回nil
-- (id)ajJsonValueDecoded;
+/// 将NSData转换成json对象，如果不是json格式，则返回nil
++ (id (^)(NSData *))ajJsonValueDecoded;
 
-/// 将NSData转换utf8格式的字符串
-- (NSString *)ajUtf8String;
+/// 将NSData转换成字符串（UTF8格式）
++ (NSString *(^)(NSData *))ajStringValue;
 
 @end
 
