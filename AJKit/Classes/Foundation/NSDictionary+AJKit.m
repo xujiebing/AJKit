@@ -26,14 +26,7 @@
 + (id  _Nonnull (^)(NSDictionary * _Nonnull, NSString * _Nonnull))ajObjectForKey {
     id (^block)(NSDictionary *, NSString *) = ^(NSDictionary *dic, NSString *key) {
         id value = nil;
-        if (NSDictionary.ajIsEmpty(dic)) {
-            return value;
-        }
-        if (NSString.ajIsEmpty(key)) {
-            return value;
-        }
-        NSArray *array = [dic allKeys];
-        if (![array containsObject:key]) {
+        if (!NSDictionary.ajContainsObjectForKey(dic, key)) {
             return value;
         }
         value = [dic objectForKey:key];
@@ -42,19 +35,12 @@
     return block;
 }
 
-- (NSString *)ajJsonString {
-    if ([NSJSONSerialization isValidJSONObject:self]) {
-        NSError *error;
-        NSData *jsonData = [NSJSONSerialization dataWithJSONObject:self options:0 error:&error];
-        NSString *json = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
-        return json;
-    }
-    return nil;
-}
-
-- (BOOL (^)(NSString * _Nonnull))ajContainsObjectForKey {
-    BOOL (^block)(NSString *) = ^(NSString *key) {
-        NSArray *array = [self allKeys];
++ (BOOL (^)(NSDictionary * _Nonnull, NSString * _Nonnull))ajContainsObjectForKey {
+    BOOL (^block)(NSDictionary *, NSString *) = ^(NSDictionary *dic, NSString *key) {
+        if (NSDictionary.ajIsEmpty(dic) || NSString.ajIsEmpty(key)) {
+            return NO;
+        }
+        NSArray *array = dic.allKeys;
         BOOL contains = [array containsObject:key];
         return contains;
     };

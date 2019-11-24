@@ -42,22 +42,32 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDate (AJKit)
 
+/// 判断NSDate是否为空
+/// - Parameters: NSDate *
++ (BOOL (^)(NSDate * _Nonnull))ajIsEmpty;
+
 /// 将日期以格式化的方式转化成字符串
-- (NSString * (^)(NSString *format))ajStringValue;
+/// - Parameters: NSDate *, NSString *
++ (NSString * (^)(NSDate *date, NSString *format))ajStringValue;
 
 /// 当前日期  返回一个yyyy-MM-dd格式的日期
-- (NSString *)ajDateString;
+/// - Parameters: NSDate *
++ (NSString * (^)(NSDate *date))ajDateString;
 
 /// 当前日期+时间  返回一个yyyy-MM-dd HH:mm:ss格式的日期+时间
-- (NSString *)ajDateTimeString;
+/// - Parameters: NSDate *
++ (NSString * (^)(NSDate *date))ajDateTimeString;
 
 /// 时间戳(秒)
-- (NSString *)ajTimestamp;
+/// - Parameters: NSDate *
++ (NSString * (^)(NSDate *date))ajTimestamp;
 
 /// 时间戳(毫秒)
-- (NSString *)ajTimestampMillisecond;
+/// - Parameters: NSDate *
++ (NSString * (^)(NSDate *date))ajTimestampMillisecond;
 
-/// 根据时间戳（毫秒）转换成日期字符串
+/// 根据时间戳（毫秒）转换成日期格式
+/// - Parameters: NSTimeInterval
 + (NSDate * (^)(NSTimeInterval))ajTimestampMillisecondToDate;
 
 @end

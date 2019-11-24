@@ -44,7 +44,7 @@ static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
     return block;
 }
 
-+ (NSString * _Nonnull (^)(NSData * _Nonnull))ajBase64Encoding {
++ (NSString * _Nonnull (^)(NSData * _Nonnull))ajBase64Encode {
     NSString * (^block)(NSData *) = ^(NSData *data){
         if (NSData.ajIsEmpty(data)) {
             return AJEmptyString;

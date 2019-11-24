@@ -19,10 +19,9 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-    NSData *data = @"qqqq".ajDataValue;
-    
-    NSString *q = NSData.ajHexString(data);
-    NSString *qq = NSData.ajStringValue(data);
+//    NSData *data = @"qqqq".ajDataValue;
+//    NSString *q = NSData.ajHexString(data);
+//    NSString *qq = NSData.ajStringValue(data);
     AJLog(@"")
 }
 
