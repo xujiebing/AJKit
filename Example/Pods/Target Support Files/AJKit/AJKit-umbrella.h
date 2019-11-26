@@ -10,10 +10,6 @@
 #endif
 #endif
 
-#import "AJAES128.h"
-#import "AJAlgorithm.h"
-#import "NSData+AJAlgorithm.h"
-#import "NSString+AJAlgorithm.h"
 #import "AJFoundation.h"
 #import "AJFoundationConfig.h"
 #import "NSArray+AJKit.h"
@@ -24,8 +20,6 @@
 #import "NSObject+AJKit.h"
 #import "NSString+AJKit.h"
 #import "UIDevice+AJKit.h"
-#import "AJRuntime.h"
-#import "NSObject+AJRuntime.h"
 #import "AJUIKit.h"
 #import "UIViewController+AJKit.h"
 

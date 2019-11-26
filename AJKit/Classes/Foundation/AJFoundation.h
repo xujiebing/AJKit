@@ -16,6 +16,9 @@
 #include <arpa/inet.h>
 #include <ifaddrs.h>
 
+#import <objc/runtime.h>
+#import <objc/message.h>
+
 #import <AJKit/AJFoundationConfig.h>
 #import <AJKit/NSArray+AJKit.h>
 #import <AJKit/NSData+AJKit.h>

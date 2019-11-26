@@ -12,88 +12,116 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSString (AJKit)
 
 /// 判断字符串是否为空
+/// - Parameters: NSString *
 + (BOOL (^)(NSString *))ajIsEmpty;
 
 /// urlUTF8编码
-- (NSString *)ajUrlEncodeUTF8;
+/// - Parameters: NSString *
++ (NSString * (^)(NSString *))ajEncodeUTF8;
 
 /// url编码
-- (NSString * (^)(NSStringEncoding))ajUrlEncode;
+/// - Parameters: NSString *,NSStringEncoding
++ (NSString * (^)(NSString *string, NSStringEncoding encoding))ajEncode;
 
 /// url UTF8解码
-- (NSString *)ajUrlDecodeUTF8;
+/// - Parameters: NSString *
++ (NSString * (^)(NSString *))ajDecodeUTF8;
 
 /// url解码
-- (NSString * (^)(NSStringEncoding))ajUrlDecode;
+/// - Parameters: NSString *,NSStringEncoding
++ (NSString * (^)(NSString *string, NSStringEncoding encoding))ajDecode;
 
 /// 字符串转对象
+/// - Parameters: NSString *
 + (id (^)(NSString *))ajJsonObject;
 
 /// 将base64编码的字符串转换成NSData
-- (NSData *)ajBase64Decoding;
+/// - Parameters: NSString *
++ (NSData * (^)(NSString *))ajBase64DecodeToData;
 
 /// 根据文件名（包含后缀）获取文件内容
-- (NSData *)ajFileData;
+/// - Parameters: NSString *
++ (NSData * (^)(NSString *))ajFileData;
 
 /// 随机批次号，时间+随机数
-+ (NSString *)ajSequence;
+/// - Parameters: NSString *
++ (NSString * (^)(NSString *))ajSequence;
 
 /// 生成随机数
+/// - Parameters: NSInteger
 + (NSString *(^)(NSInteger length))ajRandom;
 
 /// 16进制字符串转换成10进制字符串
-- (NSString *)ajHexToDecimal;
+/// - Parameters: NSString *
++ (NSString * (^)(NSString *))ajHexToDecimal;
 
 /// 10进制字符串转换成16进制字符串
-- (NSString *)ajDecimalToHex;
+/// - Parameters: NSString *
++ (NSString * (^)(NSString *))ajDecimalToHex;
 
 /// base64编码
-- (NSString *)ajBase64Encoding;
+/// - Parameters: NSString *
++ (NSString * (^)(NSString *))ajBase64Encode;
 
 /// base64解码
-- (NSString *)ajBase64Decode;
+/// - Parameters: NSString *
++ (NSString * (^)(NSString *))ajBase64Decode;
 
 /// 是否是中文
-- (BOOL)ajIsChinese;
+/// - Parameters: NSString *
++ (BOOL (^)(NSString *))ajIsChinese;
 
 /// 正则匹配
-- (BOOL (^)(NSString *))ajMatchesRegex;
+/// - Parameters: NSString *, NSString *
++ (BOOL (^)(NSString *string, NSString *regex))ajMatchesRegex;
 
 /// 过滤空格
-- (NSString *)ajClearWhiteSpace;
+/// - Parameters: NSString *
++ (NSString * (^)(NSString *))ajClearWhiteSpace;
 
 /// 过滤空格和换行
-- (NSString *)ajClearWhiteSpaceAndNewLine;
+/// - Parameters: NSString *
++ (NSString * (^)(NSString *))ajClearWhiteSpaceAndNewLine;
 
 /// 判断是否包含某个字符串
-- (BOOL (^)(NSString *))ajContainsString;
+/// - Parameters: NSString *
++ (BOOL (^)(NSString *))ajContainsString;
 
 /// 将字符串转成NSNumber
-- (NSNumber *)ajNumberValue;
+/// - Parameters: NSString *
++ (NSNumber * (^)(NSString *))ajNumberValue;
 
 /// 将字符串转换成NSData类型
-- (NSData *)ajDataValue;
+/// - Parameters: NSString *
++ (NSData * (^)(NSString *))ajDataValue;
 
 /// 判断邮箱格式
-- (BOOL)ajIsEmail;
+/// - Parameters: NSString *
++ (BOOL (^)(NSString *))ajIsEmail;
 
 /// 判断手机号格式
-- (BOOL)ajIsMobileNumber;
+/// - Parameters: NSString *
++ (BOOL (^)(NSString *))ajIsMobileNumber;
 
 /// 判断是否是纯数字格式
-- (BOOL)ajIsNumber;
+/// - Parameters: NSString *
++ (BOOL (^)(NSString *))ajIsNumber;
 
 /// 判断是否是邮政编码格式
-- (BOOL)ajIsPostalcode;
+/// - Parameters: NSString *
++ (BOOL (^)(NSString *))ajIsPostalcode;
 
 /// 判断是否是url格式
-- (BOOL)ajIsUrl;
+/// - Parameters: NSString *
++ (BOOL (^)(NSString *))ajIsUrl;
 
 /// 判断是否是身份证号格式
-- (BOOL)ajIsIDCardNumber;
+/// - Parameters: NSString *
++ (BOOL (^)(NSString *))ajIsIDCardNumber;
 
 /// 将 日期字符串 通过 格式化 转换成 时间对象
-- (NSDate * (^)(NSString *format))ajDateValue;
+/// - Parameters: NSString *，NSString *
++ (NSDate * (^)(NSString *string, NSString *format))ajDateValue;
 
 @end
 

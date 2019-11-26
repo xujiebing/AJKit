@@ -29,15 +29,15 @@ TODO: Add long description of the pod here.
     kit.source_files = 'AJKit/Classes/UIKit/*.{h,m}'
   end
   
-  s.subspec 'Runtime' do |runtime|
-    runtime.prefix_header_file = 'AJKit/Classes/Runtime/AJRuntime.pch'
-    runtime.source_files = 'AJKit/Classes/Runtime/*.{h,m}'
-    runtime.dependency 'AJKit/Foundation'
-  end
-  
-  s.subspec 'Algorithm' do |algorithm|
-    algorithm.prefix_header_file = 'AJKit/Classes/Algorithm/AJAlgorithm.pch'
-    algorithm.source_files = 'AJKit/Classes/Algorithm/**/*.{h,m}'
-  end
+#  s.subspec 'Runtime' do |runtime|
+#    runtime.prefix_header_file = 'AJKit/Classes/Runtime/AJRuntime.pch'
+#    runtime.source_files = 'AJKit/Classes/Runtime/*.{h,m}'
+#    runtime.dependency 'AJKit/Foundation'
+#  end
+#  
+#  s.subspec 'Algorithm' do |algorithm|
+#    algorithm.prefix_header_file = 'AJKit/Classes/Algorithm/AJAlgorithm.pch'
+#    algorithm.source_files = 'AJKit/Classes/Algorithm/**/*.{h,m}'
+#  end
   
 end
