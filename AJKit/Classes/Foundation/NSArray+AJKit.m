@@ -10,11 +10,11 @@
 @implementation NSArray (AJKit)
 
 + (BOOL (^)(NSArray * _Nonnull))ajIsEmpty {
-    BOOL (^block)(NSArray *) = ^(NSArray *array) {
-        if (![array isKindOfClass:[NSArray class]]) {
+    BOOL (^block)(NSArray *) = ^(NSArray *ajSelf) {
+        if (![ajSelf isKindOfClass:[NSArray class]]) {
             return YES;
         }
-        if (array.count == 0) {
+        if (ajSelf.count == 0) {
             return YES;
         }
         return NO;
@@ -23,13 +23,13 @@
 }
 
 + (id  _Nonnull (^)(NSArray * _Nonnull, NSUInteger))ajObjectAtIndex {
-    id (^block)(NSArray *, NSUInteger) = ^(NSArray *array, NSUInteger index) {
+    id (^block)(NSArray *, NSUInteger) = ^(NSArray *ajSelf, NSUInteger index) {
         id obj = nil;
-        if (NSArray.ajIsEmpty(array)) {
+        if (NSArray.ajIsEmpty(ajSelf)) {
             return obj;
         }
-        if (index < array.count) {
-            obj = [array objectAtIndex:index];
+        if (index < ajSelf.count) {
+            obj = [ajSelf objectAtIndex:index];
         }
         return obj;
     };
@@ -41,11 +41,11 @@
 @implementation NSMutableArray (AJKit)
 
 + (BOOL (^)(NSMutableArray * _Nonnull))ajIsEmpty {
-    BOOL (^block)(NSMutableArray *) = ^(NSMutableArray *array) {
-        if (![array isKindOfClass:[NSMutableArray class]]) {
+    BOOL (^block)(NSMutableArray *) = ^(NSMutableArray *ajSelf) {
+        if (![ajSelf isKindOfClass:[NSMutableArray class]]) {
             return YES;
         }
-        if (array.count == 0) {
+        if (ajSelf.count == 0) {
             return YES;
         }
         return NO;
@@ -54,14 +54,14 @@
 }
 
 + (void (^)(NSMutableArray * _Nonnull, id _Nonnull))ajAddObject {
-    void (^block)(NSMutableArray *, id) = ^(NSMutableArray *array, id object) {
-        if (![array isKindOfClass:[NSMutableArray class]]) {
+    void (^block)(NSMutableArray *, id) = ^(NSMutableArray *ajSelf, id object) {
+        if (![ajSelf isKindOfClass:[NSMutableArray class]]) {
             return ;
         }
         if (!object) {
             return;
         }
-        [array addObject:object];
+        [ajSelf addObject:object];
     };
     return block;
 }

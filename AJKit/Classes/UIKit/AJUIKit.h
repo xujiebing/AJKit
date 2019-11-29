@@ -8,6 +8,5 @@
 #ifndef AJUIKit_h
 #define AJUIKit_h
 
-#import <AJKit/UIViewController+AJKit.h>
 
 #endif /* AJUIKit_h */

@@ -43,31 +43,38 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSDate (AJKit)
 
 /// 判断NSDate是否为空
-/// - Parameters: NSDate *
-+ (BOOL (^)(NSDate * _Nonnull))ajIsEmpty;
+/// @param NSDate* date对象
+/// @return BOOL 是否为空
++ (BOOL (^)(NSDate *))ajIsEmpty;
 
 /// 将日期以格式化的方式转化成字符串
-/// - Parameters: NSDate *, NSString *
-+ (NSString * (^)(NSDate *date, NSString *format))ajStringValue;
+/// @param NSDate* date对象
+/// @return NSString* 字符串或nil
++ (NSString * (^)(NSDate *ajSelf, NSString *format))ajStringValue;
 
-/// 当前日期  返回一个yyyy-MM-dd格式的日期
-/// - Parameters: NSDate *
-+ (NSString * (^)(NSDate *date))ajDateString;
+/// 获取当前日期
+/// @param NSDate* date对象
+/// @return NSString* 返回一个yyyy-MM-dd格式的日期字符串或nil
++ (NSString * (^)(NSDate *ajSelf))ajDateString;
 
-/// 当前日期+时间  返回一个yyyy-MM-dd HH:mm:ss格式的日期+时间
-/// - Parameters: NSDate *
-+ (NSString * (^)(NSDate *date))ajDateTimeString;
+/// 获取当前日期+时间
+/// @param NSDate* date对象
+/// @return NSString*  返回一个yyyy-MM-dd HH:mm:ss格式的日期+时间字符串或nil
++ (NSString * (^)(NSDate *ajSelf))ajDateTimeString;
 
 /// 时间戳(秒)
-/// - Parameters: NSDate *
-+ (NSString * (^)(NSDate *date))ajTimestamp;
+/// @param NSDate* date对象
+/// @return NSString* 字符串或nil
++ (NSString * (^)(NSDate *ajSelf))ajTimestamp;
 
 /// 时间戳(毫秒)
-/// - Parameters: NSDate *
-+ (NSString * (^)(NSDate *date))ajTimestampMillisecond;
+/// @param NSDate* date对象
+/// @return NSString* 字符串或nil
++ (NSString * (^)(NSDate *ajSelf))ajTimestampMillisecond;
 
 /// 根据时间戳（毫秒）转换成日期格式
-/// - Parameters: NSTimeInterval
+/// @param NSTimeInterval 时间戳对象
+/// @return NSDate* date对象
 + (NSDate * (^)(NSTimeInterval))ajTimestampMillisecondToDate;
 
 @end

@@ -13,7 +13,6 @@
     UIViewController *viewController = nil;
     
     UIViewController *vc = [UIApplication sharedApplication].keyWindow.rootViewController;
-    
     if([vc isKindOfClass:[UITabBarController class]]) {
         viewController = ((UITabBarController *)vc).selectedViewController;
     } else if ([vc isKindOfClass:[UINavigationController class]]) {

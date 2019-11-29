@@ -12,11 +12,11 @@ static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
 @implementation NSData (AJKit)
 
 + (BOOL (^)(NSData * _Nonnull))ajIsEmpty {
-    BOOL (^block)(NSData *) = ^(NSData *data) {
-        if (![data isKindOfClass:[NSData class]]) {
+    BOOL (^block)(NSData *) = ^(NSData *ajSelf) {
+        if (![ajSelf isKindOfClass:NSData.class]) {
             return YES;
         }
-        if (data.length == 0) {
+        if (ajSelf.length == 0) {
             return YES;
         }
         return NO;
@@ -25,13 +25,13 @@ static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
 }
 
 + (NSString * _Nonnull (^)(NSData * _Nonnull))ajHexString {
-    NSString * (^block)(NSData *) = ^(NSData *data){
-        if (NSData.ajIsEmpty(data)) {
+    NSString * (^block)(NSData *) = ^(NSData *ajSelf){
+        if (NSData.ajIsEmpty(ajSelf)) {
             return AJEmptyString;
         }
-        Byte *bytes = (Byte *)[data bytes];
+        Byte *bytes = (Byte *)[ajSelf bytes];
         NSString *hexStr = @"";
-        for(int i=0; i<[data length]; i++) {
+        for(int i=0; i<[ajSelf length]; i++) {
             NSString *newHexStr = [NSString stringWithFormat:@"%x",bytes[i] & 0xff]; //16进制数
             newHexStr = [newHexStr uppercaseString];
             if([newHexStr length] == 1) {
@@ -45,17 +45,17 @@ static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
 }
 
 + (NSString * _Nonnull (^)(NSData * _Nonnull))ajBase64Encode {
-    NSString * (^block)(NSData *) = ^(NSData *data){
-        if (NSData.ajIsEmpty(data)) {
+    NSString * (^block)(NSData *) = ^(NSData *ajSelf){
+        if (NSData.ajIsEmpty(ajSelf)) {
             return AJEmptyString;
         }
-        NSUInteger length = data.length;
+        NSUInteger length = ajSelf.length;
         NSUInteger out_length = ((length + 2) / 3) * 4;
         uint8_t *output = malloc(((out_length + 2) / 3) * 4);
         if (output == NULL) {
             return AJEmptyString;
         }
-        const char *input = data.bytes;
+        const char *input = ajSelf.bytes;
         NSInteger i, value;
         for (i = 0; i < length; i += 3) {
             value = 0;
@@ -85,13 +85,13 @@ static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
 }
 
 + (id _Nonnull (^)(NSData * _Nonnull))ajJsonValueDecoded {
-    id (^block)(NSData *) = ^(NSData *data){
+    id (^block)(NSData *) = ^(NSData *ajSelf){
         id value = nil;
-        if (NSData.ajIsEmpty(data)) {
+        if (NSData.ajIsEmpty(ajSelf)) {
             return value;
         }
         NSError *error = nil;
-        value = [NSJSONSerialization JSONObjectWithData:data options:kNilOptions error:&error];
+        value = [NSJSONSerialization JSONObjectWithData:ajSelf options:kNilOptions error:&error];
         if (error) {
             AJLog(@"jsonValueDecoded error:%@", error);
         }
@@ -101,11 +101,11 @@ static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
 }
 
 + (NSString * _Nonnull (^)(NSData * _Nonnull))ajStringValue {
-    NSString * (^block)(NSData *) = ^(NSData *data){
-        if (NSData.ajIsEmpty(data)) {
+    NSString * (^block)(NSData *) = ^(NSData *ajSelf){
+        if (NSData.ajIsEmpty(ajSelf)) {
             return AJEmptyString;
         }
-        NSString *utf8String = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        NSString *utf8String = [[NSString alloc] initWithData:ajSelf encoding:NSUTF8StringEncoding];
         return utf8String;
     };
     return block;

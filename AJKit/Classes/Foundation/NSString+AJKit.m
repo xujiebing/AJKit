@@ -29,11 +29,11 @@ static const short base64DecodingTable[256] = {
 @implementation NSString (AJKit)
 
 + (BOOL (^)(NSString *))ajIsEmpty {
-    BOOL (^block)(NSString *) = ^(NSString *string) {
-        if (![string isKindOfClass:NSString.class]) {
+    BOOL (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (![ajSelf isKindOfClass:NSString.class]) {
             return YES;
         }
-        if (string.length == 0) {
+        if (ajSelf.length == 0) {
             return YES;
         }
         return NO;
@@ -42,8 +42,8 @@ static const short base64DecodingTable[256] = {
 }
 
 + (NSString * _Nonnull (^)(NSString * _Nonnull))ajEncodeUTF8 {
-    NSString *(^block)(NSString *) = ^(NSString *string) {
-        NSString *encoded = NSString.ajEncode(string, NSUTF8StringEncoding);
+    NSString *(^block)(NSString *) = ^(NSString *ajSelf) {
+        NSString *encoded = NSString.ajEncode(ajSelf, NSUTF8StringEncoding);
         return encoded;
     };
     return block;
@@ -51,13 +51,13 @@ static const short base64DecodingTable[256] = {
 
 + (NSString * _Nonnull (^)(NSString * _Nonnull, NSStringEncoding))ajEncode {
 
-    NSString *(^block)(NSString *, NSStringEncoding) = ^(NSString *string, NSStringEncoding encoding) {
+    NSString *(^block)(NSString *, NSStringEncoding) = ^(NSString *ajSelf, NSStringEncoding encoding) {
         NSString *encoded = nil;
-        if (NSString.ajIsEmpty(string)) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return encoded;
         }
         encoded = (__bridge_transfer NSString *)CFURLCreateStringByAddingPercentEscapes(NULL,
-                                                                                        (__bridge CFStringRef)string,
+                                                                                        (__bridge CFStringRef)ajSelf,
                                                                                         NULL,
                                                                                         CFSTR("!#$&'()*+,/:;=?@[]"),
                                                                                         (CFStringEncoding)encoding);
@@ -67,32 +67,32 @@ static const short base64DecodingTable[256] = {
 }
 
 + (NSString * _Nonnull (^)(NSString * _Nonnull))ajDecodeUTF8 {
-    NSString *(^block)(NSString *) = ^(NSString *string) {
-        NSString *encoded = NSString.ajDecode(string, NSUTF8StringEncoding);
+    NSString *(^block)(NSString *) = ^(NSString *ajSelf) {
+        NSString *encoded = NSString.ajDecode(ajSelf, NSUTF8StringEncoding);
         return encoded;
     };
     return block;
 }
 
 + (NSString * _Nonnull (^)(NSString * _Nonnull, NSStringEncoding))ajDecode {
-    NSString *(^block)(NSString *, NSStringEncoding) = ^(NSString *string, NSStringEncoding encoding) {
+    NSString *(^block)(NSString *, NSStringEncoding) = ^(NSString *ajSelf, NSStringEncoding encoding) {
         NSString *decodeString = nil;
-        if (NSString.ajIsEmpty(string)) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return decodeString;
         }
-        decodeString = (__bridge_transfer NSString*)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef)string, CFSTR(""),CFStringConvertNSStringEncodingToEncoding(encoding));
+        decodeString = (__bridge_transfer NSString*)CFURLCreateStringByReplacingPercentEscapesUsingEncoding(NULL, (__bridge CFStringRef)ajSelf, CFSTR(""),CFStringConvertNSStringEncodingToEncoding(encoding));
         return decodeString;
     };
     return block;
 }
 
 + (id  _Nonnull (^)(NSString * _Nonnull))ajJsonObject {
-    id (^block)(NSString *) = ^(NSString *string) {
+    id (^block)(NSString *) = ^(NSString *ajSelf) {
         id complete = nil;
-        if (NSString.ajIsEmpty(string)) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return complete;
         }
-        NSData *data = NSString.ajDataValue(string);
+        NSData *data = NSString.ajDataValue(ajSelf);
         complete = NSData.ajJsonValueDecoded(data);
         return complete;
     };
@@ -100,13 +100,13 @@ static const short base64DecodingTable[256] = {
 }
 
 + (NSData * _Nonnull (^)(NSString * _Nonnull))ajBase64DecodeToData {
-    NSData * (^block)(NSString *) = ^(NSString *base64String) {
+    NSData * (^block)(NSString *) = ^(NSString *ajSelf) {
         NSMutableData *data = nil;
-        if (NSString.ajIsEmpty(base64String)) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return data;
         }
-        NSInteger length = base64String.length;
-        const char *string = [base64String cStringUsingEncoding:NSASCIIStringEncoding];
+        NSInteger length = ajSelf.length;
+        const char *string = [ajSelf cStringUsingEncoding:NSASCIIStringEncoding];
         if (string  == NULL)
             return data;
         
@@ -146,28 +146,22 @@ static const short base64DecodingTable[256] = {
 }
 
 + (NSData * _Nonnull (^)(NSString * _Nonnull))ajFileData {
-    NSData * (^block)(NSString *) = ^(NSString *string) {
-        NSMutableData *data = nil;
-        if (NSString.ajIsEmpty(string)) {
+    NSData * (^block)(NSString *) = ^(NSString *ajSelf) {
+        NSData *data = nil;
+        if (NSString.ajIsEmpty(ajSelf)) {
             return data;
         }
-        NSString *path = [[NSBundle mainBundle] pathForResource:string ofType:@""];
+        NSString *path = [[NSBundle mainBundle] pathForResource:ajSelf ofType:@""];
         data = [NSData dataWithContentsOfFile:path];
         return data;
     };
     return block;
 }
 
-+ (NSString * _Nonnull (^)(NSString * _Nonnull))ajSequence {
-    NSString * (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
-            return AJEmptyString;
-        }
-        NSString *currentDate = NSDate.ajStringValue(NSDate.date, AJYYYYMMDDHHMMSS5);
-        NSString *value = [currentDate stringByAppendingString:NSString.ajRandom(10)];
-        return value;
-    };
-    return block;
++ (NSString *)ajSequence {
+    NSString *currentDate = NSDate.ajStringValue(NSDate.date, AJYYYYMMDDHHMMSS5);
+    NSString *value = [currentDate stringByAppendingString:NSString.ajRandom(10)];
+    return value;
 }
 
 + (NSString *(^)(NSInteger))ajRandom {
@@ -185,17 +179,17 @@ static const short base64DecodingTable[256] = {
 }
 
 + (NSString * _Nonnull (^)(NSString * _Nonnull))ajHexToDecimal {
-    NSString * (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    NSString * (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return AJEmptyString;
         }
         NSMutableData *stringData = [[NSMutableData alloc] init];
         unsigned char whole_byte;
         char byte_chars[3] = {'\0','\0','\0'};
         int i;
-        for (i=0; i < [string length] / 2; i++) {
-            byte_chars[0] = [string characterAtIndex:i*2];
-            byte_chars[1] = [string characterAtIndex:i*2+1];
+        for (i=0; i < [ajSelf length] / 2; i++) {
+            byte_chars[0] = [ajSelf characterAtIndex:i*2];
+            byte_chars[1] = [ajSelf characterAtIndex:i*2+1];
             whole_byte = strtol(byte_chars, NULL, 16);
             [stringData appendBytes:&whole_byte length:1];
         }
@@ -205,14 +199,14 @@ static const short base64DecodingTable[256] = {
 }
 
 + (NSString * _Nonnull (^)(NSString * _Nonnull))ajDecimalToHex {
-    NSString * (^block)(NSString *) = ^(NSString *string) {
-        NSMutableString *hexString = [[NSMutableString alloc] initWithString:AJEmptyString];
-        if (NSString.ajIsEmpty(string)) {
+    NSString * (^block)(NSString *) = ^(NSString *ajSelf) {
+        NSMutableString *hexString = nil;
+        if (NSString.ajIsEmpty(ajSelf)) {
             return hexString;
         }
-        NSUInteger len = [string length];
+        NSUInteger len = [ajSelf length];
         unichar *chars = malloc(len * sizeof(unichar));
-        [string getCharacters:chars];
+        [ajSelf getCharacters:chars];
         hexString = [[NSMutableString alloc] init];
         for(NSUInteger i = 0; i < len; i++ ) {
             [hexString appendString:[NSString stringWithFormat:@"%x", chars[i]]];
@@ -224,11 +218,11 @@ static const short base64DecodingTable[256] = {
 }
 
 + (NSString * _Nonnull (^)(NSString * _Nonnull))ajBase64Encode {
-    NSString * (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    NSString * (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return AJEmptyString;
         }
-        NSData *data = NSString.ajDataValue(string);
+        NSData *data = NSString.ajDataValue(ajSelf);
         NSString *value = [data base64EncodedStringWithOptions:0];
         return value;
     };
@@ -236,11 +230,11 @@ static const short base64DecodingTable[256] = {
 }
 
 + (NSString * _Nonnull (^)(NSString * _Nonnull))ajBase64Decode {
-    NSString * (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    NSString * (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return AJEmptyString;
         }
-        NSData *data = NSString.ajBase64DecodeToData(string);
+        NSData *data = NSString.ajBase64DecodeToData(ajSelf);
         NSString *value = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
         return value;
     };
@@ -248,19 +242,19 @@ static const short base64DecodingTable[256] = {
 }
 
 + (BOOL (^)(NSString * _Nonnull))ajIsChinese {
-    BOOL (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    BOOL (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return NO;
         }
         NSString *match = @"(^[\u4e00-\u9fa5]+$)";
-        return NSString.ajMatchesRegex(string, match);
+        return NSString.ajMatchesRegex(ajSelf, match);
     };
     return block;
 }
 
 + (BOOL (^)(NSString * _Nonnull, NSString * _Nonnull))ajMatchesRegex {
-    BOOL (^block)(NSString *, NSString *) = ^(NSString *string, NSString *regex) {
-        if (NSString.ajIsEmpty(string) || NSString.ajIsEmpty(regex)) {
+    BOOL (^block)(NSString *, NSString *) = ^(NSString *ajSelf, NSString *regex) {
+        if (NSString.ajIsEmpty(ajSelf) || NSString.ajIsEmpty(regex)) {
             return NO;
         }
         NSError *error = nil;
@@ -269,7 +263,7 @@ static const short base64DecodingTable[256] = {
             AJLog(@"NSString+YYAdd create regex error: %@", error);
             return NO;
         }
-        NSUInteger result = [pattern numberOfMatchesInString:string options:0 range:NSMakeRange(0, string.length)];
+        NSUInteger result = [pattern numberOfMatchesInString:ajSelf options:0 range:NSMakeRange(0, ajSelf.length)];
         if (result > 0) {
             return YES;
         }
@@ -279,24 +273,24 @@ static const short base64DecodingTable[256] = {
 }
 
 + (NSString * _Nonnull (^)(NSString * _Nonnull))ajClearWhiteSpace {
-    NSString * (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    NSString * (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return AJEmptyString;
         }
         NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-        NSString *value = [string stringByTrimmingCharactersInSet:set];
+        NSString *value = [ajSelf stringByTrimmingCharactersInSet:set];
         return value;
     };
     return block;
 }
 
 + (NSString * _Nonnull (^)(NSString * _Nonnull))ajClearWhiteSpaceAndNewLine {
-    NSString * (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    NSString * (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return AJEmptyString;
         }
         NSCharacterSet *set = [NSCharacterSet whitespaceAndNewlineCharacterSet];
-        NSArray *array = [string componentsSeparatedByCharactersInSet:set];
+        NSArray *array = [ajSelf componentsSeparatedByCharactersInSet:set];
         NSString *value = [array componentsJoinedByString:@""];
         return value;
     };
@@ -304,23 +298,23 @@ static const short base64DecodingTable[256] = {
 }
 
 + (BOOL (^)(NSString * _Nonnull, NSString * _Nonnull))ajContainsString {
-    BOOL (^block)(NSString *, NSString *) = ^(NSString *string, NSString *containString) {
-        if (NSString.ajIsEmpty(string) || NSString.ajIsEmpty(containString)) {
+    BOOL (^block)(NSString *, NSString *) = ^(NSString *ajSelf, NSString *containString) {
+        if (NSString.ajIsEmpty(ajSelf) || NSString.ajIsEmpty(containString)) {
             return NO;
         }
-        BOOL contains = [string rangeOfString:containString].location != NSNotFound;
+        BOOL contains = [ajSelf rangeOfString:containString].location != NSNotFound;
         return contains;
     };
     return block;
 }
 
 + (NSNumber * _Nonnull (^)(NSString * _Nonnull))ajNumberValue {
-    NSNumber * (^block)(NSString *) = ^(NSString *string) {
+    NSNumber * (^block)(NSString *) = ^(NSString *ajSelf) {
         NSNumber *number = nil;
-        if (NSString.ajIsEmpty(string)) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return number;
         }
-        NSString *str = [NSString.ajClearWhiteSpace(string) lowercaseString];
+        NSString *str = [NSString.ajClearWhiteSpace(ajSelf) lowercaseString];
         if (!str || !str.length) {
             return number;
         }
@@ -340,85 +334,85 @@ static const short base64DecodingTable[256] = {
         // normal number
         NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
         [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-        number = [formatter numberFromString:string];
+        number = [formatter numberFromString:ajSelf];
         return number;
     };
     return block;
 }
 
 + (NSData * _Nonnull (^)(NSString * _Nonnull))ajDataValue {
-    NSData * (^block)(NSString *) = ^(NSString *string) {
+    NSData * (^block)(NSString *) = ^(NSString *ajSelf) {
         NSData *data = nil;
-        if (NSString.ajIsEmpty(string)) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return data;
         }
-        data = [string dataUsingEncoding:NSUTF8StringEncoding];
+        data = [ajSelf dataUsingEncoding:NSUTF8StringEncoding];
         return data;
     };
     return block;
 }
 
 + (BOOL (^)(NSString * _Nonnull))ajIsEmail {
-    BOOL (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    BOOL (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return NO;
         }
         NSString *regex = @"[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,4}";
-        return NSString.ajMatchesRegex(string, regex);
+        return NSString.ajMatchesRegex(ajSelf, regex);
     };
     return block;
 }
 
 + (BOOL (^)(NSString * _Nonnull))ajIsMobileNumber {
-    BOOL (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    BOOL (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return NO;
         }
         NSString *regex = @"^(1)[0-9]{10}$";
-        return NSString.ajMatchesRegex(string, regex);
+        return NSString.ajMatchesRegex(ajSelf, regex);
     };
     return block;
 }
 
 + (BOOL (^)(NSString * _Nonnull))ajIsNumber {
-    BOOL (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    BOOL (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return NO;
         }
         NSString *regex = @"(^[0-9]*$)";
-        return NSString.ajMatchesRegex(string, regex);
+        return NSString.ajMatchesRegex(ajSelf, regex);
     };
     return block;
 }
 
 + (BOOL (^)(NSString * _Nonnull))ajIsPostalcode {
-    BOOL (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    BOOL (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return NO;
         }
         NSString *regex = @"^[0-8]\\d{5}(?!\\d)$";
-        return NSString.ajMatchesRegex(string, regex);
+        return NSString.ajMatchesRegex(ajSelf, regex);
     };
     return block;
 }
 
 + (BOOL (^)(NSString * _Nonnull))ajIsUrl {
-    BOOL (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    BOOL (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return NO;
         }
         NSString *regex = @"^((http)|(https))+:[^\\s]+\\.[^\\s]*$";
-        return NSString.ajMatchesRegex(string, regex);
+        return NSString.ajMatchesRegex(ajSelf, regex);
     };
     return block;
 }
 
 + (BOOL (^)(NSString * _Nonnull))ajIsIDCardNumber {
-    BOOL (^block)(NSString *) = ^(NSString *string) {
-        if (NSString.ajIsEmpty(string)) {
+    BOOL (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
             return NO;
         }
-        NSString *value = string;
+        NSString *value = ajSelf;
         value = [value stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
         int length = 0;
         if (!value) {
@@ -498,15 +492,15 @@ static const short base64DecodingTable[256] = {
 }
 
 + (NSDate * _Nonnull (^)(NSString * _Nonnull, NSString * _Nonnull))ajDateValue {
-    NSDate * (^block)(NSString *, NSString *) = ^(NSString *string, NSString *format){
+    NSDate * (^block)(NSString *, NSString *) = ^(NSString *ajSelf, NSString *format){
         NSDate *date = nil;
-        if (NSString.ajIsEmpty(string) || NSString.ajIsEmpty(format)) {
+        if (NSString.ajIsEmpty(ajSelf) || NSString.ajIsEmpty(format)) {
             return date;
         }
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:format];
         [formatter setLocale:[NSLocale currentLocale]];
-        date = [formatter dateFromString:string];
+        date = [formatter dateFromString:ajSelf];
         return date;
     };
     return block;

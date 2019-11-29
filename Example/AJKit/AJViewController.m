@@ -23,6 +23,7 @@
 //    NSString *q = NSData.ajHexString(data);
 //    NSString *qq = NSData.ajStringValue(data);
     AJLog(@"")
+    NSArray.ajIsEmpty(@[]);
 }
 
 - (void)didReceiveMemoryWarning

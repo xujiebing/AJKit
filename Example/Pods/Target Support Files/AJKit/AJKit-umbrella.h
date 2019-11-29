@@ -21,6 +21,7 @@
 #import "NSString+AJKit.h"
 #import "UIDevice+AJKit.h"
 #import "AJUIKit.h"
+#import "UIView+AJKit.h"
 #import "UIViewController+AJKit.h"
 
 FOUNDATION_EXPORT double AJKitVersionNumber;

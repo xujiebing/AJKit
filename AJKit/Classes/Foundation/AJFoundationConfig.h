@@ -16,6 +16,6 @@
 
 #define kAJWeakSelf __weak __typeof(self)ajSelf = self;
 
-static NSString * const AJEmptyString = @"";
+static NSString * const AJEmptyString = nil;
 
 #endif /* AJFoundationConfig_h */

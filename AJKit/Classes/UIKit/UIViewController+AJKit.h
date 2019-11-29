@@ -12,6 +12,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIViewController (AJKit)
 
 /// 获取当前viewController
+/// @return UIViewController* 当前控制器
 + (UIViewController *)ajCurrentViewController;
 
 @end

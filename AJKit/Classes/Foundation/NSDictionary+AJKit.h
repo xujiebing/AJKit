@@ -12,32 +12,34 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSDictionary (AJKit)
 
 /// 判断字典是否为空
-/// - Parameters: NSDictionary *
-+ (BOOL (^)(NSDictionary *))ajIsEmpty;
+/// @param NSDictionary* 字典对象
+/// @return BOOL 是否为空
++ (BOOL (^)(NSDictionary *ajSelf))ajIsEmpty;
 
 /// 获取字典value，防止越界crash
-/// - Parameters: NSDictionary *, NSString *
-+ (id (^)(NSDictionary *dic, NSString *key))ajObjectForKey;
+/// @param NSDictionary* 字典对象
+/// @return id 对象
++ (id (^)(NSDictionary *ajSelf, NSString *key))ajObjectForKey;
 
 /// 判断是否包含某个key对应的对象
-/// - Parameters: NSDictionary *, NSString *
-+ (BOOL (^)(NSDictionary *dic, NSString *key))ajContainsObjectForKey;
+/// @param NSDictionary* 字典对象
+/// @return BOOL 是否包含
++ (BOOL (^)(NSDictionary *ajSelf, NSString *key))ajContainsObjectForKey;
 
 @end
 
 @interface NSMutableDictionary (AJKit)
 
 /// 判断字典是否为空
-/// - Parameters: NSMutableDictionary *
-+ (BOOL (^)(NSMutableDictionary *))ajIsEmpty;
+/// @param NSMutableDictionary* 字典对象
+/// @return BOOL 是否为空
++ (BOOL (^)(NSMutableDictionary *ajSelf))ajIsEmpty;
 
 /// 字典设置key value
-/// - Parameters: NSMutableDictionary *, NSString *, id
-+ (void (^)(NSMutableDictionary *dic, NSString *key, id value))ajSetValueForKey;
-
-/// 字典设置key object
-/// - Parameters: NSMutableDictionary *, NSString *, id
-+ (void (^)(NSMutableDictionary *dic, NSString *key, id object))ajSetObjectForKey;
+/// @param NSMutableDictionary* 字典对象
+/// @param NSString* 字符串
+/// @param id 对象
++ (void (^)(NSMutableDictionary *ajSelf, NSString *key, id value))ajSetValueForKey;
 
 @end
 
