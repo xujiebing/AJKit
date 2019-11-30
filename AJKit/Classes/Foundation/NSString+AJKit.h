@@ -16,6 +16,15 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return BOOL 是否为空
 + (BOOL (^)(NSString *ajSelf))ajIsEmpty;
 
+/// Documents Path
++ (NSString *)ajDocumentsPath;
+
+/// Library Path
++ (NSString *)ajLibraryPath;
+
+/// Caches Path
++ (NSString *)ajCachesPath;
+
 /// url UTF8编码
 /// @param NSString* 字符串对象
 /// @return NSString* 字符串对象

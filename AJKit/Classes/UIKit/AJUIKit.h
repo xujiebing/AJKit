@@ -8,10 +8,10 @@
 #ifndef AJUIKit_h
 #define AJUIKit_h
 
+#import <AJKit/UIColor+AJKit.h>
+#import <AJKit/UIImage+AJKit.h>
 #import <AJKit/UIView+AJKit.h>
 #import <AJKit/UIViewController+AJKit.h>
-#import <AJKit/UIImage+AJKit.h>
-#import <AJKit/UIColor+AJKit.h>
 #import <AJKit/UINavigationItem+AJKit.h>
 #import <AJKit/UINavigationController+AJKit.h>
 #import <AJKit/UITextField+AJKit.h>

@@ -28,5 +28,7 @@
 #import <AJKit/NSObject+AJKit.h>
 #import <AJKit/NSString+AJKit.h>
 #import <AJKit/UIDevice+AJKit.h>
+#import <AJKit/NSBundle+AJKit.h>
+#import <AJKit/NSFileManager+AJKit.h>
 
 #endif /* AJFoundation_h */

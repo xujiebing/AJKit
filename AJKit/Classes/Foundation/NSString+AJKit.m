@@ -41,6 +41,21 @@ static const short base64DecodingTable[256] = {
     return block;
 }
 
++ (NSString *)ajDocumentsPath {
+    return [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory,
+                                                NSUserDomainMask, YES) firstObject];
+}
+
++ (NSString *)ajLibraryPath {
+    return [NSSearchPathForDirectoriesInDomains(NSLibraryDirectory,
+                                                NSUserDomainMask, YES) firstObject];
+}
+
++ (NSString *)ajCachesPath {
+    return [NSSearchPathForDirectoriesInDomains(NSCachesDirectory,
+                                                NSUserDomainMask, YES) firstObject];
+}
+
 + (NSString * _Nonnull (^)(NSString * _Nonnull))ajEncodeUTF8 {
     NSString *(^block)(NSString *) = ^(NSString *ajSelf) {
         NSString *encoded = NSString.ajEncode(ajSelf, NSUTF8StringEncoding);
