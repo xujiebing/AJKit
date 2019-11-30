@@ -8,6 +8,7 @@
 
 #import "AJViewController.h"
 #import <AJKit/AJFoundation.h>
+#import <AJKit/AJUIKit.h>
 
 @interface AJViewController ()
 
@@ -18,12 +19,12 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
-//    NSData *data = @"qqqq".ajDataValue;
-//    NSString *q = NSData.ajHexString(data);
-//    NSString *qq = NSData.ajStringValue(data);
-    AJLog(@"")
-    NSArray.ajIsEmpty(@[]);
+    [self.navigationController pushViewController:AJViewController.new animated:YES];
+    self.navigationItem.ajAddLeftButtonWithTitle(@"test", self, @selector(p_test));
+}
+
+- (void)p_test {
+    
 }
 
 - (void)didReceiveMemoryWarning

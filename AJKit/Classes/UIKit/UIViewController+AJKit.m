@@ -26,4 +26,12 @@
     return viewController;
 }
 
+- (void)ajSetNavigationBarTransparent {
+    UIImage *image = UIColor.clearColor.ajImage;
+    [self.navigationController.navigationBar setBackgroundImage:image forBarMetrics:UIBarMetricsDefault];
+    self.extendedLayoutIncludesOpaqueBars = YES;
+    [self.navigationController.navigationBar setTranslucent:YES];
+    self.automaticallyAdjustsScrollViewInsets = NO;
+}
+
 @end

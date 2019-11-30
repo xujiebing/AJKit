@@ -48,6 +48,16 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return NSData* data对象
 + (NSData * (^)(NSString *ajSelf))ajBase64DecodeToData;
 
+/// base64编码
+/// @param NSString* 字符串
+/// @return NSString* 编码后的字符串
++ (NSString * (^)(NSString *ajSelf))ajBase64Encode;
+
+/// base64解码
+/// @param NSString* 字符串
+/// @return NSString* 解码后的字符串
++ (NSString * (^)(NSString *ajSelf))ajBase64Decode;
+
 /// 根据文件名（包含后缀）获取文件内容
 /// @param NSString* 字符串对象
 /// @return NSData* data对象
@@ -71,16 +81,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param NSString* 10进制字符串
 /// @return NSString* 16进制字符串
 + (NSString * (^)(NSString *ajSelf))ajDecimalToHex;
-
-/// base64编码
-/// @param NSString* 字符串
-/// @return NSString* 编码后的字符串
-+ (NSString * (^)(NSString *ajSelf))ajBase64Encode;
-
-/// base64解码
-/// @param NSString* 字符串
-/// @return NSString* 解码后的字符串
-+ (NSString * (^)(NSString *ajSelf))ajBase64Decode;
 
 /// 是否是中文
 /// @param NSString* 字符串对象
@@ -118,6 +118,17 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return NSData* data
 + (NSData * (^)(NSString *ajSelf))ajDataValue;
 
+/// 将 日期字符串 通过 格式化 转换成 时间对象
+/// @param NSString* 字符串
+/// @param NSString* 时间格式
+/// @return NSDate* date对象
++ (NSDate * (^)(NSString *ajSelf, NSString *format))ajDateValue;
+
+/// 颜色hexString转成UIColor
+/// @param NSString* 颜色hex字符串
+/// @return UIColor* color对象
++ (UIColor * (^)(NSString *ajSelf))ajColorValue;
+
 /// 判断邮箱格式
 /// @param NSString* 字符串
 /// @return BOOL 是否是邮箱格式
@@ -147,12 +158,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// @param NSString* 字符串
 /// @return BOOL 是否是身份证号格式
 + (BOOL (^)(NSString *ajSelf))ajIsIDCardNumber;
-
-/// 将 日期字符串 通过 格式化 转换成 时间对象
-/// @param NSString* 字符串
-/// @param NSString* 时间格式
-/// @return NSDate* date对象
-+ (NSDate * (^)(NSString *ajSelf, NSString *format))ajDateValue;
 
 @end
 

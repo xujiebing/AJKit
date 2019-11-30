@@ -15,6 +15,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return UIViewController* 当前控制器
 + (UIViewController *)ajCurrentViewController;
 
+/// 设置vc导航栏透明
+- (void)ajSetNavigationBarTransparent;
+
 @end
 
 NS_ASSUME_NONNULL_END

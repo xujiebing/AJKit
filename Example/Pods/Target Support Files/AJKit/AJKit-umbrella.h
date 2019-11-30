@@ -21,6 +21,10 @@
 #import "NSString+AJKit.h"
 #import "UIDevice+AJKit.h"
 #import "AJUIKit.h"
+#import "UIColor+AJKit.h"
+#import "UIImage+AJKit.h"
+#import "UINavigationController+AJKit.h"
+#import "UINavigationItem+AJKit.h"
 #import "UIView+AJKit.h"
 #import "UIViewController+AJKit.h"
 

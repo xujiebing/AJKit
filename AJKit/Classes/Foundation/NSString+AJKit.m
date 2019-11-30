@@ -145,6 +145,30 @@ static const short base64DecodingTable[256] = {
     return block;
 }
 
++ (NSString * _Nonnull (^)(NSString * _Nonnull))ajBase64Encode {
+    NSString * (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
+            return AJEmptyString;
+        }
+        NSData *data = NSString.ajDataValue(ajSelf);
+        NSString *value = [data base64EncodedStringWithOptions:0];
+        return value;
+    };
+    return block;
+}
+
++ (NSString * _Nonnull (^)(NSString * _Nonnull))ajBase64Decode {
+    NSString * (^block)(NSString *) = ^(NSString *ajSelf) {
+        if (NSString.ajIsEmpty(ajSelf)) {
+            return AJEmptyString;
+        }
+        NSData *data = NSString.ajBase64DecodeToData(ajSelf);
+        NSString *value = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+        return value;
+    };
+    return block;
+}
+
 + (NSData * _Nonnull (^)(NSString * _Nonnull))ajFileData {
     NSData * (^block)(NSString *) = ^(NSString *ajSelf) {
         NSData *data = nil;
@@ -213,30 +237,6 @@ static const short base64DecodingTable[256] = {
         }
         free(chars);
         return hexString;
-    };
-    return block;
-}
-
-+ (NSString * _Nonnull (^)(NSString * _Nonnull))ajBase64Encode {
-    NSString * (^block)(NSString *) = ^(NSString *ajSelf) {
-        if (NSString.ajIsEmpty(ajSelf)) {
-            return AJEmptyString;
-        }
-        NSData *data = NSString.ajDataValue(ajSelf);
-        NSString *value = [data base64EncodedStringWithOptions:0];
-        return value;
-    };
-    return block;
-}
-
-+ (NSString * _Nonnull (^)(NSString * _Nonnull))ajBase64Decode {
-    NSString * (^block)(NSString *) = ^(NSString *ajSelf) {
-        if (NSString.ajIsEmpty(ajSelf)) {
-            return AJEmptyString;
-        }
-        NSData *data = NSString.ajBase64DecodeToData(ajSelf);
-        NSString *value = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        return value;
     };
     return block;
 }
@@ -348,6 +348,59 @@ static const short base64DecodingTable[256] = {
         }
         data = [ajSelf dataUsingEncoding:NSUTF8StringEncoding];
         return data;
+    };
+    return block;
+}
+
++ (NSDate * _Nonnull (^)(NSString * _Nonnull, NSString * _Nonnull))ajDateValue {
+    NSDate * (^block)(NSString *, NSString *) = ^(NSString *ajSelf, NSString *format){
+        NSDate *date = nil;
+        if (NSString.ajIsEmpty(ajSelf) || NSString.ajIsEmpty(format)) {
+            return date;
+        }
+        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+        [formatter setDateFormat:format];
+        [formatter setLocale:[NSLocale currentLocale]];
+        date = [formatter dateFromString:ajSelf];
+        return date;
+    };
+    return block;
+}
+
++ (UIColor * _Nonnull (^)(NSString * _Nonnull))ajColorValue {
+    UIColor * (^block)(NSString *) = ^(NSString *ajSelf){
+        UIColor *color = UIColor.clearColor;
+        if (NSString.ajIsEmpty(ajSelf)) {
+            return color;
+        }
+        NSString *cString = [[ajSelf stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
+        // String should be 6 or 8 characters
+        if ([cString length] < 6) {
+            return color;
+        }
+        // 判断前缀
+        if ([cString hasPrefix:@"0X"])
+            cString = [cString substringFromIndex:2];
+        if ([cString hasPrefix:@"#"])
+            cString = [cString substringFromIndex:1];
+        if ([cString length] != 6)
+            return color;
+        // 从六位数值中找到RGB对应的位数并转换
+        NSRange range;
+        range.location = 0;
+        range.length = 2;
+        //R、G、B
+        NSString *rString = [cString substringWithRange:range];
+        range.location = 2;
+        NSString *gString = [cString substringWithRange:range];
+        range.location = 4;
+        NSString *bString = [cString substringWithRange:range];
+        // Scan values
+        unsigned int r, g, b;
+        [[NSScanner scannerWithString:rString] scanHexInt:&r];
+        [[NSScanner scannerWithString:gString] scanHexInt:&g];
+        [[NSScanner scannerWithString:bString] scanHexInt:&b];
+        return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0f];
     };
     return block;
 }
@@ -487,21 +540,6 @@ static const short base64DecodingTable[256] = {
             default:
                 return NO;
         }
-    };
-    return block;
-}
-
-+ (NSDate * _Nonnull (^)(NSString * _Nonnull, NSString * _Nonnull))ajDateValue {
-    NSDate * (^block)(NSString *, NSString *) = ^(NSString *ajSelf, NSString *format){
-        NSDate *date = nil;
-        if (NSString.ajIsEmpty(ajSelf) || NSString.ajIsEmpty(format)) {
-            return date;
-        }
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:format];
-        [formatter setLocale:[NSLocale currentLocale]];
-        date = [formatter dateFromString:ajSelf];
-        return date;
     };
     return block;
 }
