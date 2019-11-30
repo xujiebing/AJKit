@@ -14,5 +14,10 @@
 #import <AJKit/UIColor+AJKit.h>
 #import <AJKit/UINavigationItem+AJKit.h>
 #import <AJKit/UINavigationController+AJKit.h>
+#import <AJKit/UITextField+AJKit.h>
+#import <AJKit/UITextView+AJKit.h>
+#import <AJKit/UITabBar+AJKit.h>
+#import <AJKit/UIScrollView+AJKit.h>
+#import <AJKit/UISearchBar+AJKit.h>
 
 #endif /* AJUIKit_h */

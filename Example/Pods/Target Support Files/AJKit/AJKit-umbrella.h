@@ -25,6 +25,11 @@
 #import "UIImage+AJKit.h"
 #import "UINavigationController+AJKit.h"
 #import "UINavigationItem+AJKit.h"
+#import "UIScrollView+AJKit.h"
+#import "UISearchBar+AJKit.h"
+#import "UITabBar+AJKit.h"
+#import "UITextField+AJKit.h"
+#import "UITextView+AJKit.h"
 #import "UIView+AJKit.h"
 #import "UIViewController+AJKit.h"
 

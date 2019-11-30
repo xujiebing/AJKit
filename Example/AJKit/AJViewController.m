@@ -19,12 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    [self.navigationController pushViewController:AJViewController.new animated:YES];
-    self.navigationItem.ajAddLeftButtonWithTitle(@"test", self, @selector(p_test));
-}
-
-- (void)p_test {
-    
+    UITextField *textField = UITextField.new;
+    textField.ajLimitInput = 10;
 }
 
 - (void)didReceiveMemoryWarning
