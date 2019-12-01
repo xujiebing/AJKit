@@ -7,7 +7,7 @@
 //
 
 #import "AJViewController.h"
-#import <AJKit/AJFoundation.h>
+//#import <AJKit/AJFoundation.h>
 #import <AJKit/AJUIKit.h>
 
 @interface AJViewController ()

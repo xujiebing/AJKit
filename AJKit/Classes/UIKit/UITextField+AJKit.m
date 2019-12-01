@@ -36,16 +36,16 @@ static NSString * const AJUITextFieldLimitInput = @"AJUITextFieldLimitInput";
 #pragma mark - 内部方法
 
 - (void)p_textFieldViewDidChange:(NSNotification*)notification {
-    UITextField *textField = notification.object;
-    NSNumber *number = [textField valueForKey:@""];
-    if (number && textField.text.length > [number integerValue] && textField.markedTextRange == nil) {
-        textField.text = [textField.text substringWithRange:NSMakeRange(0, [number integerValue])];
+    NSInteger limit = self.ajLimitInput;
+    if (limit && self.text.length > limit && self.markedTextRange == nil) {
+        self.text = [self.text substringWithRange:NSMakeRange(0, limit)];
     }
 }
 
 #pragma mark - 动态属性
 
 - (void)setLimitInput:(NSInteger)limitInput {
+    [NSNotificationCenter.defaultCenter removeObserver:self name:UITextFieldTextDidChangeNotification object:nil];
     [NSNotificationCenter.defaultCenter addObserver:self
                                            selector:@selector(p_textFieldViewDidChange:)
                                                name:UITextFieldTextDidChangeNotification
