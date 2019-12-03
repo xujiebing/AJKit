@@ -67,7 +67,7 @@
 }
 
 + (NSString *)AES128DecrypeBase64:(NSString *)encrypeText key:(NSString *)key {
-    NSData *data = encrypeText.ajBase64Decoding;
+    NSData *data = NSString.ajBase64DecodeToData(encrypeText);
     return [self decrype:data key:key];
 }
 

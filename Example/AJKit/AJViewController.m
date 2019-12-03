@@ -7,7 +7,7 @@
 //
 
 #import "AJViewController.h"
-//#import <AJKit/AJFoundation.h>
+#import <AJKit/AJFoundation.h>
 #import <AJKit/AJUIKit.h>
 
 @interface AJViewController ()
@@ -19,8 +19,8 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    UITextField *textField = UITextField.new;
-    textField.ajLimitInput = 10;
+    NSString *ss = NSNull.null;
+    ss = [ss stringByAppendingString:@"ww"];
 }
 
 - (void)didReceiveMemoryWarning

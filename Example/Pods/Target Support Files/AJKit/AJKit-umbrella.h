@@ -28,6 +28,7 @@
 #import "UIDevice+AJKit.h"
 #import "AJRuntime.h"
 #import "NSObject+AJRuntime.h"
+#import "NSObject+Text.h"
 #import "AJUIKit.h"
 #import "UIColor+AJKit.h"
 #import "UIImage+AJKit.h"

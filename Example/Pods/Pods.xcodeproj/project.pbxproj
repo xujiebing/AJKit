@@ -8,69 +8,69 @@
 
 /* Begin PBXBuildFile section */
 		063FDF4F0E08F54820F49F94D573272D /* Pods-AJKit_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E1CD414EADFC5D96F5F74DAF03D0DCC9 /* Pods-AJKit_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		06F0EF8140C7EF91EEC66DDF7C623378 /* NSFileManager+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C458C982226E2D92DE156B2B03C21C06 /* NSFileManager+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0D20F68E4F8670484BB53673F74813DF /* AJFoundationConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 5B52A151BFE98B851E4E739CCFF84199 /* AJFoundationConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		192DFDC37443BE5D88CCABC1FE8F4626 /* AJAES128.h in Headers */ = {isa = PBXBuildFile; fileRef = D7E245DCD5B6A8DE8B7DC67CE5640AAA /* AJAES128.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		19573D19DDD381F30E842B772EE9DD3A /* UITabBar+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BA060BB7A291F6FFC035661DAADC91D /* UITabBar+AJKit.m */; };
-		1A1968EA8CC630A2684287B3ACBA7A67 /* UITabBar+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B147C84D8BEF9DEBDA3DE3ABC2BD313 /* UITabBar+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1D5B6D253E9673C5C48E3FA7A6921F2A /* UIView+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 6B044215016E5238D262AE77718A047C /* UIView+AJKit.m */; };
-		1E0F556AB80D4899FDB3958889A038D7 /* NSArray+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DD1B6A28A2A7ADFBADAC59FB1CA4F98 /* NSArray+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1FF000404CFDA5045E8B9C448906C72F /* NSObject+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 80D32C475728111AE33A86FF3E054FCA /* NSObject+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		258BCE23B6EF4865CDA9A8B3E987824A /* UIImage+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E7E3F5B39C3AAC9572E79C2394442BDE /* UIImage+AJKit.m */; };
-		2941ADC94C82DF955B47DF61DAA8473E /* NSString+AJAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 1F68F54545DA87304AC73CA8ACCD78F3 /* NSString+AJAlgorithm.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		2C857FFEC4353147DDC3D0DAE180ECD8 /* UINavigationController+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C5AB51626EE3E32C4140DE2FE46D3E78 /* UINavigationController+AJKit.m */; };
-		2D49C3DE3E10C31E91566EBF3E34B27A /* NSBundle+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FAC8C057C1F1FC05760B398EDEA61551 /* NSBundle+AJKit.m */; };
-		32F1B072F598C9FCD549C9CA04DD5332 /* NSString+AJAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = DAE7411C3E6A3B3712D6FA545AC53A85 /* NSString+AJAlgorithm.m */; };
-		35083F1F6D90880AB6B54156BB6E97D6 /* NSDate+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DEF82B4EFCF2DF824D1E06A875A9AF4 /* NSDate+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3CC8684E9903BE1F7548716525CFC7F6 /* UIColor+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0632AE7DCE10BF8DA58FBDC997998CF5 /* UIColor+AJKit.m */; };
-		3D9B2F106A0AC81EE5B149A73EFD2731 /* UIViewController+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A5CBBE95A7900B9699D5FD130ED86D91 /* UIViewController+AJKit.m */; };
-		3E5669800CD93A7B296B6A020E4A9723 /* NSNull+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A52E952A2524E73E98414635381EE702 /* NSNull+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		48CF25EA9333CA0C0B0CDD0CC8C8BA0C /* UIScrollView+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 93639AAC561AF488F0F54BF5AE0FAD58 /* UIScrollView+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0BFC564D623FACB5847788754B0EA25A /* UITextField+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 29FCB6DBFF8DCFCBEF4F737E39ED7F34 /* UITextField+AJKit.m */; };
+		0F75A674F10835846A5DE4588DC0494D /* NSFileManager+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 03BFFC18054624ABFE72A809C47D40EF /* NSFileManager+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		108A7D4F09E31A8C40F2E4EDF5861DC3 /* AJUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 568BFF265B77E38EF752F9D3970A9544 /* AJUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1635900607FF1DD998DA0B198D6FB656 /* UIScrollView+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AD8DD03ABCDA20FEECB7DD86E4D04E34 /* UIScrollView+AJKit.m */; };
+		181F7206A1EF2A445D645FBAE8E4E318 /* NSDictionary+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = CC81E875CEB557186EAAC2E8A4310277 /* NSDictionary+AJKit.m */; };
+		1989A3F7E0EDEEECB93C31BBBF31CDA6 /* NSString+AJAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = F38453435308D31F1305B6398C7651D6 /* NSString+AJAlgorithm.m */; };
+		2041145C8E8AC3C03E0446E285B35751 /* AJKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = F92BD875ED94C3E611D0834F7434E1F6 /* AJKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		21CB0392AD48EC8F45E47EF362DC1DF6 /* NSObject+AJRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = 34A4352CAA7537CEA48C70A1AD91C30A /* NSObject+AJRuntime.m */; };
+		33289E1268482CAC29DD8E41FEE316C7 /* AJKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 949DAF69031F86A71EAF70C288CBF86B /* AJKit-dummy.m */; };
+		3507B97E33C724E4978EBDD706AD02E3 /* UIViewController+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 915CED219804A67A14B9F29DB73AF4E9 /* UIViewController+AJKit.m */; };
+		3790295A187303F5E3E9A33D78C44526 /* UIDevice+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 650DCB526BB84C4BC887B6C1119D9A58 /* UIDevice+AJKit.m */; };
+		411888346F771950D640BA5F3533E430 /* AJFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = 7F8BE43C786289B19EEE41E5F5A200CD /* AJFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		43054F3D6ED2FD3264E74436945A0444 /* AJAES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 53F8DFD81300C02884CFA05F4B2F819C /* AJAES128.m */; };
+		473B4FAE79E9BE195462AB8C1A9376A0 /* UITextView+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8BB32678B661C1216D5D642797E291D1 /* UITextView+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		48093B6CD32606A84700CD7108917319 /* NSFileManager+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = AF31993B261F0C5886457AE7B41AFFC7 /* NSFileManager+AJKit.m */; };
+		483D20314BA2D7769D8193ECC45DF34A /* NSString+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 467633AF4D079DC989AB9CD7B2507126 /* NSString+AJKit.m */; };
 		48F6A973FB6BBA3BA560FD880BD290A6 /* Pods-AJKit_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C748543104084627E5DB3FC9ADDEAB5 /* Pods-AJKit_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4BA0DBF7E40765137AC73C11F5A2D2B9 /* UIScrollView+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C7C504FC290E7761CEA777DD3EF5A4FB /* UIScrollView+AJKit.m */; };
-		512769BF04BE649F18087643C7FD6D91 /* NSDictionary+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = ACAE93E157882AAA3D474138E7F18979 /* NSDictionary+AJKit.m */; };
-		528FD21EA26E0A83E9BD7A9A88A27DEA /* NSObject+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 4D4E4FF3A8B5CE537C506076ACF67DA6 /* NSObject+AJKit.m */; };
-		5A09417217CFECFB6F17F8810F23E4F3 /* NSString+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 35620863E05109F797BC75D5D16908A8 /* NSString+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5B9CD38DA18BC534DFB9EEFEF2807A85 /* NSData+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F5AE1F48ED47E3EB39BD86AC3D3F9EA3 /* NSData+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4BB4E88154B45F4C479A77119031C686 /* UIColor+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2C9E1D37A681213BF4985C4B7667B4AD /* UIColor+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		51CB0E77C66123EE8AE61E935606ECE2 /* NSObject+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F0F92DBB96246905602C36848B7AC5A3 /* NSObject+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		521FCD7A95DB0D666A1F0B8097AA6340 /* NSData+AJAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 95D7B07629995EF986E758F08A9AC217 /* NSData+AJAlgorithm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		54FBF4DAF8BC402DE1B6069056EBC00A /* NSData+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 0C05DBD1ED7BC7BE235F08D6844E1E33 /* NSData+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		560AD34D5EE7EA5DF133AF6DE9B4C563 /* UIView+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5F5BC0CE5AF1233F6844FBE4C6E71F09 /* UIView+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		5814DC4BA058DC1486D3D51F67625B5F /* NSNull+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = AC2E449F37914FDDFDCB3D025B031E22 /* NSNull+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		5D4D70AC9B184F4098C26D5369BF24DC /* Pods-AJKit_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D007B3A30ED74255494F0256BED037F /* Pods-AJKit_Example-dummy.m */; };
-		5DF2B5BC1F82D969492B4D6DF1C46E14 /* UIColor+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 6501C4E510D17179C7002B65031479D4 /* UIColor+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		62F3A3D27D7821A8E4A8033F3DDBFAB0 /* NSArray+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 99ADD49708982FC1D9A56C4F01C77F6A /* NSArray+AJKit.m */; };
-		639946920C58C9064F14079903FB3F48 /* NSNull+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 729CE28401E5C5DC5734049595E23B16 /* NSNull+AJKit.m */; };
+		609674F9CB4E3C19158FC42F6C195B75 /* UITabBar+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FA9450B6D89E5F10A1F931CC4E337131 /* UITabBar+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		62742EA006CE45DF7464EABD82A3CB34 /* UISearchBar+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 7EC879AD068EC20B79E4EB9A3D19E2DB /* UISearchBar+AJKit.m */; };
 		658DBD9E2B50B7E3E025FCF356A77B4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		6F42B9B9A48D03B4124CB8985E806E50 /* AJKit-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B8D7340374DDDD2DF45AA1EA5A225144 /* AJKit-dummy.m */; };
-		74E144FC54109B82CE945EFEACD74F75 /* AJRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 17CB6C36AE7E3A3AA851927B5F59603A /* AJRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8019FC822FB0EBE82FDC908DDE8F2DE8 /* UITextView+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C8A94C7DB50253E7F3B9DCD62CFB4543 /* UITextView+AJKit.m */; };
-		8FE87565A181C0E68230F5B172817A4D /* UISearchBar+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 62E45B2BC8B792402FBB0019171FA7E3 /* UISearchBar+AJKit.m */; };
-		924ED3C999BD14F70F915FAA5C2FBE61 /* UIView+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 2D34DC18C37C58C761D4CDB2E4489C33 /* UIView+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		945E42428802583A7B8FE697098DF02B /* NSString+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = C7A50BA486D3B8894872E99183EEEEF7 /* NSString+AJKit.m */; };
-		94AD47B6D7C77189D20AAA17A1DE58DB /* AJFoundation.h in Headers */ = {isa = PBXBuildFile; fileRef = EB3827F539C46CEC2B65097CD72777A1 /* AJFoundation.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		95D3692841A909DA67CBE43AA465E5ED /* UINavigationController+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A368A38DBB116A1C672C0675B3FF41C4 /* UINavigationController+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99B46D762FF15287BF570EA57D0D2F74 /* NSData+AJAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 4576F077A5EE77450E26193444AC8200 /* NSData+AJAlgorithm.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		99D7776CDE738AC440364342ABD0DABC /* UITextView+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EC78CB65E3D0CED5C0AE34768FE54722 /* UITextView+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		9BD4DDC27C5714254EB06775268C15D9 /* AJAES128.m in Sources */ = {isa = PBXBuildFile; fileRef = 677EE5B261F75377252868128DA9BA83 /* AJAES128.m */; };
-		A15C7B7104B96FEC9BFF9B92195B54D3 /* AJAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 9DD2B40E2AE5CF1ABC578617354B139E /* AJAlgorithm.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		AD4E2627BD4C63D4FD340AA6FE6F3DD3 /* AJKit-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 51059DC1925608E01EE9B2752FA74E5B /* AJKit-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B72FD19BBE694B7B3B84BD2C21920718 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
-		BAE54794F0EAA5B03D7B50D1BEE17B86 /* NSBundle+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FC184B22434249F114B7251D7F523CCA /* NSBundle+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BBB3BAF484157CA6198E2F7205D1AE1D /* NSData+AJAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = 6BC908FD8CE726BABDA6F6D36CF9F9FB /* NSData+AJAlgorithm.m */; };
-		BF7DED6291234B3CB0AFBC257A0F7DA5 /* UIViewController+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 8EDFB108B6778969ABDBC179F96A2E99 /* UIViewController+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C0ADDD782A4B3E671E42D814C9D68B62 /* NSFileManager+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 066664DB487704AB2DE3928CB09C5236 /* NSFileManager+AJKit.m */; };
-		C1BF107D3ACF3F4349BA8A6F9B625B4D /* UIImage+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 116802CEF75A8E1351BB75E21DB7DAAA /* UIImage+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C6D7CDB7FA30432AA0056EB46B188199 /* UISearchBar+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A8BB4F2D0B37222B19C4E20A3A31D966 /* UISearchBar+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C9FFC7561E63EF21DD9A5BCAC2A0A6FA /* NSData+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E2B1CEDB81FED00F77D0248C4F84E9B6 /* NSData+AJKit.m */; };
-		D500AF3DFD4A759C3BA27A63495A485D /* AJUIKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A6A52B697FA4A92B203F71369E227C13 /* AJUIKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D88F7179AF1F3353EDE064F6D5329FBB /* NSObject+AJRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = B325DEFB30FF6F7EB0E77D5952F5B87A /* NSObject+AJRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		DEF68221F1D90C0D44CF558F2CCB914F /* NSDate+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D0B0DAF0502A7C00795A79F8C3B62C36 /* NSDate+AJKit.m */; };
-		E003F12A6EE24A1B8D1A0B6C79DF1420 /* UIDevice+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 62C2C6D864F95C0A439D4970386420B8 /* UIDevice+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		68528AC248F8FCA956E1D35145593B32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		6F977F856280BEB40E4499822A83C409 /* UISearchBar+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = E8620DBF0CCD0D663F2B8C7178D74B68 /* UISearchBar+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		7CD5F8901659B307E59EB97526528429 /* NSNull+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 050DF013340BEAD59DE764BA75E3436B /* NSNull+AJKit.m */; };
+		80F71346F3BBCB5C425694D548B7C273 /* UIColor+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 03345A15D036C00185BF3B56520AA8FB /* UIColor+AJKit.m */; };
+		83672367DA43FA8105EED8D790E784FA /* NSData+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = E5E2B18E833345756E9B8605BE2F6862 /* NSData+AJKit.m */; };
+		8A4E9EA872CA69976DD60C9F1B54E2CD /* UIViewController+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 5FB8F94E56B9962324A170A753DAD66C /* UIViewController+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		915DB6FBEE67ED6459BC89FA5D01F46E /* NSBundle+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9D04906915B4DCBB49ACCDEC4B5CF060 /* NSBundle+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9975F12F6E8F3FB17E76422EE5FB8559 /* NSData+AJAlgorithm.m in Sources */ = {isa = PBXBuildFile; fileRef = C689592C3447BF21E45A7D7B05479CE6 /* NSData+AJAlgorithm.m */; };
+		A35E2A67C9D3AD66028C2A34939F2011 /* UINavigationItem+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 107254F7B98A8B89CC73A8E3CEC7CDB9 /* UINavigationItem+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A68A165711EFCC60471715EE32FE0EC9 /* UIImage+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 45E3D50FFD01627EA154AB00570FE98D /* UIImage+AJKit.m */; };
+		A7743189951CFE2090E46930E5F73292 /* NSArray+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A245427C0B2CFD536BF66C5FE3BE49F /* NSArray+AJKit.m */; };
+		B08ED309287CB4954DB41B573A005DD6 /* NSString+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 4E83A8B7FF6B43F81790FD118AC21542 /* NSString+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B17B8C8CEF675B083B1426811D2734BF /* NSDate+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 27A8366E2FE7073D3E8D7B0BE7156EED /* NSDate+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B23BC9842FAEBC7B8AD787AE8976A0B2 /* NSObject+AJRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E82939EC6D77DE99AA8DAFE7A5ADB45 /* NSObject+AJRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B889B85DC9D43A50DA5ECC7D732C4CE5 /* NSObject+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1043D410C196B45FB6E2B026DA514 /* NSObject+AJKit.m */; };
+		BE20FF3C7BA070095A6989510CA973BA /* UITabBar+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 40632F2B81869709603D1A68809608CE /* UITabBar+AJKit.m */; };
+		C07241E540FDBC9F980D2EF7D2201E23 /* AJRuntime.h in Headers */ = {isa = PBXBuildFile; fileRef = 8D3A6442FD4CFD82219F7B2E067FB511 /* AJRuntime.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1D230E295DBFE4AAA83A410C5A1EDA1 /* UINavigationController+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = FF9E1E885E0DA8827362077CCAE63692 /* UINavigationController+AJKit.m */; };
+		C2ABF3A914DAC605390C43E87A6CC296 /* UITextView+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = D3F54AF7FD1AA37045A4F242E8CBDBD7 /* UITextView+AJKit.m */; };
+		C2B49ED6423274BB83986E06875D156C /* UIImage+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = CA80390BBFC61383FC8F5DC78FBFB2C1 /* UIImage+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C78C0E6360E43D26E87CD62FE4A00D3C /* UIDevice+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 51446C9C767D5A7F5CB5FA777BDBD022 /* UIDevice+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		CC8B78D317C6F5D44E691ED5204FFE6B /* UIView+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = F725D4F21126C761D33A54E60683215A /* UIView+AJKit.m */; };
+		D10128FDB8F12539107D10EC48BB577E /* NSDictionary+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = BBCDCCC38CDA2D634B18A0BD71FE9DBF /* NSDictionary+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D33D79BE0394B87E848BEDE49A7B0D64 /* AJFoundationConfig.h in Headers */ = {isa = PBXBuildFile; fileRef = 4DA813AE8DA0BA49F50C9A36CB5B1436 /* AJFoundationConfig.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D4603BF16F3190E56F9DB1BF5557398D /* AJAES128.h in Headers */ = {isa = PBXBuildFile; fileRef = B8400BE6122D013580C2211BCD526073 /* AJAES128.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		DFCAF7D860DED045AC9424DEBB6BD559 /* NSArray+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 258EF3580ABDEA0852388359637A407C /* NSArray+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4AF203021213BAA25F75844E587092B /* UINavigationItem+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 1965AD2773323CA04F5903E89883799C /* UINavigationItem+AJKit.m */; };
+		E5D392F3FF4F1C8104C9692E2808AF6F /* AJAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 4861A0DC322D0D1B328FCBD113B4ADD2 /* AJAlgorithm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E620798670805B8C8C1126CA973C79F0 /* UIScrollView+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 9436D8606A176B000FD0436686B12F8E /* UIScrollView+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E80C93EDD8D75EAB8BA28AA25011B7B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */; };
+		E82A186C9291C5B7AA49D00BDE9BFD8E /* NSDate+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = A49205350F5DE515AE8D5E0EAEB11B2C /* NSDate+AJKit.m */; };
 		E8F2AFA4A4A70048D1E0651CA63CF6B5 /* Pods-AJKit_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CCFBAA8353E27734847F65E8CC251170 /* Pods-AJKit_Tests-dummy.m */; };
-		ED73F430ACE2D2B447AB4D46C16EEA39 /* UINavigationItem+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 10C92BB059E8E919C9C305B6F46784AF /* UINavigationItem+AJKit.m */; };
-		EFF18D3B652FD2AA500294C139F56BDE /* NSDictionary+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 7788A4DD14E0835BA421BEA4F4948B7D /* NSDictionary+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F19543782F43533446C73096ED8DCEA0 /* NSObject+AJRuntime.m in Sources */ = {isa = PBXBuildFile; fileRef = F69BD2242EFCC1B78F6855C5261A07D5 /* NSObject+AJRuntime.m */; };
-		F5D81F89E6118FCED5C7F1A8D5FE963D /* UINavigationItem+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 40F94C614050C8E6FB4CC2F40FBB4B22 /* UINavigationItem+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F6943B9B20F81BAEC2AC7ED3F20B79D7 /* UIDevice+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 65032DE4533F2522754C2B974060CD97 /* UIDevice+AJKit.m */; };
-		F6DADCC259DD841B87A16DD19BD4D4B9 /* UITextField+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = 87171526BB524D8F98808CD85D4A7B51 /* UITextField+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F7F0299B8E6AAF1D4B56C2419B7725FB /* UITextField+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5DA2CCF581D1A1F7E170B422E76E7E8D /* UITextField+AJKit.m */; };
+		F6120B461050EB5E3ACCD91C7673447E /* UINavigationController+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = EDF020B65E68420DFD5268C9EE90D6A8 /* UINavigationController+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FAEFFDA3FE3E1BADD67A611E1082E83C /* NSBundle+AJKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 8B2EAF820A2F6E51CFEE48098F3AC5C3 /* NSBundle+AJKit.m */; };
+		FDBA362F075BC4B1E394CB763A07B640 /* NSString+AJAlgorithm.h in Headers */ = {isa = PBXBuildFile; fileRef = 872F233542119F59F2A1E2EA9B8ED22F /* NSString+AJAlgorithm.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		FFE677A8D2E796F21F1FEA90509E1829 /* UITextField+AJKit.h in Headers */ = {isa = PBXBuildFile; fileRef = FD34CC98BA82F18CE16F013C0028ADF0 /* UITextField+AJKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,96 +91,96 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0632AE7DCE10BF8DA58FBDC997998CF5 /* UIColor+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+AJKit.m"; path = "AJKit/Classes/UIKit/UIColor+AJKit.m"; sourceTree = "<group>"; };
-		066664DB487704AB2DE3928CB09C5236 /* NSFileManager+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+AJKit.m"; path = "AJKit/Classes/Foundation/NSFileManager+AJKit.m"; sourceTree = "<group>"; };
+		03345A15D036C00185BF3B56520AA8FB /* UIColor+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIColor+AJKit.m"; path = "AJKit/Classes/UIKit/UIColor+AJKit.m"; sourceTree = "<group>"; };
+		03BFFC18054624ABFE72A809C47D40EF /* NSFileManager+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+AJKit.h"; path = "AJKit/Classes/Foundation/NSFileManager+AJKit.h"; sourceTree = "<group>"; };
+		050DF013340BEAD59DE764BA75E3436B /* NSNull+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNull+AJKit.m"; path = "AJKit/Classes/Foundation/NSNull+AJKit.m"; sourceTree = "<group>"; };
+		0C05DBD1ED7BC7BE235F08D6844E1E33 /* NSData+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+AJKit.h"; path = "AJKit/Classes/Foundation/NSData+AJKit.h"; sourceTree = "<group>"; };
 		0C748543104084627E5DB3FC9ADDEAB5 /* Pods-AJKit_Tests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AJKit_Tests-umbrella.h"; sourceTree = "<group>"; };
 		0D007B3A30ED74255494F0256BED037F /* Pods-AJKit_Example-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AJKit_Example-dummy.m"; sourceTree = "<group>"; };
-		0DEF82B4EFCF2DF824D1E06A875A9AF4 /* NSDate+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+AJKit.h"; path = "AJKit/Classes/Foundation/NSDate+AJKit.h"; sourceTree = "<group>"; };
-		10C92BB059E8E919C9C305B6F46784AF /* UINavigationItem+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+AJKit.m"; path = "AJKit/Classes/UIKit/UINavigationItem+AJKit.m"; sourceTree = "<group>"; };
-		116802CEF75A8E1351BB75E21DB7DAAA /* UIImage+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AJKit.h"; path = "AJKit/Classes/UIKit/UIImage+AJKit.h"; sourceTree = "<group>"; };
+		107254F7B98A8B89CC73A8E3CEC7CDB9 /* UINavigationItem+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+AJKit.h"; path = "AJKit/Classes/UIKit/UINavigationItem+AJKit.h"; sourceTree = "<group>"; };
 		16B397886A3DB05EBCEEF089708735E2 /* Pods-AJKit_Example-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AJKit_Example-Info.plist"; sourceTree = "<group>"; };
-		17CB6C36AE7E3A3AA851927B5F59603A /* AJRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJRuntime.h; path = AJKit/Classes/Runtime/AJRuntime.h; sourceTree = "<group>"; };
-		1F68F54545DA87304AC73CA8ACCD78F3 /* NSString+AJAlgorithm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+AJAlgorithm.h"; sourceTree = "<group>"; };
+		1965AD2773323CA04F5903E89883799C /* UINavigationItem+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationItem+AJKit.m"; path = "AJKit/Classes/UIKit/UINavigationItem+AJKit.m"; sourceTree = "<group>"; };
+		1A245427C0B2CFD536BF66C5FE3BE49F /* NSArray+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+AJKit.m"; path = "AJKit/Classes/Foundation/NSArray+AJKit.m"; sourceTree = "<group>"; };
+		1CF303338A7303DF71A5989B72FA4C47 /* AJKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; path = AJKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1EB1043D410C196B45FB6E2B026DA514 /* NSObject+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+AJKit.m"; path = "AJKit/Classes/Foundation/NSObject+AJKit.m"; sourceTree = "<group>"; };
+		258EF3580ABDEA0852388359637A407C /* NSArray+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+AJKit.h"; path = "AJKit/Classes/Foundation/NSArray+AJKit.h"; sourceTree = "<group>"; };
 		264E89D56AD94F0F45DC65E853FDC3B1 /* Pods-AJKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AJKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		2D34DC18C37C58C761D4CDB2E4489C33 /* UIView+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AJKit.h"; path = "AJKit/Classes/UIKit/UIView+AJKit.h"; sourceTree = "<group>"; };
+		27A8366E2FE7073D3E8D7B0BE7156EED /* NSDate+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDate+AJKit.h"; path = "AJKit/Classes/Foundation/NSDate+AJKit.h"; sourceTree = "<group>"; };
+		29FCB6DBFF8DCFCBEF4F737E39ED7F34 /* UITextField+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+AJKit.m"; path = "AJKit/Classes/UIKit/UITextField+AJKit.m"; sourceTree = "<group>"; };
+		2BD4D760E236663E43F2A2F373B5BE0F /* AJAlgorithm.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJAlgorithm.pch; path = AJKit/Classes/Algorithm/AJAlgorithm.pch; sourceTree = "<group>"; };
+		2C9E1D37A681213BF4985C4B7667B4AD /* UIColor+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+AJKit.h"; path = "AJKit/Classes/UIKit/UIColor+AJKit.h"; sourceTree = "<group>"; };
 		31D19E3BDF5C506E11E4FF1CBCDA6F26 /* Pods-AJKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AJKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3212113385A8FBBDB272BD23C409FF61 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS12.2.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		35620863E05109F797BC75D5D16908A8 /* NSString+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+AJKit.h"; path = "AJKit/Classes/Foundation/NSString+AJKit.h"; sourceTree = "<group>"; };
-		3BA060BB7A291F6FFC035661DAADC91D /* UITabBar+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITabBar+AJKit.m"; path = "AJKit/Classes/UIKit/UITabBar+AJKit.m"; sourceTree = "<group>"; };
-		40F94C614050C8E6FB4CC2F40FBB4B22 /* UINavigationItem+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationItem+AJKit.h"; path = "AJKit/Classes/UIKit/UINavigationItem+AJKit.h"; sourceTree = "<group>"; };
-		4576F077A5EE77450E26193444AC8200 /* NSData+AJAlgorithm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSData+AJAlgorithm.h"; sourceTree = "<group>"; };
-		4D143AB079D93E831184B385109760DC /* AJKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AJKit-prefix.pch"; sourceTree = "<group>"; };
-		4D4E4FF3A8B5CE537C506076ACF67DA6 /* NSObject+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+AJKit.m"; path = "AJKit/Classes/Foundation/NSObject+AJKit.m"; sourceTree = "<group>"; };
-		51059DC1925608E01EE9B2752FA74E5B /* AJKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AJKit-umbrella.h"; sourceTree = "<group>"; };
-		51472FA7DFAC11CF5CB2429556FD429C /* AJKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AJKit.modulemap; sourceTree = "<group>"; };
-		5B52A151BFE98B851E4E739CCFF84199 /* AJFoundationConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJFoundationConfig.h; path = AJKit/Classes/Foundation/AJFoundationConfig.h; sourceTree = "<group>"; };
-		5DA2CCF581D1A1F7E170B422E76E7E8D /* UITextField+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextField+AJKit.m"; path = "AJKit/Classes/UIKit/UITextField+AJKit.m"; sourceTree = "<group>"; };
-		62C2C6D864F95C0A439D4970386420B8 /* UIDevice+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+AJKit.h"; path = "AJKit/Classes/Foundation/UIDevice+AJKit.h"; sourceTree = "<group>"; };
-		62E45B2BC8B792402FBB0019171FA7E3 /* UISearchBar+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UISearchBar+AJKit.m"; path = "AJKit/Classes/UIKit/UISearchBar+AJKit.m"; sourceTree = "<group>"; };
+		34A4352CAA7537CEA48C70A1AD91C30A /* NSObject+AJRuntime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+AJRuntime.m"; path = "AJKit/Classes/Runtime/NSObject+AJRuntime.m"; sourceTree = "<group>"; };
+		3E82939EC6D77DE99AA8DAFE7A5ADB45 /* NSObject+AJRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+AJRuntime.h"; path = "AJKit/Classes/Runtime/NSObject+AJRuntime.h"; sourceTree = "<group>"; };
+		40632F2B81869709603D1A68809608CE /* UITabBar+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITabBar+AJKit.m"; path = "AJKit/Classes/UIKit/UITabBar+AJKit.m"; sourceTree = "<group>"; };
+		4223F323FA346ED36D0DF10688ED9B1C /* AJKit.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = AJKit.modulemap; sourceTree = "<group>"; };
+		45E3D50FFD01627EA154AB00570FE98D /* UIImage+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AJKit.m"; path = "AJKit/Classes/UIKit/UIImage+AJKit.m"; sourceTree = "<group>"; };
+		4649E958F476D484B29217EC9D7CF7B4 /* AJKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AJKit.xcconfig; sourceTree = "<group>"; };
+		467633AF4D079DC989AB9CD7B2507126 /* NSString+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+AJKit.m"; path = "AJKit/Classes/Foundation/NSString+AJKit.m"; sourceTree = "<group>"; };
+		4861A0DC322D0D1B328FCBD113B4ADD2 /* AJAlgorithm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJAlgorithm.h; path = AJKit/Classes/Algorithm/AJAlgorithm.h; sourceTree = "<group>"; };
+		4D9A61EF00C8C26B1DE359A6A318C189 /* AJKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AJKit-Info.plist"; sourceTree = "<group>"; };
+		4DA813AE8DA0BA49F50C9A36CB5B1436 /* AJFoundationConfig.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJFoundationConfig.h; path = AJKit/Classes/Foundation/AJFoundationConfig.h; sourceTree = "<group>"; };
+		4E83A8B7FF6B43F81790FD118AC21542 /* NSString+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSString+AJKit.h"; path = "AJKit/Classes/Foundation/NSString+AJKit.h"; sourceTree = "<group>"; };
+		51446C9C767D5A7F5CB5FA777BDBD022 /* UIDevice+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIDevice+AJKit.h"; path = "AJKit/Classes/Foundation/UIDevice+AJKit.h"; sourceTree = "<group>"; };
+		53F8DFD81300C02884CFA05F4B2F819C /* AJAES128.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AJAES128.m; sourceTree = "<group>"; };
+		5649C4CC60CBC7C9AD21B6F1511B6146 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		568BFF265B77E38EF752F9D3970A9544 /* AJUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJUIKit.h; path = AJKit/Classes/UIKit/AJUIKit.h; sourceTree = "<group>"; };
+		5F5BC0CE5AF1233F6844FBE4C6E71F09 /* UIView+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIView+AJKit.h"; path = "AJKit/Classes/UIKit/UIView+AJKit.h"; sourceTree = "<group>"; };
+		5FB8F94E56B9962324A170A753DAD66C /* UIViewController+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AJKit.h"; path = "AJKit/Classes/UIKit/UIViewController+AJKit.h"; sourceTree = "<group>"; };
 		63A69363D55472DD08E5F087A4940C23 /* Pods-AJKit_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AJKit_Example.modulemap"; sourceTree = "<group>"; };
-		6501C4E510D17179C7002B65031479D4 /* UIColor+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIColor+AJKit.h"; path = "AJKit/Classes/UIKit/UIColor+AJKit.h"; sourceTree = "<group>"; };
-		65032DE4533F2522754C2B974060CD97 /* UIDevice+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+AJKit.m"; path = "AJKit/Classes/Foundation/UIDevice+AJKit.m"; sourceTree = "<group>"; };
-		677EE5B261F75377252868128DA9BA83 /* AJAES128.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = AJAES128.m; sourceTree = "<group>"; };
+		650DCB526BB84C4BC887B6C1119D9A58 /* UIDevice+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIDevice+AJKit.m"; path = "AJKit/Classes/Foundation/UIDevice+AJKit.m"; sourceTree = "<group>"; };
+		678F4948ECE6CE3D2D759032FD5E7AAC /* AJFoundation.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJFoundation.pch; path = AJKit/Classes/Foundation/AJFoundation.pch; sourceTree = "<group>"; };
 		6858C0CD580C1C5D37310A9F13CD04EE /* Pods-AJKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AJKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		698FD86B984D3D3964D895C5CC8F76A5 /* Pods_AJKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AJKit_Example.framework; path = "Pods-AJKit_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B044215016E5238D262AE77718A047C /* UIView+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AJKit.m"; path = "AJKit/Classes/UIKit/UIView+AJKit.m"; sourceTree = "<group>"; };
-		6BC908FD8CE726BABDA6F6D36CF9F9FB /* NSData+AJAlgorithm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSData+AJAlgorithm.m"; sourceTree = "<group>"; };
-		729CE28401E5C5DC5734049595E23B16 /* NSNull+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSNull+AJKit.m"; path = "AJKit/Classes/Foundation/NSNull+AJKit.m"; sourceTree = "<group>"; };
-		77496F47BAF2AC72FAB05DA2F40E1EF2 /* AJKit-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "AJKit-Info.plist"; sourceTree = "<group>"; };
-		7788A4DD14E0835BA421BEA4F4948B7D /* NSDictionary+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+AJKit.h"; path = "AJKit/Classes/Foundation/NSDictionary+AJKit.h"; sourceTree = "<group>"; };
-		80D32C475728111AE33A86FF3E054FCA /* NSObject+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+AJKit.h"; path = "AJKit/Classes/Foundation/NSObject+AJKit.h"; sourceTree = "<group>"; };
-		87171526BB524D8F98808CD85D4A7B51 /* UITextField+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+AJKit.h"; path = "AJKit/Classes/UIKit/UITextField+AJKit.h"; sourceTree = "<group>"; };
-		8B147C84D8BEF9DEBDA3DE3ABC2BD313 /* UITabBar+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITabBar+AJKit.h"; path = "AJKit/Classes/UIKit/UITabBar+AJKit.h"; sourceTree = "<group>"; };
-		8EDFB108B6778969ABDBC179F96A2E99 /* UIViewController+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIViewController+AJKit.h"; path = "AJKit/Classes/UIKit/UIViewController+AJKit.h"; sourceTree = "<group>"; };
+		698FD86B984D3D3964D895C5CC8F76A5 /* Pods_AJKit_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AJKit_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F86882C8FC196125A73CC0EC630D14F /* AJUIKit.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJUIKit.pch; path = AJKit/Classes/UIKit/AJUIKit.pch; sourceTree = "<group>"; };
+		7EC879AD068EC20B79E4EB9A3D19E2DB /* UISearchBar+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UISearchBar+AJKit.m"; path = "AJKit/Classes/UIKit/UISearchBar+AJKit.m"; sourceTree = "<group>"; };
+		7F8BE43C786289B19EEE41E5F5A200CD /* AJFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJFoundation.h; path = AJKit/Classes/Foundation/AJFoundation.h; sourceTree = "<group>"; };
+		85281F24A0A70A4E7C7CD01BA7F5D8C7 /* AJKit-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AJKit-prefix.pch"; sourceTree = "<group>"; };
+		872F233542119F59F2A1E2EA9B8ED22F /* NSString+AJAlgorithm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSString+AJAlgorithm.h"; sourceTree = "<group>"; };
+		8B2EAF820A2F6E51CFEE48098F3AC5C3 /* NSBundle+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+AJKit.m"; path = "AJKit/Classes/Foundation/NSBundle+AJKit.m"; sourceTree = "<group>"; };
+		8BB32678B661C1216D5D642797E291D1 /* UITextView+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextView+AJKit.h"; path = "AJKit/Classes/UIKit/UITextView+AJKit.h"; sourceTree = "<group>"; };
+		8D3A6442FD4CFD82219F7B2E067FB511 /* AJRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJRuntime.h; path = AJKit/Classes/Runtime/AJRuntime.h; sourceTree = "<group>"; };
 		8F2ED391A2355DB3FC862F219467803E /* Pods-AJKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-AJKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		8FB3381AD48DA7D80B72752383B24941 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		915CED219804A67A14B9F29DB73AF4E9 /* UIViewController+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AJKit.m"; path = "AJKit/Classes/UIKit/UIViewController+AJKit.m"; sourceTree = "<group>"; };
 		918D857EDF3ADF20D753FCF1F9B87038 /* Pods-AJKit_Example-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AJKit_Example-acknowledgements.markdown"; sourceTree = "<group>"; };
-		922C62DBB0C34F1E30CD2A254F4BF04E /* AJRuntime.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJRuntime.pch; path = AJKit/Classes/Runtime/AJRuntime.pch; sourceTree = "<group>"; };
-		93639AAC561AF488F0F54BF5AE0FAD58 /* UIScrollView+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+AJKit.h"; path = "AJKit/Classes/UIKit/UIScrollView+AJKit.h"; sourceTree = "<group>"; };
-		963D9653D40FA22C507C4EC7E3D1D73D /* AJFoundation.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJFoundation.pch; path = AJKit/Classes/Foundation/AJFoundation.pch; sourceTree = "<group>"; };
-		9828EF3B0C763A541DED3AAC0EB8573D /* AJUIKit.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJUIKit.pch; path = AJKit/Classes/UIKit/AJUIKit.pch; sourceTree = "<group>"; };
-		99ADD49708982FC1D9A56C4F01C77F6A /* NSArray+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSArray+AJKit.m"; path = "AJKit/Classes/Foundation/NSArray+AJKit.m"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9DD1B6A28A2A7ADFBADAC59FB1CA4F98 /* NSArray+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSArray+AJKit.h"; path = "AJKit/Classes/Foundation/NSArray+AJKit.h"; sourceTree = "<group>"; };
-		9DD2B40E2AE5CF1ABC578617354B139E /* AJAlgorithm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJAlgorithm.h; path = AJKit/Classes/Algorithm/AJAlgorithm.h; sourceTree = "<group>"; };
+		9436D8606A176B000FD0436686B12F8E /* UIScrollView+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+AJKit.h"; path = "AJKit/Classes/UIKit/UIScrollView+AJKit.h"; sourceTree = "<group>"; };
+		949DAF69031F86A71EAF70C288CBF86B /* AJKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AJKit-dummy.m"; sourceTree = "<group>"; };
+		95D7B07629995EF986E758F08A9AC217 /* NSData+AJAlgorithm.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "NSData+AJAlgorithm.h"; sourceTree = "<group>"; };
+		9D04906915B4DCBB49ACCDEC4B5CF060 /* NSBundle+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+AJKit.h"; path = "AJKit/Classes/Foundation/NSBundle+AJKit.h"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A0AB1F7D63B5FAC330C3C9D2E367D4AD /* Pods-AJKit_Tests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AJKit_Tests-Info.plist"; sourceTree = "<group>"; };
 		A28EA98B83B8C7A438B856A01BE738BE /* Pods-AJKit_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AJKit_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		A2B14F34CF67F244628EACC109DD66ED /* Pods-AJKit_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-AJKit_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		A368A38DBB116A1C672C0675B3FF41C4 /* UINavigationController+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+AJKit.h"; path = "AJKit/Classes/UIKit/UINavigationController+AJKit.h"; sourceTree = "<group>"; };
-		A52E952A2524E73E98414635381EE702 /* NSNull+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNull+AJKit.h"; path = "AJKit/Classes/Foundation/NSNull+AJKit.h"; sourceTree = "<group>"; };
-		A5CBBE95A7900B9699D5FD130ED86D91 /* UIViewController+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIViewController+AJKit.m"; path = "AJKit/Classes/UIKit/UIViewController+AJKit.m"; sourceTree = "<group>"; };
-		A6A52B697FA4A92B203F71369E227C13 /* AJUIKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJUIKit.h; path = AJKit/Classes/UIKit/AJUIKit.h; sourceTree = "<group>"; };
-		A712286AB87FCB1285DA9882DE690ABC /* AJAlgorithm.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJAlgorithm.pch; path = AJKit/Classes/Algorithm/AJAlgorithm.pch; sourceTree = "<group>"; };
-		A8BB4F2D0B37222B19C4E20A3A31D966 /* UISearchBar+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UISearchBar+AJKit.h"; path = "AJKit/Classes/UIKit/UISearchBar+AJKit.h"; sourceTree = "<group>"; };
-		ACAE93E157882AAA3D474138E7F18979 /* NSDictionary+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+AJKit.m"; path = "AJKit/Classes/Foundation/NSDictionary+AJKit.m"; sourceTree = "<group>"; };
+		A49205350F5DE515AE8D5E0EAEB11B2C /* NSDate+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+AJKit.m"; path = "AJKit/Classes/Foundation/NSDate+AJKit.m"; sourceTree = "<group>"; };
+		AC2E449F37914FDDFDCB3D025B031E22 /* NSNull+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSNull+AJKit.h"; path = "AJKit/Classes/Foundation/NSNull+AJKit.h"; sourceTree = "<group>"; };
 		AD2A5336D280768580DF01B617F59DA7 /* Pods-AJKit_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-AJKit_Tests.modulemap"; sourceTree = "<group>"; };
-		AD8A74F6B459A14B5147CFF297AED4CA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; path = LICENSE; sourceTree = "<group>"; };
-		AF07D9951016DA37B7F10B32C0A6019B /* Pods_AJKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_AJKit_Tests.framework; path = "Pods-AJKit_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		B325DEFB30FF6F7EB0E77D5952F5B87A /* NSObject+AJRuntime.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+AJRuntime.h"; path = "AJKit/Classes/Runtime/NSObject+AJRuntime.h"; sourceTree = "<group>"; };
-		B702619F2A3E2046EADC1041F1F404B2 /* AJKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AJKit.framework; path = AJKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8D7340374DDDD2DF45AA1EA5A225144 /* AJKit-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AJKit-dummy.m"; sourceTree = "<group>"; };
-		C458C982226E2D92DE156B2B03C21C06 /* NSFileManager+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSFileManager+AJKit.h"; path = "AJKit/Classes/Foundation/NSFileManager+AJKit.h"; sourceTree = "<group>"; };
-		C5AB51626EE3E32C4140DE2FE46D3E78 /* UINavigationController+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+AJKit.m"; path = "AJKit/Classes/UIKit/UINavigationController+AJKit.m"; sourceTree = "<group>"; };
-		C7A50BA486D3B8894872E99183EEEEF7 /* NSString+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSString+AJKit.m"; path = "AJKit/Classes/Foundation/NSString+AJKit.m"; sourceTree = "<group>"; };
-		C7C504FC290E7761CEA777DD3EF5A4FB /* UIScrollView+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+AJKit.m"; path = "AJKit/Classes/UIKit/UIScrollView+AJKit.m"; sourceTree = "<group>"; };
-		C8A94C7DB50253E7F3B9DCD62CFB4543 /* UITextView+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextView+AJKit.m"; path = "AJKit/Classes/UIKit/UITextView+AJKit.m"; sourceTree = "<group>"; };
+		AD8DD03ABCDA20FEECB7DD86E4D04E34 /* UIScrollView+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+AJKit.m"; path = "AJKit/Classes/UIKit/UIScrollView+AJKit.m"; sourceTree = "<group>"; };
+		AF07D9951016DA37B7F10B32C0A6019B /* Pods_AJKit_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AJKit_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AF31993B261F0C5886457AE7B41AFFC7 /* NSFileManager+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSFileManager+AJKit.m"; path = "AJKit/Classes/Foundation/NSFileManager+AJKit.m"; sourceTree = "<group>"; };
+		B702619F2A3E2046EADC1041F1F404B2 /* AJKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AJKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B8400BE6122D013580C2211BCD526073 /* AJAES128.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AJAES128.h; sourceTree = "<group>"; };
+		BBCDCCC38CDA2D634B18A0BD71FE9DBF /* NSDictionary+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSDictionary+AJKit.h"; path = "AJKit/Classes/Foundation/NSDictionary+AJKit.h"; sourceTree = "<group>"; };
+		C689592C3447BF21E45A7D7B05479CE6 /* NSData+AJAlgorithm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSData+AJAlgorithm.m"; sourceTree = "<group>"; };
+		C8EE193623490DAB9D9528732376D7A5 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		CA80390BBFC61383FC8F5DC78FBFB2C1 /* UIImage+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIImage+AJKit.h"; path = "AJKit/Classes/UIKit/UIImage+AJKit.h"; sourceTree = "<group>"; };
+		CC81E875CEB557186EAAC2E8A4310277 /* NSDictionary+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDictionary+AJKit.m"; path = "AJKit/Classes/Foundation/NSDictionary+AJKit.m"; sourceTree = "<group>"; };
 		CCFBAA8353E27734847F65E8CC251170 /* Pods-AJKit_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-AJKit_Tests-dummy.m"; sourceTree = "<group>"; };
-		D0B0DAF0502A7C00795A79F8C3B62C36 /* NSDate+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSDate+AJKit.m"; path = "AJKit/Classes/Foundation/NSDate+AJKit.m"; sourceTree = "<group>"; };
-		D7E245DCD5B6A8DE8B7DC67CE5640AAA /* AJAES128.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = AJAES128.h; sourceTree = "<group>"; };
-		DAE7411C3E6A3B3712D6FA545AC53A85 /* NSString+AJAlgorithm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+AJAlgorithm.m"; sourceTree = "<group>"; };
+		D142B48EE3C596DDBF235775C2465CE2 /* AJRuntime.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJRuntime.pch; path = AJKit/Classes/Runtime/AJRuntime.pch; sourceTree = "<group>"; };
+		D3F54AF7FD1AA37045A4F242E8CBDBD7 /* UITextView+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UITextView+AJKit.m"; path = "AJKit/Classes/UIKit/UITextView+AJKit.m"; sourceTree = "<group>"; };
 		E1CD414EADFC5D96F5F74DAF03D0DCC9 /* Pods-AJKit_Example-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-AJKit_Example-umbrella.h"; sourceTree = "<group>"; };
-		E2B1CEDB81FED00F77D0248C4F84E9B6 /* NSData+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+AJKit.m"; path = "AJKit/Classes/Foundation/NSData+AJKit.m"; sourceTree = "<group>"; };
-		E7E3F5B39C3AAC9572E79C2394442BDE /* UIImage+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImage+AJKit.m"; path = "AJKit/Classes/UIKit/UIImage+AJKit.m"; sourceTree = "<group>"; };
-		EA646479CE87D11651989AADB1090511 /* AJKit.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = AJKit.xcconfig; sourceTree = "<group>"; };
-		EB3827F539C46CEC2B65097CD72777A1 /* AJFoundation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AJFoundation.h; path = AJKit/Classes/Foundation/AJFoundation.h; sourceTree = "<group>"; };
+		E5E2B18E833345756E9B8605BE2F6862 /* NSData+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSData+AJKit.m"; path = "AJKit/Classes/Foundation/NSData+AJKit.m"; sourceTree = "<group>"; };
+		E8620DBF0CCD0D663F2B8C7178D74B68 /* UISearchBar+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UISearchBar+AJKit.h"; path = "AJKit/Classes/UIKit/UISearchBar+AJKit.h"; sourceTree = "<group>"; };
 		EBFA82AE4B03C7A85230B0A3ED5F5696 /* Pods-AJKit_Example-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-AJKit_Example-frameworks.sh"; sourceTree = "<group>"; };
 		EC4207BB340D64F3730E58491425AE06 /* Pods-AJKit_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-AJKit_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EC78CB65E3D0CED5C0AE34768FE54722 /* UITextView+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextView+AJKit.h"; path = "AJKit/Classes/UIKit/UITextView+AJKit.h"; sourceTree = "<group>"; };
-		F5AE1F48ED47E3EB39BD86AC3D3F9EA3 /* NSData+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSData+AJKit.h"; path = "AJKit/Classes/Foundation/NSData+AJKit.h"; sourceTree = "<group>"; };
-		F69BD2242EFCC1B78F6855C5261A07D5 /* NSObject+AJRuntime.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSObject+AJRuntime.m"; path = "AJKit/Classes/Runtime/NSObject+AJRuntime.m"; sourceTree = "<group>"; };
-		F70CFBF017F6A09FDE9C2432B25AA919 /* AJKit.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; path = AJKit.podspec; sourceTree = "<group>"; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		FAC8C057C1F1FC05760B398EDEA61551 /* NSBundle+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "NSBundle+AJKit.m"; path = "AJKit/Classes/Foundation/NSBundle+AJKit.m"; sourceTree = "<group>"; };
-		FC184B22434249F114B7251D7F523CCA /* NSBundle+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSBundle+AJKit.h"; path = "AJKit/Classes/Foundation/NSBundle+AJKit.h"; sourceTree = "<group>"; };
+		EDF020B65E68420DFD5268C9EE90D6A8 /* UINavigationController+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UINavigationController+AJKit.h"; path = "AJKit/Classes/UIKit/UINavigationController+AJKit.h"; sourceTree = "<group>"; };
+		F0F92DBB96246905602C36848B7AC5A3 /* NSObject+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "NSObject+AJKit.h"; path = "AJKit/Classes/Foundation/NSObject+AJKit.h"; sourceTree = "<group>"; };
+		F38453435308D31F1305B6398C7651D6 /* NSString+AJAlgorithm.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "NSString+AJAlgorithm.m"; sourceTree = "<group>"; };
+		F725D4F21126C761D33A54E60683215A /* UIView+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIView+AJKit.m"; path = "AJKit/Classes/UIKit/UIView+AJKit.m"; sourceTree = "<group>"; };
+		F92BD875ED94C3E611D0834F7434E1F6 /* AJKit-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AJKit-umbrella.h"; sourceTree = "<group>"; };
+		FA9450B6D89E5F10A1F931CC4E337131 /* UITabBar+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITabBar+AJKit.h"; path = "AJKit/Classes/UIKit/UITabBar+AJKit.h"; sourceTree = "<group>"; };
+		FD34CC98BA82F18CE16F013C0028ADF0 /* UITextField+AJKit.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UITextField+AJKit.h"; path = "AJKit/Classes/UIKit/UITextField+AJKit.h"; sourceTree = "<group>"; };
+		FF9E1E885E0DA8827362077CCAE63692 /* UINavigationController+AJKit.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UINavigationController+AJKit.m"; path = "AJKit/Classes/UIKit/UINavigationController+AJKit.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,14 +192,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		525C3C95CE8340BB87E5767B04209317 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B72FD19BBE694B7B3B84BD2C21920718 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		8C18EB32C2D038925A9EE0EFAA184B8B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -208,37 +200,51 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		ADC0314BB72938466823CBECE2EB63D2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				68528AC248F8FCA956E1D35145593B32 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		09BEC44B1DA29972FDB02202707B2EFB /* UIKit */ = {
+		12291116EA81F82F2DB71A239C12B768 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				A6A52B697FA4A92B203F71369E227C13 /* AJUIKit.h */,
-				6501C4E510D17179C7002B65031479D4 /* UIColor+AJKit.h */,
-				0632AE7DCE10BF8DA58FBDC997998CF5 /* UIColor+AJKit.m */,
-				116802CEF75A8E1351BB75E21DB7DAAA /* UIImage+AJKit.h */,
-				E7E3F5B39C3AAC9572E79C2394442BDE /* UIImage+AJKit.m */,
-				A368A38DBB116A1C672C0675B3FF41C4 /* UINavigationController+AJKit.h */,
-				C5AB51626EE3E32C4140DE2FE46D3E78 /* UINavigationController+AJKit.m */,
-				40F94C614050C8E6FB4CC2F40FBB4B22 /* UINavigationItem+AJKit.h */,
-				10C92BB059E8E919C9C305B6F46784AF /* UINavigationItem+AJKit.m */,
-				93639AAC561AF488F0F54BF5AE0FAD58 /* UIScrollView+AJKit.h */,
-				C7C504FC290E7761CEA777DD3EF5A4FB /* UIScrollView+AJKit.m */,
-				A8BB4F2D0B37222B19C4E20A3A31D966 /* UISearchBar+AJKit.h */,
-				62E45B2BC8B792402FBB0019171FA7E3 /* UISearchBar+AJKit.m */,
-				8B147C84D8BEF9DEBDA3DE3ABC2BD313 /* UITabBar+AJKit.h */,
-				3BA060BB7A291F6FFC035661DAADC91D /* UITabBar+AJKit.m */,
-				87171526BB524D8F98808CD85D4A7B51 /* UITextField+AJKit.h */,
-				5DA2CCF581D1A1F7E170B422E76E7E8D /* UITextField+AJKit.m */,
-				EC78CB65E3D0CED5C0AE34768FE54722 /* UITextView+AJKit.h */,
-				C8A94C7DB50253E7F3B9DCD62CFB4543 /* UITextView+AJKit.m */,
-				2D34DC18C37C58C761D4CDB2E4489C33 /* UIView+AJKit.h */,
-				6B044215016E5238D262AE77718A047C /* UIView+AJKit.m */,
-				8EDFB108B6778969ABDBC179F96A2E99 /* UIViewController+AJKit.h */,
-				A5CBBE95A7900B9699D5FD130ED86D91 /* UIViewController+AJKit.m */,
+				4223F323FA346ED36D0DF10688ED9B1C /* AJKit.modulemap */,
+				4649E958F476D484B29217EC9D7CF7B4 /* AJKit.xcconfig */,
+				949DAF69031F86A71EAF70C288CBF86B /* AJKit-dummy.m */,
+				4D9A61EF00C8C26B1DE359A6A318C189 /* AJKit-Info.plist */,
+				85281F24A0A70A4E7C7CD01BA7F5D8C7 /* AJKit-prefix.pch */,
+				F92BD875ED94C3E611D0834F7434E1F6 /* AJKit-umbrella.h */,
 			);
-			name = UIKit;
+			name = "Support Files";
+			path = "Example/Pods/Target Support Files/AJKit";
+			sourceTree = "<group>";
+		};
+		16CAA89FE4661A0DC6A1B238358DA4AF /* Categorys */ = {
+			isa = PBXGroup;
+			children = (
+				95D7B07629995EF986E758F08A9AC217 /* NSData+AJAlgorithm.h */,
+				C689592C3447BF21E45A7D7B05479CE6 /* NSData+AJAlgorithm.m */,
+				872F233542119F59F2A1E2EA9B8ED22F /* NSString+AJAlgorithm.h */,
+				F38453435308D31F1305B6398C7651D6 /* NSString+AJAlgorithm.m */,
+			);
+			name = Categorys;
+			path = AJKit/Classes/Algorithm/Categorys;
+			sourceTree = "<group>";
+		};
+		184A26D436AE6565BD69402969E72C78 /* Algorithm */ = {
+			isa = PBXGroup;
+			children = (
+				4861A0DC322D0D1B328FCBD113B4ADD2 /* AJAlgorithm.h */,
+				52CA8C846CA93FEA81C1AF39ACBB88AE /* AES */,
+				16CAA89FE4661A0DC6A1B238358DA4AF /* Categorys */,
+			);
+			name = Algorithm;
 			sourceTree = "<group>";
 		};
 		28BE5A3EF82EC69DAE791826E4D33C26 /* Pods-AJKit_Tests */ = {
@@ -267,64 +273,28 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		330D7FAE6A2F10E6EAD3C24F1E246AD9 /* Pod */ = {
+		52CA8C846CA93FEA81C1AF39ACBB88AE /* AES */ = {
 			isa = PBXGroup;
 			children = (
-				A712286AB87FCB1285DA9882DE690ABC /* AJAlgorithm.pch */,
-				963D9653D40FA22C507C4EC7E3D1D73D /* AJFoundation.pch */,
-				F70CFBF017F6A09FDE9C2432B25AA919 /* AJKit.podspec */,
-				922C62DBB0C34F1E30CD2A254F4BF04E /* AJRuntime.pch */,
-				9828EF3B0C763A541DED3AAC0EB8573D /* AJUIKit.pch */,
-				AD8A74F6B459A14B5147CFF297AED4CA /* LICENSE */,
-				8FB3381AD48DA7D80B72752383B24941 /* README.md */,
+				B8400BE6122D013580C2211BCD526073 /* AJAES128.h */,
+				53F8DFD81300C02884CFA05F4B2F819C /* AJAES128.m */,
 			);
-			name = Pod;
+			name = AES;
+			path = AJKit/Classes/Algorithm/AES;
 			sourceTree = "<group>";
 		};
-		4757C9AC648E904B84BA14F5BE5C444E /* Algorithm */ = {
+		63EA2D8D745CD98C7599579388A0124C /* AJKit */ = {
 			isa = PBXGroup;
 			children = (
-				9DD2B40E2AE5CF1ABC578617354B139E /* AJAlgorithm.h */,
-				AF6D51DBB1DB8B13D6E0D1C8056E08E4 /* AES */,
-				79C776473BBFC37D0FBCF5E415DAE0AB /* Categorys */,
+				184A26D436AE6565BD69402969E72C78 /* Algorithm */,
+				80EAAD0C8ABC546CCA0BCD338FDE2347 /* Foundation */,
+				F5807FDCDF75CFD8D4A59633D2184243 /* Pod */,
+				C70F37BFB5CD7091919AE4672DF76BDB /* Runtime */,
+				12291116EA81F82F2DB71A239C12B768 /* Support Files */,
+				D1A0EDBCB5727247EE34C17B1FC83198 /* UIKit */,
 			);
-			name = Algorithm;
-			sourceTree = "<group>";
-		};
-		4AD82D5CC05D283BD975A7FC6A8296A3 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				51472FA7DFAC11CF5CB2429556FD429C /* AJKit.modulemap */,
-				EA646479CE87D11651989AADB1090511 /* AJKit.xcconfig */,
-				B8D7340374DDDD2DF45AA1EA5A225144 /* AJKit-dummy.m */,
-				77496F47BAF2AC72FAB05DA2F40E1EF2 /* AJKit-Info.plist */,
-				4D143AB079D93E831184B385109760DC /* AJKit-prefix.pch */,
-				51059DC1925608E01EE9B2752FA74E5B /* AJKit-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "Example/Pods/Target Support Files/AJKit";
-			sourceTree = "<group>";
-		};
-		5714BF123AA0B47EC1D1F09EF9F05798 /* Runtime */ = {
-			isa = PBXGroup;
-			children = (
-				17CB6C36AE7E3A3AA851927B5F59603A /* AJRuntime.h */,
-				B325DEFB30FF6F7EB0E77D5952F5B87A /* NSObject+AJRuntime.h */,
-				F69BD2242EFCC1B78F6855C5261A07D5 /* NSObject+AJRuntime.m */,
-			);
-			name = Runtime;
-			sourceTree = "<group>";
-		};
-		79C776473BBFC37D0FBCF5E415DAE0AB /* Categorys */ = {
-			isa = PBXGroup;
-			children = (
-				4576F077A5EE77450E26193444AC8200 /* NSData+AJAlgorithm.h */,
-				6BC908FD8CE726BABDA6F6D36CF9F9FB /* NSData+AJAlgorithm.m */,
-				1F68F54545DA87304AC73CA8ACCD78F3 /* NSString+AJAlgorithm.h */,
-				DAE7411C3E6A3B3712D6FA545AC53A85 /* NSString+AJAlgorithm.m */,
-			);
-			name = Categorys;
-			path = AJKit/Classes/Algorithm/Categorys;
+			name = AJKit;
+			path = ../..;
 			sourceTree = "<group>";
 		};
 		7C84CFBD4D33AF646E95427D47C6AB84 /* Pods-AJKit_Example */ = {
@@ -344,65 +314,41 @@
 			path = "Target Support Files/Pods-AJKit_Example";
 			sourceTree = "<group>";
 		};
-		8DE288D5662824C1589138D6CD81A16B /* Development Pods */ = {
+		80EAAD0C8ABC546CCA0BCD338FDE2347 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				A12FFC1B67F48BCAC44DC5897D33028E /* AJKit */,
-			);
-			name = "Development Pods";
-			sourceTree = "<group>";
-		};
-		9B287445FDBE66070888A95837C51101 /* Foundation */ = {
-			isa = PBXGroup;
-			children = (
-				EB3827F539C46CEC2B65097CD72777A1 /* AJFoundation.h */,
-				5B52A151BFE98B851E4E739CCFF84199 /* AJFoundationConfig.h */,
-				9DD1B6A28A2A7ADFBADAC59FB1CA4F98 /* NSArray+AJKit.h */,
-				99ADD49708982FC1D9A56C4F01C77F6A /* NSArray+AJKit.m */,
-				FC184B22434249F114B7251D7F523CCA /* NSBundle+AJKit.h */,
-				FAC8C057C1F1FC05760B398EDEA61551 /* NSBundle+AJKit.m */,
-				F5AE1F48ED47E3EB39BD86AC3D3F9EA3 /* NSData+AJKit.h */,
-				E2B1CEDB81FED00F77D0248C4F84E9B6 /* NSData+AJKit.m */,
-				0DEF82B4EFCF2DF824D1E06A875A9AF4 /* NSDate+AJKit.h */,
-				D0B0DAF0502A7C00795A79F8C3B62C36 /* NSDate+AJKit.m */,
-				7788A4DD14E0835BA421BEA4F4948B7D /* NSDictionary+AJKit.h */,
-				ACAE93E157882AAA3D474138E7F18979 /* NSDictionary+AJKit.m */,
-				C458C982226E2D92DE156B2B03C21C06 /* NSFileManager+AJKit.h */,
-				066664DB487704AB2DE3928CB09C5236 /* NSFileManager+AJKit.m */,
-				A52E952A2524E73E98414635381EE702 /* NSNull+AJKit.h */,
-				729CE28401E5C5DC5734049595E23B16 /* NSNull+AJKit.m */,
-				80D32C475728111AE33A86FF3E054FCA /* NSObject+AJKit.h */,
-				4D4E4FF3A8B5CE537C506076ACF67DA6 /* NSObject+AJKit.m */,
-				35620863E05109F797BC75D5D16908A8 /* NSString+AJKit.h */,
-				C7A50BA486D3B8894872E99183EEEEF7 /* NSString+AJKit.m */,
-				62C2C6D864F95C0A439D4970386420B8 /* UIDevice+AJKit.h */,
-				65032DE4533F2522754C2B974060CD97 /* UIDevice+AJKit.m */,
+				7F8BE43C786289B19EEE41E5F5A200CD /* AJFoundation.h */,
+				4DA813AE8DA0BA49F50C9A36CB5B1436 /* AJFoundationConfig.h */,
+				258EF3580ABDEA0852388359637A407C /* NSArray+AJKit.h */,
+				1A245427C0B2CFD536BF66C5FE3BE49F /* NSArray+AJKit.m */,
+				9D04906915B4DCBB49ACCDEC4B5CF060 /* NSBundle+AJKit.h */,
+				8B2EAF820A2F6E51CFEE48098F3AC5C3 /* NSBundle+AJKit.m */,
+				0C05DBD1ED7BC7BE235F08D6844E1E33 /* NSData+AJKit.h */,
+				E5E2B18E833345756E9B8605BE2F6862 /* NSData+AJKit.m */,
+				27A8366E2FE7073D3E8D7B0BE7156EED /* NSDate+AJKit.h */,
+				A49205350F5DE515AE8D5E0EAEB11B2C /* NSDate+AJKit.m */,
+				BBCDCCC38CDA2D634B18A0BD71FE9DBF /* NSDictionary+AJKit.h */,
+				CC81E875CEB557186EAAC2E8A4310277 /* NSDictionary+AJKit.m */,
+				03BFFC18054624ABFE72A809C47D40EF /* NSFileManager+AJKit.h */,
+				AF31993B261F0C5886457AE7B41AFFC7 /* NSFileManager+AJKit.m */,
+				AC2E449F37914FDDFDCB3D025B031E22 /* NSNull+AJKit.h */,
+				050DF013340BEAD59DE764BA75E3436B /* NSNull+AJKit.m */,
+				F0F92DBB96246905602C36848B7AC5A3 /* NSObject+AJKit.h */,
+				1EB1043D410C196B45FB6E2B026DA514 /* NSObject+AJKit.m */,
+				4E83A8B7FF6B43F81790FD118AC21542 /* NSString+AJKit.h */,
+				467633AF4D079DC989AB9CD7B2507126 /* NSString+AJKit.m */,
+				51446C9C767D5A7F5CB5FA777BDBD022 /* UIDevice+AJKit.h */,
+				650DCB526BB84C4BC887B6C1119D9A58 /* UIDevice+AJKit.m */,
 			);
 			name = Foundation;
 			sourceTree = "<group>";
 		};
-		A12FFC1B67F48BCAC44DC5897D33028E /* AJKit */ = {
+		8DE288D5662824C1589138D6CD81A16B /* Development Pods */ = {
 			isa = PBXGroup;
 			children = (
-				4757C9AC648E904B84BA14F5BE5C444E /* Algorithm */,
-				9B287445FDBE66070888A95837C51101 /* Foundation */,
-				330D7FAE6A2F10E6EAD3C24F1E246AD9 /* Pod */,
-				5714BF123AA0B47EC1D1F09EF9F05798 /* Runtime */,
-				4AD82D5CC05D283BD975A7FC6A8296A3 /* Support Files */,
-				09BEC44B1DA29972FDB02202707B2EFB /* UIKit */,
+				63EA2D8D745CD98C7599579388A0124C /* AJKit */,
 			);
-			name = AJKit;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		AF6D51DBB1DB8B13D6E0D1C8056E08E4 /* AES */ = {
-			isa = PBXGroup;
-			children = (
-				D7E245DCD5B6A8DE8B7DC67CE5640AAA /* AJAES128.h */,
-				677EE5B261F75377252868128DA9BA83 /* AJAES128.m */,
-			);
-			name = AES;
-			path = AJKit/Classes/Algorithm/AES;
+			name = "Development Pods";
 			sourceTree = "<group>";
 		};
 		B71CC3D909DD8BFF0EAF53BDAF928FA9 /* Targets Support Files */ = {
@@ -422,6 +368,16 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		C70F37BFB5CD7091919AE4672DF76BDB /* Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				8D3A6442FD4CFD82219F7B2E067FB511 /* AJRuntime.h */,
+				3E82939EC6D77DE99AA8DAFE7A5ADB45 /* NSObject+AJRuntime.h */,
+				34A4352CAA7537CEA48C70A1AD91C30A /* NSObject+AJRuntime.m */,
+			);
+			name = Runtime;
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
@@ -433,12 +389,56 @@
 			);
 			sourceTree = "<group>";
 		};
+		D1A0EDBCB5727247EE34C17B1FC83198 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+				568BFF265B77E38EF752F9D3970A9544 /* AJUIKit.h */,
+				2C9E1D37A681213BF4985C4B7667B4AD /* UIColor+AJKit.h */,
+				03345A15D036C00185BF3B56520AA8FB /* UIColor+AJKit.m */,
+				CA80390BBFC61383FC8F5DC78FBFB2C1 /* UIImage+AJKit.h */,
+				45E3D50FFD01627EA154AB00570FE98D /* UIImage+AJKit.m */,
+				EDF020B65E68420DFD5268C9EE90D6A8 /* UINavigationController+AJKit.h */,
+				FF9E1E885E0DA8827362077CCAE63692 /* UINavigationController+AJKit.m */,
+				107254F7B98A8B89CC73A8E3CEC7CDB9 /* UINavigationItem+AJKit.h */,
+				1965AD2773323CA04F5903E89883799C /* UINavigationItem+AJKit.m */,
+				9436D8606A176B000FD0436686B12F8E /* UIScrollView+AJKit.h */,
+				AD8DD03ABCDA20FEECB7DD86E4D04E34 /* UIScrollView+AJKit.m */,
+				E8620DBF0CCD0D663F2B8C7178D74B68 /* UISearchBar+AJKit.h */,
+				7EC879AD068EC20B79E4EB9A3D19E2DB /* UISearchBar+AJKit.m */,
+				FA9450B6D89E5F10A1F931CC4E337131 /* UITabBar+AJKit.h */,
+				40632F2B81869709603D1A68809608CE /* UITabBar+AJKit.m */,
+				FD34CC98BA82F18CE16F013C0028ADF0 /* UITextField+AJKit.h */,
+				29FCB6DBFF8DCFCBEF4F737E39ED7F34 /* UITextField+AJKit.m */,
+				8BB32678B661C1216D5D642797E291D1 /* UITextView+AJKit.h */,
+				D3F54AF7FD1AA37045A4F242E8CBDBD7 /* UITextView+AJKit.m */,
+				5F5BC0CE5AF1233F6844FBE4C6E71F09 /* UIView+AJKit.h */,
+				F725D4F21126C761D33A54E60683215A /* UIView+AJKit.m */,
+				5FB8F94E56B9962324A170A753DAD66C /* UIViewController+AJKit.h */,
+				915CED219804A67A14B9F29DB73AF4E9 /* UIViewController+AJKit.m */,
+			);
+			name = UIKit;
+			sourceTree = "<group>";
+		};
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
 				C0834CEBB1379A84116EF29F93051C60 /* iOS */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		F5807FDCDF75CFD8D4A59633D2184243 /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				2BD4D760E236663E43F2A2F373B5BE0F /* AJAlgorithm.pch */,
+				678F4948ECE6CE3D2D759032FD5E7AAC /* AJFoundation.pch */,
+				1CF303338A7303DF71A5989B72FA4C47 /* AJKit.podspec */,
+				D142B48EE3C596DDBF235775C2465CE2 /* AJRuntime.pch */,
+				6F86882C8FC196125A73CC0EC630D14F /* AJUIKit.pch */,
+				C8EE193623490DAB9D9528732376D7A5 /* LICENSE */,
+				5649C4CC60CBC7C9AD21B6F1511B6146 /* README.md */,
+			);
+			name = Pod;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -452,49 +452,49 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		656852C43145F1FEAE784C995A883AB6 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				192DFDC37443BE5D88CCABC1FE8F4626 /* AJAES128.h in Headers */,
-				A15C7B7104B96FEC9BFF9B92195B54D3 /* AJAlgorithm.h in Headers */,
-				94AD47B6D7C77189D20AAA17A1DE58DB /* AJFoundation.h in Headers */,
-				0D20F68E4F8670484BB53673F74813DF /* AJFoundationConfig.h in Headers */,
-				AD4E2627BD4C63D4FD340AA6FE6F3DD3 /* AJKit-umbrella.h in Headers */,
-				74E144FC54109B82CE945EFEACD74F75 /* AJRuntime.h in Headers */,
-				D500AF3DFD4A759C3BA27A63495A485D /* AJUIKit.h in Headers */,
-				1E0F556AB80D4899FDB3958889A038D7 /* NSArray+AJKit.h in Headers */,
-				BAE54794F0EAA5B03D7B50D1BEE17B86 /* NSBundle+AJKit.h in Headers */,
-				99B46D762FF15287BF570EA57D0D2F74 /* NSData+AJAlgorithm.h in Headers */,
-				5B9CD38DA18BC534DFB9EEFEF2807A85 /* NSData+AJKit.h in Headers */,
-				35083F1F6D90880AB6B54156BB6E97D6 /* NSDate+AJKit.h in Headers */,
-				EFF18D3B652FD2AA500294C139F56BDE /* NSDictionary+AJKit.h in Headers */,
-				06F0EF8140C7EF91EEC66DDF7C623378 /* NSFileManager+AJKit.h in Headers */,
-				3E5669800CD93A7B296B6A020E4A9723 /* NSNull+AJKit.h in Headers */,
-				1FF000404CFDA5045E8B9C448906C72F /* NSObject+AJKit.h in Headers */,
-				D88F7179AF1F3353EDE064F6D5329FBB /* NSObject+AJRuntime.h in Headers */,
-				2941ADC94C82DF955B47DF61DAA8473E /* NSString+AJAlgorithm.h in Headers */,
-				5A09417217CFECFB6F17F8810F23E4F3 /* NSString+AJKit.h in Headers */,
-				5DF2B5BC1F82D969492B4D6DF1C46E14 /* UIColor+AJKit.h in Headers */,
-				E003F12A6EE24A1B8D1A0B6C79DF1420 /* UIDevice+AJKit.h in Headers */,
-				C1BF107D3ACF3F4349BA8A6F9B625B4D /* UIImage+AJKit.h in Headers */,
-				95D3692841A909DA67CBE43AA465E5ED /* UINavigationController+AJKit.h in Headers */,
-				F5D81F89E6118FCED5C7F1A8D5FE963D /* UINavigationItem+AJKit.h in Headers */,
-				48CF25EA9333CA0C0B0CDD0CC8C8BA0C /* UIScrollView+AJKit.h in Headers */,
-				C6D7CDB7FA30432AA0056EB46B188199 /* UISearchBar+AJKit.h in Headers */,
-				1A1968EA8CC630A2684287B3ACBA7A67 /* UITabBar+AJKit.h in Headers */,
-				F6DADCC259DD841B87A16DD19BD4D4B9 /* UITextField+AJKit.h in Headers */,
-				99D7776CDE738AC440364342ABD0DABC /* UITextView+AJKit.h in Headers */,
-				924ED3C999BD14F70F915FAA5C2FBE61 /* UIView+AJKit.h in Headers */,
-				BF7DED6291234B3CB0AFBC257A0F7DA5 /* UIViewController+AJKit.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		C8566CC0CE5D45B8E19D353007E737ED /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				48F6A973FB6BBA3BA560FD880BD290A6 /* Pods-AJKit_Tests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D934C3B3D04B0423B55D6B3E1CBC4EDC /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4603BF16F3190E56F9DB1BF5557398D /* AJAES128.h in Headers */,
+				E5D392F3FF4F1C8104C9692E2808AF6F /* AJAlgorithm.h in Headers */,
+				411888346F771950D640BA5F3533E430 /* AJFoundation.h in Headers */,
+				D33D79BE0394B87E848BEDE49A7B0D64 /* AJFoundationConfig.h in Headers */,
+				2041145C8E8AC3C03E0446E285B35751 /* AJKit-umbrella.h in Headers */,
+				C07241E540FDBC9F980D2EF7D2201E23 /* AJRuntime.h in Headers */,
+				108A7D4F09E31A8C40F2E4EDF5861DC3 /* AJUIKit.h in Headers */,
+				DFCAF7D860DED045AC9424DEBB6BD559 /* NSArray+AJKit.h in Headers */,
+				915DB6FBEE67ED6459BC89FA5D01F46E /* NSBundle+AJKit.h in Headers */,
+				521FCD7A95DB0D666A1F0B8097AA6340 /* NSData+AJAlgorithm.h in Headers */,
+				54FBF4DAF8BC402DE1B6069056EBC00A /* NSData+AJKit.h in Headers */,
+				B17B8C8CEF675B083B1426811D2734BF /* NSDate+AJKit.h in Headers */,
+				D10128FDB8F12539107D10EC48BB577E /* NSDictionary+AJKit.h in Headers */,
+				0F75A674F10835846A5DE4588DC0494D /* NSFileManager+AJKit.h in Headers */,
+				5814DC4BA058DC1486D3D51F67625B5F /* NSNull+AJKit.h in Headers */,
+				51CB0E77C66123EE8AE61E935606ECE2 /* NSObject+AJKit.h in Headers */,
+				B23BC9842FAEBC7B8AD787AE8976A0B2 /* NSObject+AJRuntime.h in Headers */,
+				FDBA362F075BC4B1E394CB763A07B640 /* NSString+AJAlgorithm.h in Headers */,
+				B08ED309287CB4954DB41B573A005DD6 /* NSString+AJKit.h in Headers */,
+				4BB4E88154B45F4C479A77119031C686 /* UIColor+AJKit.h in Headers */,
+				C78C0E6360E43D26E87CD62FE4A00D3C /* UIDevice+AJKit.h in Headers */,
+				C2B49ED6423274BB83986E06875D156C /* UIImage+AJKit.h in Headers */,
+				F6120B461050EB5E3ACCD91C7673447E /* UINavigationController+AJKit.h in Headers */,
+				A35E2A67C9D3AD66028C2A34939F2011 /* UINavigationItem+AJKit.h in Headers */,
+				E620798670805B8C8C1126CA973C79F0 /* UIScrollView+AJKit.h in Headers */,
+				6F977F856280BEB40E4499822A83C409 /* UISearchBar+AJKit.h in Headers */,
+				609674F9CB4E3C19158FC42F6C195B75 /* UITabBar+AJKit.h in Headers */,
+				FFE677A8D2E796F21F1FEA90509E1829 /* UITextField+AJKit.h in Headers */,
+				473B4FAE79E9BE195462AB8C1A9376A0 /* UITextView+AJKit.h in Headers */,
+				560AD34D5EE7EA5DF133AF6DE9B4C563 /* UIView+AJKit.h in Headers */,
+				8A4E9EA872CA69976DD60C9F1B54E2CD /* UIViewController+AJKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -522,12 +522,12 @@
 		};
 		A6D38F6793FBA40CB1CF72858F765BBA /* AJKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F0230FE7152C55B79B7311FD876C3E35 /* Build configuration list for PBXNativeTarget "AJKit" */;
+			buildConfigurationList = 78D0678EBB20081E454C5C79D50DC340 /* Build configuration list for PBXNativeTarget "AJKit" */;
 			buildPhases = (
-				656852C43145F1FEAE784C995A883AB6 /* Headers */,
-				C04F24C7C95431AF8B54785E054D9DE3 /* Sources */,
-				525C3C95CE8340BB87E5767B04209317 /* Frameworks */,
-				65DCF7E62423228388CF6AB190FB56A4 /* Resources */,
+				D934C3B3D04B0423B55D6B3E1CBC4EDC /* Headers */,
+				644B3981749A0934F7A056B8E42AFBFF /* Sources */,
+				ADC0314BB72938466823CBECE2EB63D2 /* Frameworks */,
+				AE0C4CCD263F9A34EF9D188BD215CB97 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -586,13 +586,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		65DCF7E62423228388CF6AB190FB56A4 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		956FA43E6EEBE928FAB479854428B0A5 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -601,6 +594,13 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		ABF558F0C453405308AAD7D61739D50C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AE0C4CCD263F9A34EF9D188BD215CB97 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -618,36 +618,36 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C04F24C7C95431AF8B54785E054D9DE3 /* Sources */ = {
+		644B3981749A0934F7A056B8E42AFBFF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9BD4DDC27C5714254EB06775268C15D9 /* AJAES128.m in Sources */,
-				6F42B9B9A48D03B4124CB8985E806E50 /* AJKit-dummy.m in Sources */,
-				62F3A3D27D7821A8E4A8033F3DDBFAB0 /* NSArray+AJKit.m in Sources */,
-				2D49C3DE3E10C31E91566EBF3E34B27A /* NSBundle+AJKit.m in Sources */,
-				BBB3BAF484157CA6198E2F7205D1AE1D /* NSData+AJAlgorithm.m in Sources */,
-				C9FFC7561E63EF21DD9A5BCAC2A0A6FA /* NSData+AJKit.m in Sources */,
-				DEF68221F1D90C0D44CF558F2CCB914F /* NSDate+AJKit.m in Sources */,
-				512769BF04BE649F18087643C7FD6D91 /* NSDictionary+AJKit.m in Sources */,
-				C0ADDD782A4B3E671E42D814C9D68B62 /* NSFileManager+AJKit.m in Sources */,
-				639946920C58C9064F14079903FB3F48 /* NSNull+AJKit.m in Sources */,
-				528FD21EA26E0A83E9BD7A9A88A27DEA /* NSObject+AJKit.m in Sources */,
-				F19543782F43533446C73096ED8DCEA0 /* NSObject+AJRuntime.m in Sources */,
-				32F1B072F598C9FCD549C9CA04DD5332 /* NSString+AJAlgorithm.m in Sources */,
-				945E42428802583A7B8FE697098DF02B /* NSString+AJKit.m in Sources */,
-				3CC8684E9903BE1F7548716525CFC7F6 /* UIColor+AJKit.m in Sources */,
-				F6943B9B20F81BAEC2AC7ED3F20B79D7 /* UIDevice+AJKit.m in Sources */,
-				258BCE23B6EF4865CDA9A8B3E987824A /* UIImage+AJKit.m in Sources */,
-				2C857FFEC4353147DDC3D0DAE180ECD8 /* UINavigationController+AJKit.m in Sources */,
-				ED73F430ACE2D2B447AB4D46C16EEA39 /* UINavigationItem+AJKit.m in Sources */,
-				4BA0DBF7E40765137AC73C11F5A2D2B9 /* UIScrollView+AJKit.m in Sources */,
-				8FE87565A181C0E68230F5B172817A4D /* UISearchBar+AJKit.m in Sources */,
-				19573D19DDD381F30E842B772EE9DD3A /* UITabBar+AJKit.m in Sources */,
-				F7F0299B8E6AAF1D4B56C2419B7725FB /* UITextField+AJKit.m in Sources */,
-				8019FC822FB0EBE82FDC908DDE8F2DE8 /* UITextView+AJKit.m in Sources */,
-				1D5B6D253E9673C5C48E3FA7A6921F2A /* UIView+AJKit.m in Sources */,
-				3D9B2F106A0AC81EE5B149A73EFD2731 /* UIViewController+AJKit.m in Sources */,
+				43054F3D6ED2FD3264E74436945A0444 /* AJAES128.m in Sources */,
+				33289E1268482CAC29DD8E41FEE316C7 /* AJKit-dummy.m in Sources */,
+				A7743189951CFE2090E46930E5F73292 /* NSArray+AJKit.m in Sources */,
+				FAEFFDA3FE3E1BADD67A611E1082E83C /* NSBundle+AJKit.m in Sources */,
+				9975F12F6E8F3FB17E76422EE5FB8559 /* NSData+AJAlgorithm.m in Sources */,
+				83672367DA43FA8105EED8D790E784FA /* NSData+AJKit.m in Sources */,
+				E82A186C9291C5B7AA49D00BDE9BFD8E /* NSDate+AJKit.m in Sources */,
+				181F7206A1EF2A445D645FBAE8E4E318 /* NSDictionary+AJKit.m in Sources */,
+				48093B6CD32606A84700CD7108917319 /* NSFileManager+AJKit.m in Sources */,
+				7CD5F8901659B307E59EB97526528429 /* NSNull+AJKit.m in Sources */,
+				B889B85DC9D43A50DA5ECC7D732C4CE5 /* NSObject+AJKit.m in Sources */,
+				21CB0392AD48EC8F45E47EF362DC1DF6 /* NSObject+AJRuntime.m in Sources */,
+				1989A3F7E0EDEEECB93C31BBBF31CDA6 /* NSString+AJAlgorithm.m in Sources */,
+				483D20314BA2D7769D8193ECC45DF34A /* NSString+AJKit.m in Sources */,
+				80F71346F3BBCB5C425694D548B7C273 /* UIColor+AJKit.m in Sources */,
+				3790295A187303F5E3E9A33D78C44526 /* UIDevice+AJKit.m in Sources */,
+				A68A165711EFCC60471715EE32FE0EC9 /* UIImage+AJKit.m in Sources */,
+				C1D230E295DBFE4AAA83A410C5A1EDA1 /* UINavigationController+AJKit.m in Sources */,
+				E4AF203021213BAA25F75844E587092B /* UINavigationItem+AJKit.m in Sources */,
+				1635900607FF1DD998DA0B198D6FB656 /* UIScrollView+AJKit.m in Sources */,
+				62742EA006CE45DF7464EABD82A3CB34 /* UISearchBar+AJKit.m in Sources */,
+				BE20FF3C7BA070095A6989510CA973BA /* UITabBar+AJKit.m in Sources */,
+				0BFC564D623FACB5847788754B0EA25A /* UITextField+AJKit.m in Sources */,
+				C2ABF3A914DAC605390C43E87A6CC296 /* UITextView+AJKit.m in Sources */,
+				CC8B78D317C6F5D44E691ED5204FFE6B /* UIView+AJKit.m in Sources */,
+				3507B97E33C724E4978EBDD706AD02E3 /* UIViewController+AJKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -704,37 +704,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		0922DF3E2D7A304525C757F471818020 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA646479CE87D11651989AADB1090511 /* AJKit.xcconfig */;
-			buildSettings = {
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/AJKit/AJKit-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/AJKit/AJKit-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/AJKit/AJKit.modulemap";
-				PRODUCT_MODULE_NAME = AJKit;
-				PRODUCT_NAME = AJKit;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -861,8 +830,7 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_COMPILATION_MODE = wholemodule;
-				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -932,9 +900,40 @@
 			};
 			name = Debug;
 		};
-		B4CB8AE7C3AA158CC0FADD2E61AB8734 /* Release */ = {
+		D88B84BFE27F6C086940D5F9EC7EAA6A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = EA646479CE87D11651989AADB1090511 /* AJKit.xcconfig */;
+			baseConfigurationReference = 4649E958F476D484B29217EC9D7CF7B4 /* AJKit.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/AJKit/AJKit-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/AJKit/AJKit-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/AJKit/AJKit.modulemap";
+				PRODUCT_MODULE_NAME = AJKit;
+				PRODUCT_NAME = AJKit;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		FC8D1BC62EB41B963426A96175B7F59F /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4649E958F476D484B29217EC9D7CF7B4 /* AJKit.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1019,11 +1018,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F0230FE7152C55B79B7311FD876C3E35 /* Build configuration list for PBXNativeTarget "AJKit" */ = {
+		78D0678EBB20081E454C5C79D50DC340 /* Build configuration list for PBXNativeTarget "AJKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				0922DF3E2D7A304525C757F471818020 /* Debug */,
-				B4CB8AE7C3AA158CC0FADD2E61AB8734 /* Release */,
+				D88B84BFE27F6C086940D5F9EC7EAA6A /* Debug */,
+				FC8D1BC62EB41B963426A96175B7F59F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

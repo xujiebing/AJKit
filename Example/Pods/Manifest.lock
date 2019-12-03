@@ -1,5 +1,6 @@
 PODS:
-  - AJKit/Algorithm (0.2.0)
+  - AJKit/Algorithm (0.2.0):
+    - AJKit/Foundation
   - AJKit/Foundation (0.2.0)
   - AJKit/Runtime (0.2.0):
     - AJKit/Foundation
@@ -17,7 +18,7 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AJKit: f492e44c1d7c3dad62b105f479920474eae071c7
+  AJKit: 855c1ba3039c3740bcb8cb1739940e9574d309a6
 
 PODFILE CHECKSUM: 270c2df8e1b639f6d47fe868faaddd1f5f40aee7
 
