@@ -9,23 +9,18 @@
 
 @implementation NSArray (AJKit)
 
-+ (BOOL (^)(NSArray * _Nonnull))ajIsEmpty {
-    BOOL (^block)(NSArray *) = ^(NSArray *ajSelf) {
-        if (![ajSelf isKindOfClass:[NSArray class]]) {
-            return YES;
-        }
-        if (ajSelf.count == 0) {
-            return YES;
-        }
-        return NO;
-    };
-    return block;
+- (BOOL)ajIsEmpty {
+    if (self.count == 0) {
+        return YES;
+    }
+    return NO;
 }
 
-+ (id  _Nonnull (^)(NSArray * _Nonnull, NSUInteger))ajObjectAtIndex {
-    id (^block)(NSArray *, NSUInteger) = ^(NSArray *ajSelf, NSUInteger index) {
+- (id  _Nonnull (^)(NSUInteger))ajObjectAtIndex {
+    kAJWeakSelf
+    id (^block)(NSUInteger) = ^(NSUInteger index) {
         id obj = nil;
-        if (NSArray.ajIsEmpty(ajSelf)) {
+        if (self.ajIsEmpty) {
             return obj;
         }
         if (index < ajSelf.count) {
@@ -40,24 +35,9 @@
 
 @implementation NSMutableArray (AJKit)
 
-+ (BOOL (^)(NSMutableArray * _Nonnull))ajIsEmpty {
-    BOOL (^block)(NSMutableArray *) = ^(NSMutableArray *ajSelf) {
-        if (![ajSelf isKindOfClass:[NSMutableArray class]]) {
-            return YES;
-        }
-        if (ajSelf.count == 0) {
-            return YES;
-        }
-        return NO;
-    };
-    return block;
-}
-
-+ (void (^)(NSMutableArray * _Nonnull, id _Nonnull))ajAddObject {
-    void (^block)(NSMutableArray *, id) = ^(NSMutableArray *ajSelf, id object) {
-        if (![ajSelf isKindOfClass:[NSMutableArray class]]) {
-            return ;
-        }
+- (void (^)(id _Nonnull))ajAddObject {
+    kAJWeakSelf
+    void (^block)(id) = ^(id object) {
         if (!object) {
             return;
         }

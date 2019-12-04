@@ -9,7 +9,7 @@
 #define AJFoundationConfig_h
 
 #ifdef DEBUG
-    #define AJLog(fmt, ...) fprintf(stderr,"Func: %s \nLine: %d \nLog: %s", __PRETTY_FUNCTION__, __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__] UTF8String]);
+    #define AJLog(fmt, ...) fprintf(stderr,"Func: %s \nLine: %d \nLog: %s\n", __PRETTY_FUNCTION__, __LINE__, [[NSString stringWithFormat:fmt, ##__VA_ARGS__] UTF8String]);
 #else
     #define AJLog(...)
 #endif

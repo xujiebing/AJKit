@@ -8,7 +8,6 @@
 
 #import "AJViewController.h"
 #import <AJKit/AJFoundation.h>
-#import <AJKit/AJUIKit.h>
 
 @interface AJViewController ()
 
@@ -19,8 +18,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSString *ss = NSNull.null;
-    ss = [ss stringByAppendingString:@"ww"];
+//    NSArray *string = @"";
+//    string.ajIsEmpty;
+    AJLog(@"")
 }
 
 - (void)didReceiveMemoryWarning
