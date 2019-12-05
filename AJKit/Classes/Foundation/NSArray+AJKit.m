@@ -9,18 +9,24 @@
 
 @implementation NSArray (AJKit)
 
-- (BOOL)ajIsEmpty {
-    if (self.count == 0) {
-        return YES;
-    }
-    return NO;
++ (BOOL (^)(NSArray * _Nonnull))ajIsEmpty {
+    BOOL (^block)(NSArray *) = ^(NSArray *ajSelf) {
+        if (![ajSelf isKindOfClass:[NSArray class]]) {
+            return YES;
+        }
+        if (ajSelf.count == 0) {
+            return YES;
+        }
+        return NO;
+    };
+    return block;
 }
 
 - (id  _Nonnull (^)(NSUInteger))ajObjectAtIndex {
     kAJWeakSelf
     id (^block)(NSUInteger) = ^(NSUInteger index) {
         id obj = nil;
-        if (self.ajIsEmpty) {
+        if (NSArray.ajIsEmpty(ajSelf)) {
             return obj;
         }
         if (index < ajSelf.count) {
@@ -34,6 +40,19 @@
 @end
 
 @implementation NSMutableArray (AJKit)
+
++ (BOOL (^)(NSMutableArray * _Nonnull))ajIsEmpty {
+    BOOL (^block)(NSMutableArray *) = ^(NSMutableArray *ajSelf) {
+        if (![ajSelf isKindOfClass:[NSMutableArray class]]) {
+            return YES;
+        }
+        if (ajSelf.count == 0) {
+            return YES;
+        }
+        return NO;
+    };
+    return block;
+}
 
 - (void (^)(id _Nonnull))ajAddObject {
     kAJWeakSelf

@@ -23,10 +23,11 @@
     return block;
 }
 
-+ (id  _Nonnull (^)(NSDictionary * _Nonnull, NSString * _Nonnull))ajObjectForKey {
-    id (^block)(NSDictionary *, NSString *) = ^(NSDictionary *ajSelf, NSString *key) {
+- (id  _Nonnull (^)(NSString * _Nonnull))ajObjectForKey {
+    kAJWeakSelf
+    id (^block)(NSString *) = ^(NSString *key) {
         id value = nil;
-        if (!NSDictionary.ajContainsObjectForKey(ajSelf, key)) {
+        if (!ajSelf.ajContainsObjectForKey(key)) {
             return value;
         }
         value = [ajSelf objectForKey:key];
@@ -35,9 +36,10 @@
     return block;
 }
 
-+ (BOOL (^)(NSDictionary * _Nonnull, NSString * _Nonnull))ajContainsObjectForKey {
-    BOOL (^block)(NSDictionary *, NSString *) = ^(NSDictionary *ajSelf, NSString *key) {
-        if (NSDictionary.ajIsEmpty(ajSelf) || NSString.ajIsEmpty(key)) {
+- (BOOL (^)(NSString * _Nonnull))ajContainsObjectForKey {
+    kAJWeakSelf
+    BOOL (^block)(NSString *) = ^(NSString *key) {
+        if (ajSelf.ajIsEmpty || NSString.ajIsEmpty(key)) {
             return NO;
         }
         NSArray *array = ajSelf.allKeys;
@@ -65,8 +67,9 @@
     return block;
 }
 
-+ (void (^)(NSMutableDictionary * _Nonnull, NSString * _Nonnull, id _Nonnull))ajSetValueForKey {
-    void (^block)(NSMutableDictionary *, NSString *, id) = ^(NSMutableDictionary *ajSelf, NSString *key, id value) {
+- (void (^)(NSString * _Nonnull, id _Nonnull))ajSetValueForKey {
+    kAJWeakSelf
+    void (^block)(NSString *, id) = ^(NSString *key, id value) {
         if (![ajSelf isKindOfClass:[NSMutableDictionary class]]) {
             return ;
         }

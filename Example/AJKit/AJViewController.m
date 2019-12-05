@@ -18,7 +18,7 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-//    NSArray *string = @"";
+//    NSArray *string = nil;
 //    string.ajIsEmpty;
     AJLog(@"")
 }

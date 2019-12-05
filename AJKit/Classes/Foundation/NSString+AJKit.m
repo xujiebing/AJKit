@@ -108,7 +108,7 @@ static const short base64DecodingTable[256] = {
             return complete;
         }
         NSData *data = NSString.ajDataValue(ajSelf);
-        complete = NSData.ajJsonValueDecoded(data);
+        complete = data.ajJsonValueDecoded;
         return complete;
     };
     return block;
@@ -198,7 +198,7 @@ static const short base64DecodingTable[256] = {
 }
 
 + (NSString *)ajSequence {
-    NSString *currentDate = NSDate.ajStringValue(NSDate.date, AJYYYYMMDDHHMMSS5);
+    NSString *currentDate = NSDate.date.ajStringValue(AJYYYYMMDDHHMMSS5);
     NSString *value = [currentDate stringByAppendingString:NSString.ajRandom(10)];
     return value;
 }

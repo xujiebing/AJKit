@@ -11,11 +11,17 @@ static const char base64EncodingTable[64] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi
 
 @implementation NSData (AJKit)
 
-- (BOOL)ajIsEmpty {
-    if (self.length == 0) {
-        return YES;
-    }
-    return NO;
++ (BOOL (^)(NSData * _Nonnull))ajIsEmpty {
+    BOOL (^block)(NSData *) = ^(NSData *ajSelf) {
+        if (![ajSelf isKindOfClass:NSData.class]) {
+            return YES;
+        }
+        if (ajSelf.length == 0) {
+            return YES;
+        }
+        return NO;
+    };
+    return block;
 }
 
 - (NSString *)ajHexString {

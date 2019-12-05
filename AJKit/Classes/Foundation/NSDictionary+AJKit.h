@@ -17,14 +17,14 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL (^)(NSDictionary *ajSelf))ajIsEmpty;
 
 /// 获取字典value，防止越界crash
-/// @param NSDictionary* 字典对象
+/// @param NSString* 字典key
 /// @return id 对象
-+ (id (^)(NSDictionary *ajSelf, NSString *key))ajObjectForKey;
+- (id (^)(NSString *key))ajObjectForKey;
 
 /// 判断是否包含某个key对应的对象
-/// @param NSDictionary* 字典对象
+/// @param NSString* 字典key
 /// @return BOOL 是否包含
-+ (BOOL (^)(NSDictionary *ajSelf, NSString *key))ajContainsObjectForKey;
+- (BOOL (^)(NSString *key))ajContainsObjectForKey;
 
 @end
 
@@ -36,10 +36,9 @@ NS_ASSUME_NONNULL_BEGIN
 + (BOOL (^)(NSMutableDictionary *ajSelf))ajIsEmpty;
 
 /// 字典设置key value
-/// @param NSMutableDictionary* 字典对象
 /// @param NSString* 字符串
 /// @param id 对象
-+ (void (^)(NSMutableDictionary *ajSelf, NSString *key, id value))ajSetValueForKey;
+- (void (^)(NSString *key, id value))ajSetValueForKey;
 
 @end
 

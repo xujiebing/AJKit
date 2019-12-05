@@ -12,8 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSArray (AJKit)
 
 /// 判断数组是否为空
+/// @param NSArray* 数组对象
 /// @return BOOL 是否为空
-- (BOOL)ajIsEmpty;
++ (BOOL (^)(NSArray *ajSelf))ajIsEmpty;
 
 /// 获取数组中对象
 /// @param NSUInteger 索引
@@ -23,6 +24,11 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface NSMutableArray (AJKit)
+
+/// 判断数组是否为空
+/// @param NSMutableArray* 数组对象
+/// @return BOOL 是否为空
++ (BOOL (^)(NSMutableArray *))ajIsEmpty;
 
 /// 可变数组中添加对象
 /// @param id 对象

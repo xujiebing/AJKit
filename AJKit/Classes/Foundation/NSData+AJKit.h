@@ -12,8 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 @interface NSData (AJKit)
 
 /// 判断NSData是否为空
+/// @param NSData* data对象
 /// @return BOOL 是否为空
-- (BOOL)ajIsEmpty;
++ (BOOL (^)(NSData *ajSelf))ajIsEmpty;
 
 /// 将NSData对象转换为十六进制的字符串
 /// @return NSString* 十六进制的字符串或nil

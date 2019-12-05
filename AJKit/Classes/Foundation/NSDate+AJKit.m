@@ -9,11 +9,21 @@
 
 @implementation NSDate (AJKit)
 
++ (BOOL (^)(NSDate * _Nonnull))ajIsEmpty {
+    BOOL (^block)(NSDate *) = ^(NSDate *ajSelf) {
+        if (![ajSelf isKindOfClass:NSDate.class]) {
+            return YES;
+        }
+        return NO;
+    };
+    return block;
+}
+
 - (NSString * _Nonnull (^)(NSString * _Nonnull))ajStringValue {
     kAJWeakSelf
     NSString * (^block)(NSString *) = ^(NSString *format){
-        if (format.ajIsEmpty) {
-            return nil;
+        if (NSString.ajIsEmpty(format)) {
+            return AJEmptyString;
         }
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:format];
