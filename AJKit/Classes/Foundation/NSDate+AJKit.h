@@ -42,6 +42,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDate (AJKit)
 
+/// 判断NSDate是否为空
+/// @param NSDate* data对象
+/// @return BOOL 是否为空
++ (BOOL (^)(NSDate *ajSelf))ajIsEmpty;
+
 /// 将日期以格式化的方式转化成字符串
 /// @param NSString* date格式
 /// @return NSString* 字符串或nil
