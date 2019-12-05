@@ -9,20 +9,14 @@
 
 @implementation NSDate (AJKit)
 
-+ (BOOL (^)(NSDate * _Nonnull))ajIsEmpty {
-    BOOL (^block)(NSDate *) = ^(NSDate *ajSelf) {
-        if (![ajSelf isKindOfClass:NSDate.class]) {
-            return YES;
-        }
-        return NO;
-    };
-    return block;
+- (BOOL)ajNonEmpty {
+    return YES;
 }
 
 - (NSString * _Nonnull (^)(NSString * _Nonnull))ajStringValue {
     kAJWeakSelf
     NSString * (^block)(NSString *) = ^(NSString *format){
-        if (NSString.ajIsEmpty(format)) {
+        if (!format.ajNonEmpty) {
             return AJEmptyString;
         }
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];

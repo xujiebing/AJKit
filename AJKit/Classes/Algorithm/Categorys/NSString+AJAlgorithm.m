@@ -10,7 +10,7 @@
 @implementation NSString (AJAlgorithm)
 
 - (NSString *)ajMd5String {
-    NSData *data = NSString.ajDataValue(self);
+    NSData *data = self.ajDataValue;
     NSString *md5String = data.ajMd5String;
     return md5String;
 }

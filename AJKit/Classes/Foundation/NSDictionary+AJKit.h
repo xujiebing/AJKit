@@ -11,10 +11,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDictionary (AJKit)
 
-/// 判断字典是否为空
-/// @param NSDictionary* 字典对象
-/// @return BOOL 是否为空
-+ (BOOL (^)(NSDictionary *ajSelf))ajIsEmpty;
+/// 判断对象是否为空
+/// @return BOOL 是否为空  YES-不为空 NO-为空
+- (BOOL)ajNonEmpty;
 
 /// 获取字典value，防止越界crash
 /// @param NSString* 字典key
@@ -29,11 +28,6 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface NSMutableDictionary (AJKit)
-
-/// 判断字典是否为空
-/// @param NSMutableDictionary* 字典对象
-/// @return BOOL 是否为空
-+ (BOOL (^)(NSMutableDictionary *ajSelf))ajIsEmpty;
 
 /// 字典设置key value
 /// @param NSString* 字符串

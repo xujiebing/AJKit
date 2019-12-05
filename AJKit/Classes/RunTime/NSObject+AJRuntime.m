@@ -50,7 +50,7 @@
 + (void (^)(SEL _Nonnull, NSString * _Nonnull, SEL _Nonnull))ajSwizzleMethodWithClassName {
     kAJWeakSelf
     void (^block)(SEL, NSString *, SEL) = ^(SEL origMethod, NSString *withClassName, SEL withMethod){
-        if (NSString.ajIsEmpty(withClassName)) {
+        if (!withClassName.ajNonEmpty) {
             return ;
         }
         Class origClass = [ajSelf class];

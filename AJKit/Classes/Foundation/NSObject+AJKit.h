@@ -11,20 +11,19 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSObject (AJKit)
 
-/// 判断对象是否是JSON对象
-/// @param id 对象
-/// @return BOOL 是否是JSON对象
-+ (BOOL (^)(id ajSelf))ajIsJSONObject;
++ (BOOL (^)(SEL _Nonnull, SEL _Nonnull))ajKitSwizzleMethod;
 
-/// 获取Class类名
-/// @param id 对象
-/// @return NSString* 类名
-+ (NSString *(^)(id ajSelf))ajClassName;
+/// 判断对象是否是JSON对象
+/// @return BOOL 是否是JSON对象
+- (BOOL)ajIsJSONObject;
 
 /// json格式化
-/// @param id 对象
 /// @return NSString* 格式化后的字符串
-+ (NSString *(^)(id ajSelf))ajJsonString;
+- (NSString *)ajJsonValue;
+
+/// 获取Class类名
+/// @return NSString* 类名
+- (NSString *)ajClassName;
 
 @end
 
