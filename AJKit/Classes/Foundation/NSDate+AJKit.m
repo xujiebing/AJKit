@@ -9,20 +9,11 @@
 
 @implementation NSDate (AJKit)
 
-+ (BOOL (^)(NSDate * _Nonnull))ajIsEmpty {
-    BOOL (^block)(NSDate *) = ^(NSDate *ajSelf) {
-        if (![ajSelf isKindOfClass:NSDate.class]) {
-            return YES;
-        }
-        return NO;
-    };
-    return block;
-}
-
-+ (NSString * _Nonnull (^)(NSDate * _Nonnull, NSString * _Nonnull))ajStringValue {
-    NSString * (^block)(NSDate *, NSString *) = ^(NSDate *ajSelf, NSString *format){
-        if (NSDate.ajIsEmpty(ajSelf) || NSString.ajIsEmpty(format)) {
-            return AJEmptyString;
+- (NSString * _Nonnull (^)(NSString * _Nonnull))ajStringValue {
+    kAJWeakSelf
+    NSString * (^block)(NSString *) = ^(NSString *format){
+        if (format.ajIsEmpty) {
+            return nil;
         }
         NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
         [formatter setDateFormat:format];
@@ -33,50 +24,24 @@
     return block;
 }
 
-+ (NSString * _Nonnull (^)(NSDate * _Nonnull))ajDateString {
-    NSString * (^block)(NSDate *) = ^(NSDate *ajSelf){
-        if (NSDate.ajIsEmpty(ajSelf)) {
-            return AJEmptyString;
-        }
-        NSString *string = NSDate.ajStringValue(ajSelf, AJYYYYMMDD1);
-        return string;
-    };
-    return block;
+- (NSString *)ajDateString {
+    return self.ajStringValue(AJYYYYMMDD1);
 }
 
-+ (NSString * _Nonnull (^)(NSDate * _Nonnull))ajDateTimeString {
-    NSString * (^block)(NSDate *) = ^(NSDate *ajSelf){
-        if (NSDate.ajIsEmpty(ajSelf)) {
-            return AJEmptyString;
-        }
-        NSString *string = NSDate.ajStringValue(ajSelf, AJYYYYMMDDHHMMSS1);
-        return string;
-    };
-    return block;
+- (NSString *)ajDateTimeString {
+    return self.ajStringValue(AJYYYYMMDDHHMMSS1);
 }
 
-+ (NSString * _Nonnull (^)(NSDate * _Nonnull))ajTimestamp {
-    NSString * (^block)(NSDate *) = ^(NSDate *ajSelf){
-        if (NSDate.ajIsEmpty(ajSelf)) {
-            return AJEmptyString;
-        }
-        NSTimeInterval interval = ajSelf.timeIntervalSince1970;
-        NSString *string = [NSString stringWithFormat:@"%.0f",interval];
-        return string;
-    };
-    return block;
+- (NSString *)ajTimestamp {
+    NSTimeInterval interval = self.timeIntervalSince1970;
+    NSString *string = [NSString stringWithFormat:@"%.0f",interval];
+    return string;
 }
 
-+ (NSString * _Nonnull (^)(NSDate * _Nonnull))ajTimestampMillisecond {
-    NSString * (^block)(NSDate *) = ^(NSDate *ajSelf){
-        if (NSDate.ajIsEmpty(ajSelf)) {
-            return AJEmptyString;
-        }
-        NSTimeInterval interval = ajSelf.timeIntervalSince1970;
-        NSString *string = [NSString stringWithFormat:@"%.0f",(interval * 1000)];
-        return string;
-    };
-    return block;
+- (NSString *)ajTimestampMillisecond {
+    NSTimeInterval interval = self.timeIntervalSince1970;
+    NSString *string = [NSString stringWithFormat:@"%.0f",(interval * 1000)];
+    return string;
 }
 
 + (NSDate * (^)(NSTimeInterval))ajTimestampMillisecondToDate {
