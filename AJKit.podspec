@@ -1,7 +1,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'AJKit'
-  s.version          = '0.2.0'
+  s.version          = '0.3.0'
   s.summary          = 'A short description of AJKit.'
 
   s.description      = <<-DESC
