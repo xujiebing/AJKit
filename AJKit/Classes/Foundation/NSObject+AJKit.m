@@ -35,6 +35,10 @@
     return [NSString stringWithUTF8String:class_getName([self class])];
 }
 
++ (NSString *)ajClassName {
+    return NSStringFromClass(self);
+}
+
 #pragma mark - 内部方法
 
 + (BOOL (^)(SEL _Nonnull, SEL _Nonnull))ajKitSwizzleMethod {

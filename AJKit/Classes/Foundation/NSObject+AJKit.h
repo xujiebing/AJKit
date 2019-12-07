@@ -25,6 +25,10 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return NSString* 类名
 - (NSString *)ajClassName;
 
+/// 获取Class类名
+/// @return NSString* 类名
++ (NSString *)ajClassName;
+
 @end
 
 NS_ASSUME_NONNULL_END
