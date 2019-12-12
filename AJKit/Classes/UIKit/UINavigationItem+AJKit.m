@@ -21,6 +21,8 @@ static NSString * const AJUINavigationItemActivityIndicatorKey      = @"AJUINavi
 static NSString * const AJUINavigationItemTitleStrKey               = @"AJUINavigationTitleStrKey";
 static NSString * const AJUINavigationItemTitleLabelKey             = @"AJUINavigationTitleLabelKey";
 
+static NSString * const AJColorHex = @"364142";
+
 @implementation UINavigationItem (AJKit)
 
 #pragma mark - 导航栏左边按钮
@@ -138,7 +140,7 @@ static NSString * const AJUINavigationItemTitleLabelKey             = @"AJUINavi
     label.backgroundColor = UIColor.clearColor;
     label.font = font;
     label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = UINavigationBar.appearance.tintColor;
+    label.textColor = AJColorHex.ajColorValue;
     label.text = title;
     self.titleView = label;
     self.titleStr = title;
@@ -181,7 +183,7 @@ static NSString * const AJUINavigationItemTitleLabelKey             = @"AJUINavi
     if(!activityIndicator) {
         activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         activityIndicator.center = CGPointMake(10.0f, 20.0f);
-        activityIndicator.color = UINavigationBar.appearance.tintColor;
+        activityIndicator.color = AJColorHex.ajColorValue;
         [self.bgView addSubview:activityIndicator];
         [self setActivityIndicator:activityIndicator];
     }
@@ -210,7 +212,7 @@ static NSString * const AJUINavigationItemTitleLabelKey             = @"AJUINavi
     if (!titleLabel) {
         titleLabel = [[UILabel alloc] init];
         titleLabel.font = [UIFont systemFontOfSize:17];
-        titleLabel.textColor = UINavigationBar.appearance.tintColor;
+        titleLabel.textColor = AJColorHex.ajColorValue;
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [self setTitleLabel:titleLabel];
     }

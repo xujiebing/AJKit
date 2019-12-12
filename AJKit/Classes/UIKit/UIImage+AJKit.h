@@ -32,6 +32,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return UIImage* 压缩后的图片
 - (UIImage * (^)(CGSize size))ajRealCompressToSize;
 
+/// image to data
+- (NSData *)ajDataValue;
 
 
 @end

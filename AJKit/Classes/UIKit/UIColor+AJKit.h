@@ -13,7 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// UIColor对象转hexString
 /// @return NSString* hexString
-- (NSString *)toHexString;
+- (NSString *)ajToHexString;
 
 /// 颜色转换成图片
 /// @return 图片

@@ -85,7 +85,7 @@
     NSString *className = NSStringFromClass(self.class);
     NSString *funcName = NSStringFromSelector(aSelector);
     NSString *description = [NSString stringWithFormat:@"【%@】 未实现 【%@】 方法", className, funcName];
-    NSAssert(0, description);
+//    NSAssert(0, description);
 #endif
     IMP imp = class_getMethodImplementation([self class], @selector(p_ajNoCrash));
     class_addMethod([NSObject class], aSelector, imp, "v@:");

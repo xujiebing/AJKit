@@ -8,77 +8,67 @@
 #import "NSObject+AJRuntime.h"
 
 @implementation NSObject (AJRuntime)
-
-+ (BOOL (^)(SEL _Nonnull, SEL _Nonnull))ajSwizzleMethod {
-    kAJWeakSelf
-    BOOL (^block)(SEL, SEL) = ^(SEL origMethod, SEL withMethod){
-        Method origMethodInstance = class_getInstanceMethod(ajSelf, origMethod);
-        if (!origMethod) {
-            AJLog(@"original method %@ not found for class %@", NSStringFromSelector(origMethod), [self class]);
-            return NO;
-        }
-        
-        Method altMethodInstance = class_getInstanceMethod(self, withMethod);
-        if (!withMethod) {
-            AJLog(@"original method %@ not found for class %@", NSStringFromSelector(withMethod), [self class]);
-            return NO;
-        }
-        
-        class_addMethod(ajSelf,
-                        origMethod,
-                        class_getMethodImplementation(ajSelf, origMethod),
-                        method_getTypeEncoding(origMethodInstance));
-        class_addMethod(ajSelf,
-                        withMethod,
-                        class_getMethodImplementation(ajSelf, withMethod),
-                        method_getTypeEncoding(altMethodInstance));
-        method_exchangeImplementations(class_getInstanceMethod(ajSelf, origMethod), class_getInstanceMethod(ajSelf, withMethod));
-        return YES;
-    };
-    return block;
++ (BOOL)ajSwizzleMethod:(SEL)origMethod withMethod:(SEL)withMethod
+{
+    Method origMethodInstance = class_getInstanceMethod(self, origMethod);
+    if (!origMethod) {
+        NSLog(@"original method %@ not found for class %@", NSStringFromSelector(origMethod), [self class]);
+        return NO;
+    }
+    
+    Method altMethodInstance = class_getInstanceMethod(self, withMethod);
+    if (!withMethod) {
+        NSLog(@"original method %@ not found for class %@", NSStringFromSelector(withMethod), [self class]);
+        return NO;
+    }
+    
+    class_addMethod(self,
+                    origMethod,
+                    class_getMethodImplementation(self, origMethod),
+                    method_getTypeEncoding(origMethodInstance));
+    class_addMethod(self,
+                    withMethod,
+                    class_getMethodImplementation(self, withMethod),
+                    method_getTypeEncoding(altMethodInstance));
+    
+    method_exchangeImplementations(class_getInstanceMethod(self, origMethod), class_getInstanceMethod(self, withMethod));
+    
+    return YES;
 }
 
-+ (BOOL (^)(SEL _Nonnull, SEL _Nonnull))ajSwizzleClassMethod {
-    kAJWeakSelf
-    BOOL (^block)(SEL, SEL) = ^(SEL origClassMethod, SEL withClassMethod){
-        Class c = object_getClass((id)ajSelf);
-        return c.ajSwizzleMethod(origClassMethod, withClassMethod);
-    };
-    return block;
++ (BOOL)ajSwizzleClassMethod:(SEL)origClassMethod withClassMethod:(SEL)withClassMethod
+{
+    Class c = object_getClass((id)self);
+    return [c ajSwizzleMethod:origClassMethod withMethod:withClassMethod];
 }
 
-+ (void (^)(SEL _Nonnull, NSString * _Nonnull, SEL _Nonnull))ajSwizzleMethodWithClassName {
-    kAJWeakSelf
-    void (^block)(SEL, NSString *, SEL) = ^(SEL origMethod, NSString *withClassName, SEL withMethod){
-        if (!withClassName.ajNonEmpty) {
-            return ;
-        }
-        Class origClass = [ajSelf class];
-        Class withClass = NSClassFromString(withClassName);
-        ajSelf.ajSwizzleMethodWithClass(origClass, origMethod, withClass, withMethod);
-    };
-    return block;
++ (void)ajSwizzleMethod:(SEL)origMethod withClassName:(NSString *)withClassName withMethod:(SEL)withMethod
+{
+    if (!withClassName) {
+        return;
+    }
+    Class origClass = [self class];
+    Class withClass = NSClassFromString(withClassName);
+    [self ajSwizzleMethod:origClass origMethod:origMethod withClass:withClass withMethod:withMethod];
 }
 
-+ (void (^)(Class  _Nonnull __unsafe_unretained, SEL _Nonnull, Class  _Nonnull __unsafe_unretained, SEL _Nonnull))ajSwizzleMethodWithClass {
-    void (^block)(Class, SEL, Class, SEL) = ^(Class origClass, SEL origMethod, Class withClass, SEL withMethod){
-        if (!origClass) {
-            return;
-        }
-        if (!origMethod) {
-            return;
-        }
-        if (!withClass) {
-            return;
-        }
-        if (!withMethod) {
-            return;
-        }
-        Method srcMethod = class_getInstanceMethod(origClass,origMethod);
-        Method tarMethod = class_getInstanceMethod(withClass,withMethod);
-        method_exchangeImplementations(srcMethod, tarMethod);
-    };
-    return block;
++ (void)ajSwizzleMethod:(Class)origClass origMethod:(SEL)origMethod withClass:(Class)withClass withMethod:(SEL)withMethod
+{
+    if (!origClass) {
+        return;
+    }
+    if (!origMethod) {
+        return;
+    }
+    if (!withClass) {
+        return;
+    }
+    if (!withMethod) {
+        return;
+    }
+    
+    Method srcMethod = class_getInstanceMethod(origClass,origMethod);
+    Method tarMethod = class_getInstanceMethod(withClass,withMethod);
+    method_exchangeImplementations(srcMethod, tarMethod);
 }
-
 @end

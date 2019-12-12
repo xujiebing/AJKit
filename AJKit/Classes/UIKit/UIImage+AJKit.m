@@ -201,4 +201,8 @@
     return block;
 }
 
+- (NSData *)ajDataValue {
+    return UIImageJPEGRepresentation(self,1.0f);
+}
+
 @end
