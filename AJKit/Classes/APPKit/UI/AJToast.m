@@ -9,6 +9,11 @@
 
 @implementation AJToast
 
++ (void)load {
+    [SVProgressHUD setMinimumDismissTimeInterval:2];
+    [SVProgressHUD setDefaultStyle:SVProgressHUDStyleDark];
+}
+
 // HUD 异常信息弹窗
 + (void)showError:(NSString *)message {
     if (!message || message.length == 0) {

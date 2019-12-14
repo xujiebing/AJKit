@@ -7,7 +7,6 @@
 
 #import "AJTableViewController.h"
 #import "BWTKit.h"
-#import "BWTBaseUI.h"
 
 static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 
@@ -325,8 +324,6 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
         if (imageData && [imageData isKindOfClass:[NSData class]]) {
             UIImage *image = [UIImage imageWithData:imageData];
             _footerImageView.image = image;
-        } else {
-            _footerImageView.image = BWTBaseImageName(@"bottomImage");
         }
         
     }
@@ -371,9 +368,6 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
         _emptyView = [[UIView alloc]initWithFrame:CGRectMake(0.0, posY, self.tableView.frame.size.width, height)];
         
         UIImage *image = self.emptyImage;
-        if (!image) {
-            image = BWTBaseImageName(@"list_empty");
-        }
         UIImageView *imageView = [[UIImageView alloc] initWithImage:image];
         imageView.contentMode = UIViewContentModeScaleAspectFit;
         CGFloat centerY = 0.0;

@@ -47,6 +47,7 @@ TODO: Add long description of the pod here.
     appkit.source_files = 'AJKit/Classes/APPKit/**/*.{h,m}'
     appkit.resource = 'AJKit/Assets/AJAPPKit.bundle'
     appkit.dependency 'AJKit/Foundation'
+    appkit.dependency 'AJKit/UIKit'
     appkit.dependency 'SVProgressHUD', '2.2.5'
     appkit.dependency 'MJRefresh', '3.2.3'
   end

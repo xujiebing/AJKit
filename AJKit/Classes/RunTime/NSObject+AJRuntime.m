@@ -8,6 +8,7 @@
 #import "NSObject+AJRuntime.h"
 
 @implementation NSObject (AJRuntime)
+
 + (BOOL)ajSwizzleMethod:(SEL)origMethod withMethod:(SEL)withMethod
 {
     Method origMethodInstance = class_getInstanceMethod(self, origMethod);
