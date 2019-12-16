@@ -26,6 +26,7 @@
         UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] pathForResource:@"AJAPPKit" ofType:@"bundle"], @"ajappkit_icon_back"]];;
         self.navigationItem.ajAddLeftButtonWithImage(image, self, @selector(p_ajBack));
     }
+    [self.navigationController.navigationBar setTintColor:UIColor.blackColor];
 }
 
 - (void)ajInitData {
