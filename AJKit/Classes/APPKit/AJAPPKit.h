@@ -21,6 +21,7 @@
 #import <AJKit/AJArrayDataSource.h>
 #import <AJKit/AJAlert.h>
 #import <AJKit/AJToast.h>
+#import <AJKit/AJCacheTool.h>
 
 #import <SVProgressHUD/SVProgressHUD.h>
 

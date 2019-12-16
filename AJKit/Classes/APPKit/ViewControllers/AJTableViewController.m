@@ -6,7 +6,6 @@
 //
 
 #import "AJTableViewController.h"
-#import "BWTKit.h"
 
 static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 
@@ -115,7 +114,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
         return;
     }
     NSData *imageData = UIImagePNGRepresentation(image);
-    [BWTTools setValue:imageData forKey:kFooterImageName];
+    [AJCacheTool setValue:imageData forKey:kFooterImageName];
 }
 
 - (void)configTableView:(AJArrayDataSource *)dataSource
@@ -124,10 +123,10 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
     self.tableView.dataSource = dataSource;
     self.bwt_viewModel = viewModel;
     self.dataSourceAdapter = dataSource;
-    kWeakSelf
+    kAJWeakSelf
     [cells enumerateObjectsUsingBlock:^(NSString *cellName, NSUInteger idx, BOOL * _Nonnull stop) {
         Class class = NSClassFromString(cellName);
-        [weakSelf.tableView registerClass:class forCellReuseIdentifier:cellName];
+        [ajSelf.tableView registerClass:class forCellReuseIdentifier:cellName];
     }];
 }
 
@@ -137,10 +136,10 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
     self.tableView.dataSource = dataSource;
     self.bwt_viewModel = viewModel;
     self.dataSourceAdapter = dataSource;
-    kWeakSelf
+    kAJWeakSelf
     [nibs enumerateObjectsUsingBlock:^(NSString *nibName, NSUInteger idx, BOOL * _Nonnull stop) {
         UINib *nib = [UINib nibWithNibName:nibName bundle:nil];
-        [weakSelf.tableView registerNib:nib forCellReuseIdentifier:nibName];
+        [ajSelf.tableView registerNib:nib forCellReuseIdentifier:nibName];
     }];
 }
 
@@ -151,10 +150,10 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
     self.tableView.dataSource = dataSource;
     self.bwt_viewModel = viewModel;
     self.dataSourceAdapter = dataSource;
-    kWeakSelf
+    kAJWeakSelf
     [nibs enumerateObjectsUsingBlock:^(NSString *nibName, NSUInteger idx, BOOL * _Nonnull stop) {
         UINib *nib = [UINib nibWithNibName:nibName bundle:bundle];
-        [weakSelf.tableView registerNib:nib forCellReuseIdentifier:nibName];
+        [ajSelf.tableView registerNib:nib forCellReuseIdentifier:nibName];
     }];
 }
 
@@ -260,9 +259,9 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 }
 
 - (void)p_addHeader {
-    kWeakSelf
+    kAJWeakSelf
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        [weakSelf p_headerWithRefreshing];
+        [ajSelf p_headerWithRefreshing];
     }];
 
     if (self.autoLoad) {
@@ -272,9 +271,9 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 
 
 - (void)p_addFooter {
-    kWeakSelf
+    kAJWeakSelf
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
-        [weakSelf p_footerWithRefreshing];
+        [ajSelf p_footerWithRefreshing];
     }];
     self.tableView.mj_footer.automaticallyHidden = NO; // 关闭自动分页刷新
     self.tableView.mj_footer.hidden = YES;
@@ -319,8 +318,8 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 
 - (UIImageView *)footerImageView {
     if (!_footerImageView) {
-        _footerImageView = [[UIImageView alloc] initWithFrame:CGRectMake((BWTScreenWidth - 126) / 2.f, BWTScreenHeight - 24 - 64, 126, 14)];
-        NSData *imageData = [BWTTools objectForKey:kFooterImageName];
+        _footerImageView = [[UIImageView alloc] initWithFrame:CGRectMake((AJScreenWidth - 126) / 2.f, AJScreenHeight - 24 - 64, 126, 14)];
+        NSData *imageData = [AJCacheTool objectForKey:kFooterImageName];
         if (imageData && [imageData isKindOfClass:[NSData class]]) {
             UIImage *image = [UIImage imageWithData:imageData];
             _footerImageView.image = image;
@@ -333,7 +332,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 - (UITableView *)tableView {
     if (!_tableView) {
         
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, BWTScreenWidth, BWTViewHeight) style:_tableViewStyle];
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, AJScreenWidth, AJViewHeight) style:_tableViewStyle];
         tableView.backgroundColor = UIColorFrom10RGB(237,246,255);
         tableView.backgroundView = nil;
         tableView.delegate = self;
@@ -384,11 +383,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
         _emptyView.backgroundColor = [UIColor clearColor];
         [_emptyView addSubview:imageView];
         
-        UILabel *emptyLbl = [[UILabel alloc] initWithFrame:CGRectMake(16, imageView.frame.origin.y + imageView.frame.size.height + 8, BWTScreenWidth-32, 30)];
-        
-//        if (self.emptyTitle.length == 0) {
-//            self.emptyTitle = @"亲, 没有更多内容";
-//        }
+        UILabel *emptyLbl = [[UILabel alloc] initWithFrame:CGRectMake(16, imageView.frame.origin.y + imageView.frame.size.height + 8, AJScreenWidth-32, 30)];
         
         NSString *emptyDesc = self.emptyDesc;
         if (!emptyDesc) {
@@ -424,7 +419,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
  *  配置TableView的数据源
  */
 - (void)configTableViewSource {
-    DAssert(0)
+    NSAssert(0, @"");
 }
 
 /**
