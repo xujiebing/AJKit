@@ -19,37 +19,39 @@ TODO: Add long description of the pod here.
 
   s.default_subspec = 'Foundation'
 
-  s.subspec 'Foundation' do |foundation|
-    foundation.prefix_header_file = 'AJKit/Classes/Foundation/AJFoundation.pch'
-    foundation.source_files = 'AJKit/Classes/Foundation/*.{h,m}'
+  s.subspec 'Foundation' do |ss|
+    ss.prefix_header_file = 'AJKit/Classes/Foundation/AJFoundation.pch'
+    ss.source_files = 'AJKit/Classes/Foundation/*.{h,m}'
   end
   
-  s.subspec 'UIKit' do |kit|
-    kit.prefix_header_file = 'AJKit/Classes/UIKit/AJUIKit.pch'
-    kit.source_files = 'AJKit/Classes/UIKit/*.{h,m}'
-    kit.dependency 'AJKit/Foundation'
+  s.subspec 'UIKit' do |ss|
+    ss.prefix_header_file = 'AJKit/Classes/UIKit/AJUIKit.pch'
+    ss.source_files = 'AJKit/Classes/UIKit/*.{h,m}'
+    ss.dependency 'AJKit/Foundation'
   end
   
-  s.subspec 'Runtime' do |runtime|
-    runtime.prefix_header_file = 'AJKit/Classes/Runtime/AJRuntime.pch'
-    runtime.source_files = 'AJKit/Classes/Runtime/*.{h,m}'
-    runtime.dependency 'AJKit/Foundation'
+  s.subspec 'Runtime' do |ss|
+    ss.prefix_header_file = 'AJKit/Classes/Runtime/AJRuntime.pch'
+    ss.source_files = 'AJKit/Classes/Runtime/*.{h,m}'
+    ss.dependency 'AJKit/Foundation'
   end
   
-  s.subspec 'Algorithm' do |algorithm|
-    algorithm.prefix_header_file = 'AJKit/Classes/Algorithm/AJAlgorithm.pch'
-    algorithm.source_files = 'AJKit/Classes/Algorithm/**/*.{h,m}'
-    algorithm.dependency 'AJKit/Foundation'
+  s.subspec 'Algorithm' do |ss|
+    ss.prefix_header_file = 'AJKit/Classes/Algorithm/AJAlgorithm.pch'
+    ss.source_files = 'AJKit/Classes/Algorithm/**/*.{h,m}'
+    ss.dependency 'AJKit/Foundation'
   end
   
-  s.subspec 'APPKit' do |appkit|
-    appkit.prefix_header_file = 'AJKit/Classes/APPKit/AJAPPKit.pch'
-    appkit.source_files = 'AJKit/Classes/APPKit/**/*.{h,m}'
-    appkit.resource = 'AJKit/Assets/AJAPPKit.bundle'
-    appkit.dependency 'AJKit/Foundation'
-    appkit.dependency 'AJKit/UIKit'
-    appkit.dependency 'SVProgressHUD', '2.2.5'
-    appkit.dependency 'MJRefresh', '3.2.3'
+  s.subspec 'APPKit' do |ss|
+    ss.prefix_header_file = 'AJKit/Classes/APPKit/AJAPPKit.pch'
+    ss.source_files = 'AJKit/Classes/APPKit/**/*.{h,m}'
+    ss.resource = 'AJKit/Assets/AJAPPKit.bundle'
+    ss.dependency 'AJKit/Foundation'
+    ss.dependency 'AJKit/UIKit'
+    ss.dependency 'SVProgressHUD', '2.2.5'
+    ss.dependency 'MJRefresh', '3.2.3'
+    ss.dependency 'ReactiveObjC', '3.1.1'
+    
   end
   
 end

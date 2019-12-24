@@ -4,7 +4,7 @@ platform :ios, '8.0'
 
 target 'AJKit_Example' do
   pod 'AJKit',
-  :subspecs => ['Foundation', 'Runtime', 'UIKit', 'Algorithm'],
+  :subspecs => ['Foundation', 'Runtime', 'UIKit', 'Algorithm', 'APPKit'],
   :path => '../'
 
   target 'AJKit_Tests' do

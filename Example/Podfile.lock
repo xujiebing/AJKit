@@ -1,25 +1,44 @@
 PODS:
-  - AJKit/Algorithm (0.2.0):
+  - AJKit/Algorithm (0.4.1):
     - AJKit/Foundation
-  - AJKit/Foundation (0.2.0)
-  - AJKit/Runtime (0.2.0):
+  - AJKit/APPKit (0.4.1):
     - AJKit/Foundation
-  - AJKit/UIKit (0.2.0):
+    - AJKit/UIKit
+    - MJRefresh (= 3.2.3)
+    - ReactiveObjC (= 3.1.1)
+    - SVProgressHUD (= 2.2.5)
+  - AJKit/Foundation (0.4.1)
+  - AJKit/Runtime (0.4.1):
     - AJKit/Foundation
+  - AJKit/UIKit (0.4.1):
+    - AJKit/Foundation
+  - MJRefresh (3.2.3)
+  - ReactiveObjC (3.1.1)
+  - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - AJKit/Algorithm (from `../`)
+  - AJKit/APPKit (from `../`)
   - AJKit/Foundation (from `../`)
   - AJKit/Runtime (from `../`)
   - AJKit/UIKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - MJRefresh
+    - ReactiveObjC
+    - SVProgressHUD
 
 EXTERNAL SOURCES:
   AJKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  AJKit: 855c1ba3039c3740bcb8cb1739940e9574d309a6
+  AJKit: ce411c4b04c6bcb6ab89290c544fa26d56619aa0
+  MJRefresh: 2b1214a2dc8f4df4c5dcb028ea2ad4e245425fb7
+  ReactiveObjC: 011caa393aa0383245f2dcf9bf02e86b80b36040
+  SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 8aefd3d1cd708965d3e1ee2adb436d0243f2f504
+PODFILE CHECKSUM: c4f309346449481dcb48001db4ad28d4b96c2e04
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.8.4
