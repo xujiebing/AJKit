@@ -1,5 +1,5 @@
 //
-//  AJViewController.h
+//  AJDemoViewController.h
 //  AJKit
 //
 //  Created by xujiebing on 11/20/2019.
@@ -8,6 +8,6 @@
 
 @import UIKit;
 
-@interface AJViewController : UIViewController
+@interface AJDemoViewController : UIViewController
 
 @end

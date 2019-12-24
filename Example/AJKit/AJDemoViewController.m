@@ -1,19 +1,19 @@
 //
-//  AJViewController.m
+//  AJDemoViewController.m
 //  AJKit
 //
 //  Created by xujiebing on 11/20/2019.
 //  Copyright (c) 2019 xujiebing. All rights reserved.
 //
 
-#import "AJViewController.h"
+#import "AJDemoViewController.h"
 #import <AJKit/AJFoundation.h>
 
-@interface AJViewController ()
+@interface AJDemoViewController ()
 
 @end
 
-@implementation AJViewController
+@implementation AJDemoViewController
 
 - (void)viewDidLoad
 {
