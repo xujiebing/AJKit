@@ -6,6 +6,7 @@
 //
 
 #import "AJToast.h"
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @implementation AJToast
 

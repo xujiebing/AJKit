@@ -11,13 +11,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface UIScrollView (AJKit)
 
-- (void (^)(BOOL animated))ajScrollToTopAnimated;
+- (void)ajScrollToTopAnimated:(BOOL)animated;
 
-- (void (^)(BOOL animated))ajScrollToBottomAnimated;
+- (void)ajScrollToBottomAnimated:(BOOL)animated;
 
-- (void (^)(BOOL animated))ajScrollToLeftAnimated;
+- (void)ajScrollToLeftAnimated:(BOOL)animated;
 
-- (void (^)(BOOL animated))ajScrollToRightAnimated;
+- (void)ajScrollToRightAnimated:(BOOL)animated;
 
 @end
 

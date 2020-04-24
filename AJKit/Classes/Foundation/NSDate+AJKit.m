@@ -1,60 +1,81 @@
 //
 //  NSDate+AJKit.m
-//  AJKit
+//  Base64
 //
-//  Created by 徐结兵 on 2019/11/21.
+//  Created by 徐结兵 on 2020/4/13.
 //
 
 #import "NSDate+AJKit.h"
 
 @implementation NSDate (AJKit)
 
-- (BOOL)ajNonEmpty {
-    return YES;
+- (BOOL)ajMethodUndefinedCrash {
+    return NO;
 }
 
-- (NSString * _Nonnull (^)(NSString * _Nonnull))ajStringValue {
-    kAJWeakSelf
-    NSString * (^block)(NSString *) = ^(NSString *format){
-        if (!format.ajNonEmpty) {
-            return AJEmptyString;
-        }
-        NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
-        [formatter setDateFormat:format];
-        [formatter setLocale:[NSLocale currentLocale]];
-        NSString *string = [formatter stringFromDate:ajSelf];
-        return string;
-    };
-    return block;
++ (NSString *)ajCurrentDate {
+    NSDate *currentDate = [NSDate date];
+    NSString *date = [currentDate ajToStringWithFormat:@"yyyy-MM-dd"];
+    return date;
 }
 
-- (NSString *)ajDateString {
-    return self.ajStringValue(AJYYYYMMDD1);
++ (NSString *)ajCurrentDateTime {
+    NSDate *currentDate = [NSDate date];
+    NSString *date = [currentDate ajToStringWithFormat:@"yyyy-MM-dd HH:mm:ss"];
+    return date;
 }
 
-- (NSString *)ajDateTimeString {
-    return self.ajStringValue(AJYYYYMMDDHHMMSS1);
+- (NSString *)ajToStringWithFormat:(NSString *)format {
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:format];
+    [formatter setLocale:[NSLocale currentLocale]];
+    return [formatter stringFromDate:self];
 }
 
 - (NSString *)ajTimestamp {
-    NSTimeInterval interval = self.timeIntervalSince1970;
-    NSString *string = [NSString stringWithFormat:@"%.0f",interval];
-    return string;
+    NSTimeInterval interval = [self timeIntervalSince1970];
+    return [NSString stringWithFormat:@"%.0f",interval];
 }
 
 - (NSString *)ajTimestampMillisecond {
-    NSTimeInterval interval = self.timeIntervalSince1970;
-    NSString *string = [NSString stringWithFormat:@"%.0f",(interval * 1000)];
-    return string;
+    NSTimeInterval interval = [self timeIntervalSince1970];
+    return [NSString stringWithFormat:@"%.0f",(interval * 1000)];
 }
 
-+ (NSDate * (^)(NSTimeInterval))ajTimestampMillisecondToDate {
-    NSDate * (^block)(NSTimeInterval) = ^(NSTimeInterval timestamp){
-        NSString *intervalStr = [NSString stringWithFormat:@"%f",timestamp];
-        NSDate *date = [NSDate dateWithTimeIntervalSince1970:[intervalStr doubleValue]/1000];
-        return date;
-    };
-    return block;
++ (NSInteger)ajCompareDate:(NSString*)aDate withDate:(NSString*)bDate{
+    return [self ajCompareDate:aDate withDate:bDate format:@"yyyy-MM-dd"];
+}
+
++ (NSInteger)ajCompareDate:(NSString*)aDate withDate:(NSString*)bDate format:(NSString *)format {
+    NSDateFormatter *dateformater = [[NSDateFormatter alloc] init];
+    [dateformater setDateFormat:format];
+    NSDate *dta = [[NSDate alloc] init];
+    NSDate *dtb = [[NSDate alloc] init];
+    dta = [dateformater dateFromString:aDate];
+    dtb = [dateformater dateFromString:bDate];
+    NSComparisonResult result = [dta compare:dtb];
+    NSInteger a;
+    if (result == NSOrderedSame) {
+        // bDate = aDate
+        a = 0;
+    } else if (result == NSOrderedAscending) {
+        // bDate比aDate大
+        a = 1;
+    } else {
+        // bDate比aDate小
+        a = 2;
+    }
+    return a;
+}
+
++ (NSDate *)ajZeroTimeOfDay:(NSInteger)day {
+    NSCalendar *calendar = [NSCalendar currentCalendar];
+    [calendar setTimeZone:[NSTimeZone timeZoneWithName:@"GTM"]];
+    NSDate *now = [NSDate new];
+    NSDateComponents *components = [calendar components:NSCalendarUnitYear|NSCalendarUnitMonth|NSCalendarUnitDay fromDate:now];
+    NSDate *today = [calendar dateFromComponents:components];
+    NSDate *date = [calendar dateByAddingUnit:NSCalendarUnitDay value:day toDate:today options:0];
+    return date;
 }
 
 @end

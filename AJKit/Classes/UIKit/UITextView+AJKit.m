@@ -6,6 +6,7 @@
 //
 
 #import "UITextView+AJKit.h"
+#import <objc/runtime.h>
 
 static NSString * const AJUITextViewLimitInput = @"AJUITextViewLimitInput";
 

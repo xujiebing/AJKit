@@ -9,20 +9,16 @@
 
 @implementation NSBundle (AJKit)
 
-+ (NSString *)ajAppBundleName {
-    return [NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleName"];
+- (BOOL)ajMethodUndefinedCrash {
+    return NO;
 }
 
-+ (NSString *)ajAppBundleID {
-    return [NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleIdentifier"];
-}
-
-+ (NSString *)ajAppVersion {
-    return [NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleShortVersionString"];
-}
-
-+ (NSString *)ajAppBuildVersion {
-    return [NSBundle.mainBundle objectForInfoDictionaryKey:@"CFBundleVersion"];
++ (NSBundle *)ajBundleWithBundleName:(nonnull NSString *)bundleName
+                           className:(nonnull NSString *)className {
+    NSBundle *podBundle = [NSBundle bundleForClass:NSClassFromString(className)];
+    NSURL *bundleURL = [podBundle URLForResource:bundleName withExtension:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithURL:bundleURL];
+    return bundle;
 }
 
 @end

@@ -11,28 +11,25 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSDictionary (AJKit)
 
-/// 判断对象是否为空
-/// @return BOOL 是否为空  YES-不为空 NO-为空
-- (BOOL)ajNonEmpty;
+/// 判断字典是否为空
++ (BOOL (^_Nonnull)(NSDictionary *))ajIsEmpty;
 
-/// 获取字典value，防止越界crash
-/// @param NSString* 字典key
-/// @return id 对象
-- (id (^)(NSString *key))ajObjectForKey;
+/// 此方法避免字典越界导致的crach
+/// @param key 传入 key 不存在时，程序返回 nil
+- (id)ajObjectForKey:(NSString *)key;
 
-/// 判断是否包含某个key对应的对象
-/// @param NSString* 字典key
-/// @return BOOL 是否包含
-- (BOOL (^)(NSString *key))ajContainsObjectForKey;
+/// 是否包含某个key对象
+/// @param key key
+- (BOOL)ajContainsObjectForKey:(id)key;
 
 @end
 
 @interface NSMutableDictionary (AJKit)
 
-/// 字典设置key value
-/// @param NSString* 字符串
-/// @param id 对象
-- (void (^)(NSString *key, id value))ajSetValueForKey;
+/// 设置key value
+/// @param value value
+/// @param key key
+- (void)ajSetValue:(id)value key:(NSString *)key;
 
 @end
 

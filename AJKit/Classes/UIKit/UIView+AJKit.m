@@ -89,34 +89,22 @@
     return self.frame.origin;
 }
 
-- (void (^)(CGFloat))ajAddCorners {
-    kAJWeakSelf
-    void (^block)(CGFloat) = ^(CGFloat radius){
-        ajSelf.layer.cornerRadius = radius;
-        ajSelf.layer.masksToBounds = YES;
-    };
-    return block;
+- (void)ajAddCorners:(CGFloat)radius {
+    self.layer.cornerRadius = radius;
+    self.layer.masksToBounds = YES;
 }
 
-- (void (^)(CGFloat, UIRectCorner))ajAddRectCorners {
-    kAJWeakSelf
-    void (^block)(CGFloat, UIRectCorner) = ^(CGFloat radius, UIRectCorner rectCorners){
-        UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:ajSelf.bounds byRoundingCorners:rectCorners cornerRadii:CGSizeMake(radius, radius)];
-        CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
-        maskLayer.frame = ajSelf.bounds;
-        maskLayer.path = maskPath.CGPath;
-        ajSelf.layer.mask = maskLayer;
-    };
-    return block;
+- (void)ajAddRectCorners:(CGFloat)radius rectCorners:(UIRectCorner)rectCorners {
+    UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:self.bounds byRoundingCorners:rectCorners cornerRadii:CGSizeMake(radius, radius)];
+    CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
+    maskLayer.frame = self.bounds;
+    maskLayer.path = maskPath.CGPath;
+    self.layer.mask = maskLayer;
 }
 
-- (void (^)(CGFloat, UIColor * _Nonnull))ajAddBorder {
-    kAJWeakSelf
-    void (^block)(CGFloat, UIColor *) = ^(CGFloat width, UIColor *color){
-        ajSelf.layer.borderColor = color.CGColor;
-        ajSelf.layer.borderWidth = width;
-    };
-    return block;
+- (void)ajAddBorder:(CGFloat)width rectCorners:(UIColor *)color {
+    self.layer.borderColor = color.CGColor;
+    self.layer.borderWidth = width;
 }
 
 

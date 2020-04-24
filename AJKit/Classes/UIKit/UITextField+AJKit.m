@@ -6,6 +6,7 @@
 //
 
 #import "UITextField+AJKit.h"
+#import <objc/runtime.h>
 
 static NSString * const AJUITextFieldLimitInput = @"AJUITextFieldLimitInput";
 
@@ -21,16 +22,12 @@ static NSString * const AJUITextFieldLimitInput = @"AJUITextFieldLimitInput";
     return NSMakeRange(location, length);
 }
 
-- (void (^)(NSRange))ajSetSelectedRange {
-    kAJWeakSelf
-    void (^block)(NSRange) = ^(NSRange range){
-        UITextPosition *beginning = ajSelf.beginningOfDocument;
-        UITextPosition *startPosition = [ajSelf positionFromPosition:beginning offset:range.location];
-        UITextPosition *endPosition = [ajSelf positionFromPosition:beginning offset:range.location + range.length];
-        UITextRange *selectionRange = [ajSelf textRangeFromPosition:startPosition toPosition:endPosition];
-        [ajSelf setSelectedTextRange:selectionRange];
-    };
-    return block;
+- (void)ajSetSelectedRange:(NSRange)range {
+    UITextPosition *beginning = self.beginningOfDocument;
+    UITextPosition *startPosition = [self positionFromPosition:beginning offset:range.location];
+    UITextPosition *endPosition = [self positionFromPosition:beginning offset:range.location + range.length];
+    UITextRange *selectionRange = [self textRangeFromPosition:startPosition toPosition:endPosition];
+    [self setSelectedTextRange:selectionRange];
 }
 
 #pragma mark - 内部方法

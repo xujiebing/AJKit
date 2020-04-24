@@ -9,41 +9,51 @@
 
 @implementation NSArray (AJKit)
 
-- (BOOL)ajNonEmpty {
-    if (self.count == 0) {
-        return NO;
-    }
-    return YES;
+- (BOOL)ajMethodUndefinedCrash {
+    return NO;
 }
 
-- (id  _Nonnull (^)(NSUInteger))ajObjectAtIndex {
-    kAJWeakSelf
-    id (^block)(NSUInteger) = ^(NSUInteger index) {
-        id obj = nil;
-        if (!ajSelf.ajNonEmpty) {
-            return obj;
++ (BOOL (^)(NSArray * _Nonnull))ajIsEmpty {
+    BOOL (^block)(NSArray *) = ^(NSArray *array) {
+        if (![array isKindOfClass:NSArray.class]) {
+            return YES;
         }
-        if (index < ajSelf.count) {
-            obj = [ajSelf objectAtIndex:index];
+        if (array.count == 0) {
+            return YES;
         }
-        return obj;
+        return NO;
     };
     return block;
+}
+
+- (id)ajObjectAtIndex:(NSUInteger)index {
+    return index < self.count ? self[index] : nil;
+}
+
+- (NSUInteger)ajIndexOfObject:(id)anObject {
+    NSParameterAssert(self.count);
+    if ([self containsObject:anObject]) {
+        return [self indexOfObject:anObject];
+    }
+    return 0;
 }
 
 @end
 
 @implementation NSMutableArray (AJKit)
 
-- (void (^)(id _Nonnull))ajAddObject {
-    kAJWeakSelf
-    void (^block)(id) = ^(id object) {
-        if (!object) {
-            return;
-        }
-        [ajSelf addObject:object];
-    };
-    return block;
+- (void)ajIndexOfObject:(id)anObject {
+    if (!anObject) {
+        return;
+    }
+    [self addObject:anObject];
+}
+
+- (void)ajRemoveFirstObject {
+    if (self.count == 0) {
+        return;
+    }
+    [self removeObjectAtIndex:0];
 }
 
 @end

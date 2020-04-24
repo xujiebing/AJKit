@@ -1,8 +1,8 @@
 //
 //  NSData+AJKit.h
-//  AJKit
+//  Base64
 //
-//  Created by 徐结兵 on 2019/11/21.
+//  Created by 徐结兵 on 2020/4/9.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,25 +11,14 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSData (AJKit)
 
-/// 判断对象是否为空
-/// @return BOOL 是否为空  YES-不为空 NO-为空
-- (BOOL)ajNonEmpty;
+/// 将NSData对象转换为md5的字符串
+- (NSString *)ajToMd5String;
 
 /// 将NSData对象转换为十六进制的字符串
-/// @return NSString* 十六进制的字符串或nil
-- (NSString *)ajHexString;
+- (NSString *)ajToHexString;
 
 /// 将NSData转换成一个base64格式的字符串
-/// @return NSString* base64格式的字符串或nil
-- (NSString *)ajBase64Encode;
-
-/// 将NSData转换成json对象
-/// @return id json对象或nil
-- (id)ajJsonValueDecoded;
-
-/// 将NSData转换成字符串（UTF8格式）
-/// @return NSString* 字符串或nil
-- (NSString *)ajStringValue;
+- (NSString *)ajBase64Encoding;
 
 @end
 

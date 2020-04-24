@@ -12,7 +12,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 @interface AJTableViewController ()
 
 @property (nonatomic, strong, readwrite) UIImageView *footerImageView;    // 底部广告图片
-@property (nonatomic, strong, readwrite) AJTableViewModel *bwt_viewModel;
+@property (nonatomic, strong, readwrite) AJTableViewModel *aj_viewModel;
 @property (nonatomic, strong) AJArrayDataSource *dataSourceAdapter;
 
 @end
@@ -28,7 +28,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 - (instancetype)init {
     self = [super init];
     if (self) {
-        [self bwt_init];
+        [self aj_init];
     }
     return self;
 }
@@ -36,7 +36,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 - (instancetype)initWithCoder:(NSCoder *)coder {
     self = [super initWithCoder:coder];
     if (self) {
-        [self bwt_init];
+        [self aj_init];
     }
     return self;
 }
@@ -45,8 +45,8 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 - (void)viewDidLoad {
     [super viewDidLoad];
 
-    [self bwt_initView];
-    [self bwt_initData];
+    [self aj_initView];
+    [self aj_initData];
 }
 
 - (void)viewWillDisappear:(BOOL)animated {
@@ -80,7 +80,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 - (void)reloadTableView {
 
     // 添加为空时显示的View
-    if (self.bwt_viewModel.dataSource.count == 0) {
+    if (self.aj_viewModel.dataSource.count == 0) {
         [self.tableView addSubview:self.emptyView];
         self.emptyView.hidden = NO;
     } else {
@@ -88,7 +88,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
         self.emptyView.hidden = YES;
     }
 
-    [self.dataSourceAdapter changeItems:self.bwt_viewModel.dataSource];
+    [self.dataSourceAdapter changeItems:self.aj_viewModel.dataSource];
     [self.tableView reloadData];
     
 }
@@ -98,7 +98,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 }
 
 - (void)endRefreshing {
-    if (self.bwt_viewModel.currentPage > 1 && [self.tableView.mj_footer isRefreshing]) {
+    if (self.aj_viewModel.currentPage > 1 && [self.tableView.mj_footer isRefreshing]) {
         [self.tableView.mj_footer endRefreshing];
         return;
     }
@@ -114,14 +114,14 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
         return;
     }
     NSData *imageData = UIImagePNGRepresentation(image);
-    [AJCacheTool setValue:imageData forKey:kFooterImageName];
+    [NSUserDefaults ajSetValue:imageData forKey:kFooterImageName];
 }
 
 - (void)configTableView:(AJArrayDataSource *)dataSource
               viewModel:(AJTableViewModel *)viewModel
                   cells:(NSArray *)cells {
     self.tableView.dataSource = dataSource;
-    self.bwt_viewModel = viewModel;
+    self.aj_viewModel = viewModel;
     self.dataSourceAdapter = dataSource;
     kAJWeakSelf
     [cells enumerateObjectsUsingBlock:^(NSString *cellName, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -134,7 +134,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
               viewModel:(AJTableViewModel *)viewModel
                    nibs:(NSArray *)nibs {
     self.tableView.dataSource = dataSource;
-    self.bwt_viewModel = viewModel;
+    self.aj_viewModel = viewModel;
     self.dataSourceAdapter = dataSource;
     kAJWeakSelf
     [nibs enumerateObjectsUsingBlock:^(NSString *nibName, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -148,7 +148,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
                    nibs:(NSArray *)nibs
                  bundle:(NSBundle *)bundle {
     self.tableView.dataSource = dataSource;
-    self.bwt_viewModel = viewModel;
+    self.aj_viewModel = viewModel;
     self.dataSourceAdapter = dataSource;
     kAJWeakSelf
     [nibs enumerateObjectsUsingBlock:^(NSString *nibName, NSUInteger idx, BOOL * _Nonnull stop) {
@@ -169,16 +169,16 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 
 #pragma mark - 对内方法
 
-- (void)bwt_init {
+- (void)aj_init {
     // 初始化默认数据
     _autoLoad = YES;
     _closeRefresh = NO;
     _tableViewStyle = UITableViewStylePlain;
 }
 
-- (void)bwt_initView {
+- (void)aj_initView {
 
-    self.view.backgroundColor = UIColorFrom10RGB(248, 248, 248);
+    self.view.backgroundColor = AJUIColorFrom10RGB(248, 248, 248);
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.footerImageView];
     [self configTableViewSource];
@@ -188,11 +188,11 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
     }
 }
 
-- (void)bwt_initData {
+- (void)aj_initData {
 
     // 数据更新后刷新视图
     @weakify(self)
-    [[[RACObserve(self.bwt_viewModel, dataSource)
+    [[[RACObserve(self.aj_viewModel, dataSource)
        distinctUntilChanged]
        deliverOnMainThread]
        subscribeNext:^(id x) {
@@ -201,7 +201,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
      }];
 
     // 绑定上拉分页是否可用
-    [[RACObserve(self.bwt_viewModel, hasNextPage)
+    [[RACObserve(self.aj_viewModel, hasNextPage)
         distinctUntilChanged]
         subscribeNext:^(NSNumber *hasNextPage) {
         @strongify(self)
@@ -209,7 +209,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
     }];
 
     // 网络请求返回后刷新组件结束刷新
-    [[self.bwt_viewModel.requestRemoteDataCommand.executionSignals
+    [[self.aj_viewModel.requestRemoteDataCommand.executionSignals
       switchToLatest]
       subscribeNext:^(id  _Nullable x) {
         @strongify(self);
@@ -219,7 +219,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
     }];
 
     // 网络返回错误异常监听
-    [[[self.bwt_viewModel rac_signalForSelector:@selector(handlerError:)]
+    [[[self.aj_viewModel rac_signalForSelector:@selector(handlerError:)]
         deliverOnMainThread]
         subscribeNext:^(RACTuple * _Nullable x) {
             @strongify(self);
@@ -281,18 +281,18 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 
 
 - (void)p_headerWithRefreshing {
-    self.bwt_viewModel.currentPage = 1;
-    [self.bwt_viewModel.requestRemoteDataCommand execute:@(1)];
+    self.aj_viewModel.currentPage = 1;
+    [self.aj_viewModel.requestRemoteDataCommand execute:@(1)];
 }
 
 
 - (void)p_footerWithRefreshing {
-    self.bwt_viewModel.currentPage++;
-    [self.bwt_viewModel.requestRemoteDataCommand execute:@(self.bwt_viewModel.currentPage)];
+    self.aj_viewModel.currentPage++;
+    [self.aj_viewModel.requestRemoteDataCommand execute:@(self.aj_viewModel.currentPage)];
 
 //    if (self.totalPage > 0 && self.totalPage < self.currentPage
 //        && self.currentPage > 1) {
-//        BWTLog(@"没有分页数据...");
+//        AJLog(@"没有分页数据...");
 //        [self.tableView.mj_footer endRefreshing];
 //        self.tableView.mj_footer.hidden = YES;
 //        return;
@@ -318,8 +318,8 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 
 - (UIImageView *)footerImageView {
     if (!_footerImageView) {
-        _footerImageView = [[UIImageView alloc] initWithFrame:CGRectMake((AJScreenWidth - 126) / 2.f, AJScreenHeight - 24 - 64, 126, 14)];
-        NSData *imageData = [AJCacheTool objectForKey:kFooterImageName];
+        _footerImageView = [[UIImageView alloc] initWithFrame:CGRectMake((UIScreen.ajWidth - 126) / 2.f, UIScreen.ajHeight - 24 - 64, 126, 14)];
+        NSData *imageData = [NSUserDefaults ajObjectForKey:kFooterImageName];
         if (imageData && [imageData isKindOfClass:[NSData class]]) {
             UIImage *image = [UIImage imageWithData:imageData];
             _footerImageView.image = image;
@@ -332,8 +332,8 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 - (UITableView *)tableView {
     if (!_tableView) {
         
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, AJScreenWidth, AJViewHeight) style:_tableViewStyle];
-        tableView.backgroundColor = UIColorFrom10RGB(237,246,255);
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.ajWidth, UIScreen.ajViewHeight) style:_tableViewStyle];
+        tableView.backgroundColor = AJUIColorFrom10RGB(237,246,255);
         tableView.backgroundView = nil;
         tableView.delegate = self;
         tableView.tableFooterView = [[UIView alloc] init];
@@ -383,7 +383,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
         _emptyView.backgroundColor = [UIColor clearColor];
         [_emptyView addSubview:imageView];
         
-        UILabel *emptyLbl = [[UILabel alloc] initWithFrame:CGRectMake(16, imageView.frame.origin.y + imageView.frame.size.height + 8, AJScreenWidth-32, 30)];
+        UILabel *emptyLbl = [[UILabel alloc] initWithFrame:CGRectMake(16, imageView.frame.origin.y + imageView.frame.size.height + 8, UIScreen.ajWidth-32, 30)];
         
         NSString *emptyDesc = self.emptyDesc;
         if (!emptyDesc) {
@@ -392,7 +392,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
         emptyLbl.text = emptyDesc;
         emptyLbl.textAlignment = NSTextAlignmentCenter;
         emptyLbl.font = [UIFont systemFontOfSize:16];
-        emptyLbl.textColor = UIColorFrom16RGB(0x787878);
+        emptyLbl.textColor = AJUIColorFrom16RGB(0x787878);
         [_emptyView addSubview:emptyLbl];
         
     }

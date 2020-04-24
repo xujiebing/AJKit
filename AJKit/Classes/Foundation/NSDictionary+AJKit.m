@@ -9,59 +9,54 @@
 
 @implementation NSDictionary (AJKit)
 
-- (BOOL)ajNonEmpty {
-    NSArray *array = self.allKeys;
-    if (array.count == 0) {
+- (BOOL)ajMethodUndefinedCrash {
+    return NO;
+}
+
++ (BOOL (^)(NSDictionary *))ajIsEmpty {
+    BOOL (^block)(NSDictionary *) = ^(NSDictionary *dic) {
+        if (![dic isKindOfClass:[NSDictionary class]]) {
+            return YES;
+        }
+        NSArray *array = [dic allKeys];
+        if (array.count == 0) {
+            return YES;
+        }
         return NO;
+    };
+    return block;
+}
+
+- (id)ajObjectForKey:(NSString *)key {
+    if (![self ajContainsObjectForKey:key]) {
+        return nil;
     }
-    return YES;
+    id aValue = self[key];
+    if (aValue == [NSNull null]) {
+        return nil;
+    }
+    return aValue;
 }
 
-- (id  _Nonnull (^)(NSString * _Nonnull))ajObjectForKey {
-    kAJWeakSelf
-    id (^block)(NSString *) = ^(NSString *key) {
-        id value = nil;
-        if (!ajSelf.ajContainsObjectForKey(key)) {
-            return value;
-        }
-        value = [ajSelf objectForKey:key];
-        return value;
-    };
-    return block;
-}
-
-- (BOOL (^)(NSString * _Nonnull))ajContainsObjectForKey {
-    kAJWeakSelf
-    BOOL (^block)(NSString *) = ^(NSString *key) {
-        if (!ajSelf.ajNonEmpty || !key.ajNonEmpty) {
-            return NO;
-        }
-        NSArray *array = ajSelf.allKeys;
-        BOOL contains = [array containsObject:key];
-        return contains;
-    };
-    return block;
+- (BOOL)ajContainsObjectForKey:(id)key {
+    return [[self allKeys] containsObject:key];
 }
 
 @end
 
 @implementation NSMutableDictionary (AJKit)
 
-- (void (^)(NSString * _Nonnull, id _Nonnull))ajSetValueForKey {
-    kAJWeakSelf
-    void (^block)(NSString *, id) = ^(NSString *key, id value) {
-        if (![ajSelf isKindOfClass:[NSMutableDictionary class]]) {
-            return ;
-        }
-        if (!key.ajNonEmpty) {
-            return;
-        }
-        if (!value) {
-            return ;
-        }
-        [ajSelf setValue:value forKey:key];
-    };
-    return block;
+- (void)ajSetValue:(id)value key:(NSString *)key {
+    if (![self isKindOfClass:[NSMutableDictionary class]]) {
+        return ;
+    }
+    if (![key isKindOfClass:NSString.class]) {
+        return;
+    }
+    if (!value) {
+        return ;
+    }
+    [self setValue:value forKey:key];
 }
 
 @end

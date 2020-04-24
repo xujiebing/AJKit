@@ -11,13 +11,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSBundle (AJKit)
 
-+ (NSString *)ajAppBundleName;
-
-+ (NSString *)ajAppBundleID;
-
-+ (NSString *)ajAppVersion;
-
-+ (NSString *)ajAppBuildVersion;
+/// 获取Bundle
+/// @param bundleName bundle名
+/// @param className 类名
++ (NSBundle *)ajBundleWithBundleName:(nonnull NSString *)bundleName
+                           className:(nonnull NSString *)className;
 
 @end
 

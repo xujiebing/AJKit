@@ -1,8 +1,8 @@
 //
 //  NSString+AJKit.h
-//  AJKit
+//  AJAD
 //
-//  Created by 徐结兵 on 2019/11/20.
+//  Created by 徐结兵 on 2020/4/3.
 //
 
 #import <Foundation/Foundation.h>
@@ -11,136 +11,112 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface NSString (AJKit)
 
-/// 判断对象是否为空
-/// @return BOOL 是否为空  YES-不为空 NO-为空
-- (BOOL)ajNonEmpty;
+/// 设备唯一标识 UUID 存放到系统，App卸载后再次安装也能获取到此UUID
+@property(class, nonatomic, copy, readonly) NSString *ajDeviceUUID;
 
-/// Documents Path
-+ (NSString *)ajDocumentsPath;
+/// 随机生成一个UUID
+@property(class, nonatomic, copy, readonly) NSString *ajStringWithUUID;
 
-/// Library Path
-+ (NSString *)ajLibraryPath;
+/// 序列号
+@property(class, nonatomic, copy, readonly) NSString *ajSequence;
 
-/// Caches Path
-+ (NSString *)ajCachesPath;
+/// 判断字符串是否为空
++ (BOOL (^)(NSString *))ajIsEmpty;
 
-/// url UTF8编码
-/// @param NSString* 字符串对象
-/// @return NSString* 字符串对象
-- (NSString *)ajEncodeUTF8;
+/// url中参数转换成字典
+- (NSDictionary *)ajQueryToDictionary;
 
-/// url编码
-/// @param NSStringEncoding 编码方式
-/// @return NSString* 字符串对象
-- (NSString * (^)(NSStringEncoding encoding))ajEncode;
+/// int类型转NSString类型
++ (NSString * (^)(int))ajStringFromInt;
 
-/// url UTF8解码
-/// @return NSString* 字符串对象
-- (NSString *)ajDecodeUTF8;
+/// NSInteger类型转NSString类型
++ (NSString * (^)(NSInteger))ajStringFromInteger;
 
-/// url解码
-/// @param NSStringEncoding 编码方式
-/// @return NSString* 字符串对象
-- (NSString * (^)(NSStringEncoding encoding))ajDecode;
+/// NSString -> NSData
+- (NSData *)ajToData;
 
-/// 字符串转对象
-/// @return id 对象
-- (id)ajJsonObject;
-
-/// 将base64编码的字符串转换成NSData
-/// @return NSData* data对象
-- (NSData *)ajBase64DecodeToData;
-
-/// base64编码
-/// @return NSString* 编码后的字符串
-- (NSString *)ajBase64Encode;
-
-/// base64解码
-/// @return NSString* 解码后的字符串
-- (NSString *)ajBase64Decode;
-
-/// 根据文件名（包含后缀）获取文件内容
-/// @return NSData* data对象
-- (NSData *)ajFileData;
-
-/// 随机批次号，时间+随机数
-/// @return NSString* 随机批次号
-+ (NSString *)ajSequence;
-
-/// 生成随机数
-/// @param NSInteger 长度
-/// @return NSString* 随机批次号
-+ (NSString *(^)(NSInteger length))ajRandom;
+/// 将字符串MD5加密
+- (NSString *)ajToMd5String;
 
 /// 16进制字符串转换成10进制字符串
-/// @return NSString* 10进制字符串
-- (NSString *)ajHexToDecimal;
+- (NSString *)ajToDecimal;
 
 /// 10进制字符串转换成16进制字符串
-/// @return NSString* 16进制字符串
-- (NSString *)ajDecimalToHex;
+- (NSString *)ajToHex;
 
-/// 是否是中文
-/// @return BOOL 是否是中文
+/// 将字符串以base64编码
+- (NSString *)ajBase64Encoding;
+
+/// 将base64编码的字符串转换成NSData
+- (NSData *)ajBase64EncodingData;
+
+/// 将base64编码格式的字符串还原成明文字符串
+- (NSString *)ajBase64Decoding;
+
+/// 将字符串base64解码后转16进制
+- (NSString *)ajBase64DecodingToHex;
+
+/// 将字符串以URL编码, 编码格式为UTF8
+- (NSString *)ajURLEncode;
+
+/// 将字符串以URL解码成UTF8
+- (NSString *)ajURLDecoding;
+
+/// 判断是否纯汉字
 - (BOOL)ajIsChinese;
 
+/// 判断是否符合姓名规则
+- (BOOL)ajIsNameRule;
+
 /// 正则匹配
-/// @return BOOL 是否匹配
-- (BOOL (^)(NSString *regex))ajMatchesRegex;
+/// @param regex 正则表达式
+- (BOOL)ajMatchesRegex:(NSString *)regex;
 
-/// 过滤空格
-/// @return NSString* 过滤后的字符串
-- (NSString *)ajClearWhiteSpace;
-
-/// 过滤空格和换行
-/// @return NSString* 过滤后的字符串
-- (NSString *)ajClearWhiteSpaceAndNewLine;
+/// 将字符串过滤空格
+- (NSString *)ajStringByTrimming;
 
 /// 判断是否包含某个字符串
-/// @param NSString* 被包含字符串
-/// @return BOOL 是否包含
-- (BOOL (^)(NSString *containsString))ajContainsString;
+- (BOOL (^)(NSString *))ajContainsString;
 
 /// 将字符串转成NSNumber
-/// @return NSNumber* number
-- (NSNumber *)ajNumberValue;
+- (NSNumber *)ajToNumber;
 
-/// 将字符串转换成NSData类型
-/// @return NSData* data
-- (NSData *)ajDataValue;
+/// 验证手机号码格式是否正确
+- (BOOL)ajIsMobileNumber;
+
+/// 验证是否为纯数字
+- (BOOL)ajIsNumber;
+
+/// 验证是否是money类型
+- (BOOL)ajIsMoney;
+
+/// 校验是否为邮箱
+- (BOOL)ajIsEmailAddress;
+
+/// 精确的身份证号码有效性检测
+- (BOOL)ajAccurateVerifyIDCardNumber;
+
+/// sha1加密方式
+- (NSString *)ajSha1;
+
+/// 根据字符串内容、字体大小、视图最大范围、lineBreakMode（换行模型） 计算出当前字符串所对应的视图大小
+- (CGSize (^)(UIFont *, CGSize, NSLineBreakMode))ajSize;
+
+/// 根据字体大小，宽度 计算出 视图高度
+- (CGFloat (^)(UIFont *, CGFloat))ajSizeHeight;
 
 /// 将 日期字符串 通过 格式化 转换成 时间对象
-/// @param NSString* 时间格式
-/// @return NSDate* date对象
-- (NSDate * (^)(NSString *format))ajDateValue;
+- (NSDate * (^)(NSString *))ajToDate;
+
+/// 去除一个String里面的空格跟换行
+- (NSString *)ajClearWhiteSpaceAndNewLine;
+
+/// 在safari中打开url链接
+- (void)ajOpenInSafari;
 
 /// 颜色hexString转成UIColor
 /// @return UIColor* color对象
-- (UIColor *)ajColorValue;
-
-/// 判断邮箱格式
-/// @return BOOL 是否是邮箱格式
-- (BOOL)ajIsEmail;
-
-/// 判断手机号格式
-/// @return BOOL 是否是手机号格式
-- (BOOL)ajIsMobileNumber;
-
-/// 判断是否是纯数字格式
-/// @return BOOL 是否是纯数字格式
-- (BOOL)ajIsNumber;
-
-/// 判断是否是邮政编码格式
-/// @return BOOL 是否是邮政编码格式
-- (BOOL)ajIsPostalcode;
-
-/// 判断是否是url格式
-/// @return BOOL 是否是url格式
-- (BOOL)ajIsUrl;
-
-/// 判断是否是身份证号格式
-/// @return BOOL 是否是身份证号格式
-- (BOOL)ajIsIDCardNumber;
+- (UIColor *)ajToColor;
 
 @end
 

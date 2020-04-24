@@ -12,24 +12,24 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UISearchBar (AJKit)
 
 /// 设置输入框背景颜色
-/// @param UIColor* 颜色
-- (void (^)(UIColor *color))ajSetTextFiledBackgroundColor;
+/// @param color 颜色
+- (void)ajSetTextFiledBackgroundColor:(UIColor *)color;
 
 /// 设置输入框字体颜色
-/// @param UIColor* 颜色
-- (void (^)(UIColor *color))ajSetTextFiledTextColor;
+/// @param color 颜色
+- (void)ajSetTextFiledTextColor:(UIColor *)color;
 
 /// 设置输入框字体大小
-/// @param CGFloat 字体大小
-- (void (^)(CGFloat font))ajSetTextFieldTextFont;
+/// @param font 字体大小
+- (void)ajSetTextFieldTextFont:(CGFloat)font;
 
 /// 设置输入框光标颜色
-/// @param UIColor* 颜色
-- (void (^)(UIColor *color))ajSetTextFieldFocusColor;
+/// @param color 颜色
+- (void)ajSetTextFieldFocusColor:(UIColor *)color;
 
 /// 设置searchBar背景颜色
-/// @param UIColor* 颜色
-- (void (^)(UIColor *color))ajSetBarBackgroundColor;
+/// @param color 颜色
+- (void)ajSetBarBackgroundColor:(UIColor *)color;
 
 @end
 

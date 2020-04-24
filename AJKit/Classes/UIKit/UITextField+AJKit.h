@@ -23,8 +23,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (NSRange)ajSelectedRange;
 
 /// 设置光标选中区域
-/// @param NSRange range区域
-- (void (^)(NSRange range))ajSetSelectedRange;
+/// @param range range区域
+- (void)ajSetSelectedRange:(NSRange)range;
 
 @end
 

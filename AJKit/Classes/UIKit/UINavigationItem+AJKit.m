@@ -6,6 +6,7 @@
 //
 
 #import "UINavigationItem+AJKit.h"
+#import <objc/runtime.h>
 
 @interface UINavigationItem ()
 
@@ -140,7 +141,7 @@ static NSString * const AJColorHex = @"364142";
     label.backgroundColor = UIColor.clearColor;
     label.font = font;
     label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = AJColorHex.ajColorValue;
+    label.textColor = AJColorHex.ajToColor;
     label.text = title;
     self.titleView = label;
     self.titleStr = title;
@@ -183,7 +184,7 @@ static NSString * const AJColorHex = @"364142";
     if(!activityIndicator) {
         activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
         activityIndicator.center = CGPointMake(10.0f, 20.0f);
-        activityIndicator.color = AJColorHex.ajColorValue;
+        activityIndicator.color = AJColorHex.ajToColor;
         [self.bgView addSubview:activityIndicator];
         [self setActivityIndicator:activityIndicator];
     }
@@ -212,7 +213,7 @@ static NSString * const AJColorHex = @"364142";
     if (!titleLabel) {
         titleLabel = [[UILabel alloc] init];
         titleLabel.font = [UIFont systemFontOfSize:17];
-        titleLabel.textColor = AJColorHex.ajColorValue;
+        titleLabel.textColor = AJColorHex.ajToColor;
         titleLabel.textAlignment = NSTextAlignmentCenter;
         [self setTitleLabel:titleLabel];
     }

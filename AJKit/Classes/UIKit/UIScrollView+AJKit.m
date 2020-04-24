@@ -9,44 +9,29 @@
 
 @implementation UIScrollView (AJKit)
 
-- (void (^)(BOOL))ajScrollToTopAnimated {
-    kAJWeakSelf
-    void (^block)(BOOL) = ^(BOOL animated){
-        CGPoint off = ajSelf.contentOffset;
-        off.y = 0 - ajSelf.contentInset.top;
-        [ajSelf setContentOffset:off animated:animated];
-    };
-    return block;
+- (void)ajScrollToTopAnimated:(BOOL)animated {
+    CGPoint off = self.contentOffset;
+    off.y = 0 - self.contentInset.top;
+    [self setContentOffset:off animated:animated];
 }
 
-- (void (^)(BOOL))ajScrollToBottomAnimated {
-    kAJWeakSelf
-    void (^block)(BOOL) = ^(BOOL animated){
-        CGPoint off = ajSelf.contentOffset;
-        off.y = ajSelf.contentSize.height - ajSelf.bounds.size.height + ajSelf.contentInset.bottom;
-        [ajSelf setContentOffset:off animated:animated];
-    };
-    return block;
+- (void)ajScrollToBottomAnimated:(BOOL)animated {
+    CGPoint off = self.contentOffset;
+    off.y = self.contentSize.height - self.bounds.size.height + self.contentInset.bottom;
+    [self setContentOffset:off animated:animated];
 }
 
-- (void (^)(BOOL))ajScrollToLeftAnimated {
-    kAJWeakSelf
-    void (^block)(BOOL) = ^(BOOL animated){
-        CGPoint off = ajSelf.contentOffset;
-        off.x = 0 - ajSelf.contentInset.left;
-        [ajSelf setContentOffset:off animated:animated];
-    };
-    return block;
+
+- (void)ajScrollToLeftAnimated:(BOOL)animated {
+    CGPoint off = self.contentOffset;
+    off.x = 0 - self.contentInset.left;
+    [self setContentOffset:off animated:animated];
 }
 
-- (void (^)(BOOL))ajScrollToRightAnimated {
-    kAJWeakSelf
-    void (^block)(BOOL) = ^(BOOL animated){
-        CGPoint off = ajSelf.contentOffset;
-        off.x = ajSelf.contentSize.width - ajSelf.bounds.size.width + ajSelf.contentInset.right;
-        [ajSelf setContentOffset:off animated:animated];
-    };
-    return block;
+- (void)ajScrollToRightAnimated:(BOOL)animated {
+    CGPoint off = self.contentOffset;
+    off.x = self.contentSize.width - self.bounds.size.width + self.contentInset.right;
+    [self setContentOffset:off animated:animated];
 }
 
 @end

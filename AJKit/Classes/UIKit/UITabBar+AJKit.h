@@ -12,12 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UITabBar (AJKit)
 
 /// 添加小红点
-/// @param NSInteger tabbar索引
-- (void (^)(NSInteger index))ajAddBadgeAtIndex;
+/// @param index tabbar索引
+- (void)ajAddBadgeAtIndex:(NSInteger)index;
 
 /// 删除小红点
-/// @param NSInteger tabbar索引
-- (void (^)(NSInteger index))ajRemoveBadgeAtIndex;
+/// @param index tabbar索引
+- (void)ajRemoveBadgeAtIndex:(NSInteger)index;
 
 @end
 

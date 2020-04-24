@@ -22,17 +22,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 添加圆角
 /// @param radius 半径
-- (void (^)(CGFloat radius))ajAddCorners;
+- (void)ajAddCorners:(CGFloat)radius;
 
-/// 添加部分圆角
 /// @param radius 半径
 /// @param rectCorners rectCorners
-- (void (^)(CGFloat radius, UIRectCorner rectCorners))ajAddRectCorners;
+- (void)ajAddRectCorners:(CGFloat)radius rectCorners:(UIRectCorner)rectCorners;
 
 /// 添加边框
 /// @param width 边框宽度
 /// @param color 颜色
-- (void (^)(CGFloat width, UIColor *color))ajAddBorder;
+- (void)ajAddBorder:(CGFloat)width rectCorners:(UIColor *)color;
 
 @end
 
