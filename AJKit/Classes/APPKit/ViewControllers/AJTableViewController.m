@@ -289,16 +289,6 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 - (void)p_footerWithRefreshing {
     self.aj_viewModel.currentPage++;
     [self.aj_viewModel.requestRemoteDataCommand execute:@(self.aj_viewModel.currentPage)];
-
-//    if (self.totalPage > 0 && self.totalPage < self.currentPage
-//        && self.currentPage > 1) {
-//        AJLog(@"没有分页数据...");
-//        [self.tableView.mj_footer endRefreshing];
-//        self.tableView.mj_footer.hidden = YES;
-//        return;
-//    }
-//
-//    [self requestData:self.currentPage pageCount:self.pageCount];
 }
 
 - (void)p_headerViewVisible:(BOOL)visible {
@@ -331,7 +321,6 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        
         UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.ajWidth, UIScreen.ajViewHeight) style:_tableViewStyle];
         tableView.backgroundColor = AJUIColorFrom10RGB(237,246,255);
         tableView.backgroundView = nil;
@@ -375,10 +364,7 @@ static NSString *kFooterImageName = @"AJTableViewControllerFooterImageName";
         } else {
             centerY = _emptyView.center.y - 90.0;
         }
-        
-//        imageView.size = CGSizeMake(188, 165);
         imageView.center = CGPointMake(_emptyView.center.x, centerY);
-        // imageView.center = view.center;
         _emptyView.hidden = YES;
         _emptyView.backgroundColor = [UIColor clearColor];
         [_emptyView addSubview:imageView];

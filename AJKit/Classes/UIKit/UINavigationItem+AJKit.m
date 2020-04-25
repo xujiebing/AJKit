@@ -8,220 +8,151 @@
 #import "UINavigationItem+AJKit.h"
 #import <objc/runtime.h>
 
-@interface UINavigationItem ()
+@interface AJTitleStackView ()
 
-@property (nonatomic, strong) UIView *bgView;
-@property (nonatomic, strong) UIActivityIndicatorView *activityIndicator;
-@property (nonatomic, copy) NSString *titleStr;
-@property (nonatomic, strong) UILabel *titleLabel;
+@property (nonatomic, strong, readwrite) UIActivityIndicatorView *indicatorView;
+@property (nonatomic, strong, readwrite) UILabel *titleLabel;
 
 @end
 
-static NSString * const AJUINavigationItemBgViewKey                 = @"AJUINavigationItemBgViewKey";
-static NSString * const AJUINavigationItemActivityIndicatorKey      = @"AJUINavigationActivityIndicatorKey";
-static NSString * const AJUINavigationItemTitleStrKey               = @"AJUINavigationTitleStrKey";
-static NSString * const AJUINavigationItemTitleLabelKey             = @"AJUINavigationTitleLabelKey";
+@implementation AJTitleStackView
 
-static NSString * const AJColorHex = @"364142";
+static AJTitleStackView *_sharedInstance = nil;
++ (AJTitleStackView *)sharedInstance {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        _sharedInstance = [[self alloc] initWithFrame:CGRectZero];
+        [_sharedInstance p_initView];
+    });
+    return _sharedInstance;
+}
+
+- (void)p_initView {
+    [self addArrangedSubview:self.indicatorView];
+    [self addArrangedSubview:self.titleLabel];
+    [self setCustomSpacing:10 afterView:self.indicatorView];
+}
+
+- (UIActivityIndicatorView *)indicatorView {
+    if (!_indicatorView) {
+        _indicatorView = [UIActivityIndicatorView.alloc initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+    }
+    return _indicatorView;
+}
+
+- (UILabel *)titleLabel {
+    if (!_titleLabel) {
+        _titleLabel = UILabel.alloc.init;
+    }
+    return _titleLabel;
+}
+
+@end
+
+@interface UINavigationItem ()
+
+@property (nonatomic, strong, readonly) AJTitleStackView *titleStackView;
+@property (nonatomic, copy,readwrite) NSString *ajTitle;
+
+@end
+
+static NSString * const AJLeftButtonCallbackKey = @"AJLeftButtonCallbackKey";
+static NSString * const AJRightButtonCallbackKey = @"AJRightButtonCallbackKey";
 
 @implementation UINavigationItem (AJKit)
 
++ (BOOL)resolveInstanceMethod:(SEL)sel {
+    NSString *selectorString = NSStringFromSelector(sel);
+}
+
+id ajDictionaryGetter(id self, SEL _cmd) {
+    
+}
+
 #pragma mark - 导航栏左边按钮
 
-- (void (^)(NSString * _Nonnull))ajAddBackButtonWithTitle {
-    kAJWeakSelf
-    void (^block)(NSString *) = ^(NSString *title){
-        UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:nil action:nil];
-        ajSelf.backBarButtonItem = btnItem;
-    };
-    return block;
+- (void)ajAddLeftButtonWithImage:(UIImage *)image callback:(AJNavigationItemCallback)callback {
+    if (callback) {
+        [self setValue:callback forKey:AJLeftButtonCallbackKey];
+    }
+    UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(p_ajLeftButtonSelector)];
+    self.leftBarButtonItem = btnItem;
 }
 
-- (void (^)(UIImage * _Nonnull, id _Nonnull, SEL _Nonnull))ajAddLeftButtonWithImage {
-    kAJWeakSelf
-    void (^block)(UIImage *, id, SEL) = ^(UIImage *image, id target, SEL selector){
-        UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:target action:selector];
-        ajSelf.leftBarButtonItem = btnItem;
-    };
-    return block;
-}
-
-- (void (^)(NSString * _Nonnull, id _Nonnull, SEL _Nonnull))ajAddLeftButtonWithTitle {
-    kAJWeakSelf
-    void (^block)(NSString *, id, SEL) = ^(NSString *title, id target, SEL selector){
-        UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:target action:selector];
-        ajSelf.leftBarButtonItem = btnItem;
-    };
-    return block;
+- (void)ajAddLeftButtonWithTitle:(NSString *)title callback:(AJNavigationItemCallback)callback {
+    if (callback) {
+        [self setValue:callback forKey:AJLeftButtonCallbackKey];
+    }
+    UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(p_ajLeftButtonSelector)];
+    self.leftBarButtonItem = btnItem;
 }
 
 - (void)ajRemoveLeftButton {
     self.leftBarButtonItem = nil;
 }
 
-#pragma mark - 导航栏右边按钮
-
-- (void (^)(UIImage * _Nonnull, id _Nonnull, SEL _Nonnull))ajAddRightButtonWithImage {
-    kAJWeakSelf
-    void (^block)(UIImage *, id, SEL) = ^(UIImage *image, id target, SEL selector){
-        UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:target action:selector];
-        ajSelf.rightBarButtonItem = btnItem;
-    };
-    return block;
+- (void)p_ajLeftButtonSelector {
+    AJNavigationItemCallback callback = [self valueForKey:AJLeftButtonCallbackKey];
+    if (callback) {
+        callback();
+        [self setValue:nil forKey:AJLeftButtonCallbackKey];
+    }
 }
 
-- (void (^)(NSString * _Nonnull, id _Nonnull, SEL _Nonnull))ajAddRightButtonWithTitle {
-    kAJWeakSelf
-    void (^block)(NSString *, id, SEL) = ^(NSString *title, id target, SEL selector){
-        UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:target action:selector];
-        ajSelf.rightBarButtonItem = btnItem;
-    };
-    return block;
+#pragma mark - 导航栏右边按钮
+
+- (void)ajAddRightButtonWithImage:(UIImage *)image callback:(AJNavigationItemCallback)callback {
+    if (callback) {
+        [self setValue:callback forKey:AJRightButtonCallbackKey];
+    }
+    UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(p_ajRightButtonSelector)];
+    self.rightBarButtonItem = btnItem;
+}
+
+- (void)ajAddRightButtonWithTitle:(NSString *)title callback:(AJNavigationItemCallback)callback {
+    if (callback) {
+        [self setValue:callback forKey:AJRightButtonCallbackKey];
+    }
+    UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(p_ajRightButtonSelector)];
+    self.rightBarButtonItem = btnItem;
 }
 
 - (void)ajRemoveRightButton {
     self.rightBarButtonItem = nil;
 }
+- (void)p_ajRightButtonSelector {
+    AJNavigationItemCallback callback = [self valueForKey:AJRightButtonCallbackKey];
+    if (callback) {
+        callback();
+        [self setValue:nil forKey:AJRightButtonCallbackKey];
+    }
+}
 
 #pragma mark - 导航栏中间旋转菊花
 
-- (void (^)(NSString * _Nonnull))ajStartAnimatingWithTitle {
-    kAJWeakSelf
-    void (^block)(NSString *) = ^(NSString *title){
-        if (title.length == 0) {
-            title = ajSelf.titleStr;
-        }
-        //计算titleLabel宽度
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:17],NSFontAttributeName,nil];
-        CGSize actualsize = [title boundingRectWithSize:CGSizeMake(280,40) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
-        //自定义titleView
-        UIView *titleBgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, actualsize.width + 25, 40)];
-        self.titleView = titleBgView;
-        self.bgView.frame = CGRectMake(0, 0, actualsize.width + 25, 40);
-        self.bgView.center = titleBgView.center;
-        [titleBgView addSubview:self.bgView];
-        //菊花开始旋转
-        [self.activityIndicator startAnimating];
-        //设置标题label
-        self.titleLabel.frame = CGRectMake(25, 0, actualsize.width, 40);
-        self.titleLabel.text = title;
-        [self.bgView addSubview:self.titleLabel];
-    };
-    return block;
-}
-
 - (void)ajStartAnimating {
-    self.ajStartAnimatingWithTitle(self.titleStr);
+    [self.titleStackView.indicatorView startAnimating];
 }
 
 - (void)ajStopAnimating {
-    kAJWeakSelf
-    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        //菊花停止旋转
-        [ajSelf.activityIndicator stopAnimating];
-        CGPoint point = ajSelf.bgView.center;
-        //计算titleLabel宽度
-        NSDictionary *dic = [NSDictionary dictionaryWithObjectsAndKeys:[UIFont systemFontOfSize:17],NSFontAttributeName,nil];
-        CGSize actualsize = [ajSelf.titleStr boundingRectWithSize:CGSizeMake(280,40) options:NSStringDrawingUsesLineFragmentOrigin attributes:dic context:nil].size;
-        ajSelf.bgView.frame = CGRectMake(0, 0, actualsize.width, 40);
-        ajSelf.bgView.center = point;
-        ajSelf.titleLabel.text = ajSelf.titleStr;
-        ajSelf.titleLabel.frame = CGRectMake(0, 0, actualsize.width, 40);
-    });
+    [self.titleStackView.indicatorView stopAnimating];
 }
 
-#pragma mark - 内部方法
+#pragma mark - Getter方法
 
-- (void)setTitle:(NSString *)title {
-    UIFont *font = [UIFont boldSystemFontOfSize:17.0f];
-    CGSize textSize = [self p_autoCalculateRectWithTitle:title font:17.0f size:CGSizeMake(UIScreen.mainScreen.bounds.size.width, 9999)];
-    UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, textSize.width, textSize.height)];
-    label.adjustsFontSizeToFitWidth = YES;
-    label.minimumScaleFactor = 10.f;
-    label.backgroundColor = UIColor.clearColor;
-    label.font = font;
-    label.textAlignment = NSTextAlignmentCenter;
-    label.textColor = AJColorHex.ajToColor;
-    label.text = title;
-    self.titleView = label;
-    self.titleStr = title;
+- (AJTitleStackView *)titleStackView {
+    return AJTitleStackView.sharedInstance;
 }
 
-
-- (CGSize)p_autoCalculateRectWithTitle:(NSString*)title
-                                  font:(CGFloat)font
-                                  size:(CGSize)size {
-    NSMutableParagraphStyle* paragraphStyle = [[NSMutableParagraphStyle alloc]init];
-    paragraphStyle.lineBreakMode = NSLineBreakByWordWrapping;
-    NSDictionary* attributes = @{NSFontAttributeName:[UIFont systemFontOfSize:font],
-                                 NSParagraphStyleAttributeName:paragraphStyle.copy};
-    CGSize labelSize = [title boundingRectWithSize:size
-                                           options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading|NSStringDrawingTruncatesLastVisibleLine
-                                        attributes:attributes
-                                           context:nil].size;
-    labelSize.height = ceil(labelSize.height);
-    labelSize.width = ceil(labelSize.width);
-    return labelSize;
+- (NSString *)ajTitle {
+    return self.titleStackView.titleLabel.text;
 }
 
-#pragma mark - 动态属性
+#pragma mark - Setter方法
 
-- (UIView *)bgView {
-    UIView *bgView = objc_getAssociatedObject(self, &AJUINavigationItemBgViewKey);
-    if(!bgView) {
-        bgView = [[UIView alloc] init];
-        [self setBgView:bgView];
-    }
-    return bgView;
-}
-
-- (void)setBgView:(UIView *)bgView {
-    objc_setAssociatedObject(self, &AJUINavigationItemBgViewKey, bgView, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UIActivityIndicatorView *)activityIndicator {
-    UIActivityIndicatorView *activityIndicator = objc_getAssociatedObject(self, &AJUINavigationItemActivityIndicatorKey);
-    if(!activityIndicator) {
-        activityIndicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
-        activityIndicator.center = CGPointMake(10.0f, 20.0f);
-        activityIndicator.color = AJColorHex.ajToColor;
-        [self.bgView addSubview:activityIndicator];
-        [self setActivityIndicator:activityIndicator];
-    }
-    return activityIndicator;
-}
-
-- (void)setActivityIndicator:(UIActivityIndicatorView *)activityIndicator {
-    objc_setAssociatedObject(self, &AJUINavigationItemActivityIndicatorKey, activityIndicator, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (NSString *)titleStr {
-    NSString *titleStr = objc_getAssociatedObject(self, &AJUINavigationItemTitleStrKey);
-    if (!titleStr) {
-        titleStr = self.title;
-        [self setTitleStr:titleStr];
-    }
-    return titleStr;
-}
-
-- (void)setTitleStr:(NSString *)titleStr {
-    objc_setAssociatedObject(self, &AJUINavigationItemTitleStrKey, titleStr, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-}
-
-- (UILabel *)titleLabel {
-    UILabel *titleLabel = objc_getAssociatedObject(self, &AJUINavigationItemTitleLabelKey);
-    if (!titleLabel) {
-        titleLabel = [[UILabel alloc] init];
-        titleLabel.font = [UIFont systemFontOfSize:17];
-        titleLabel.textColor = AJColorHex.ajToColor;
-        titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self setTitleLabel:titleLabel];
-    }
-    return titleLabel;
-}
-
-- (void)setTitleLabel:(UILabel *)titleLabel {
-    objc_setAssociatedObject(self, &AJUINavigationItemTitleLabelKey, titleLabel, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+- (void)setAjTitle:(NSString *)ajTitle {
+    self.titleStackView.titleLabel.text = ajTitle;
 }
 
 @end
+

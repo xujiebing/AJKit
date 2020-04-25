@@ -19,25 +19,22 @@
 }
 
 - (UIImage *)ajImage {
-    return self.ajImageWithSize(CGSizeMake(1, 1));
+    return [self ajImageWithSize:CGSizeMake(1, 1)];
 }
 
-- (UIImage * _Nonnull (^)(CGSize))ajImageWithSize {
-    UIImage * (^block)(CGSize) = ^(CGSize size) {
-        UIImage *image = nil;
-        if (size.width <= 0 || size.height <= 0) {
-            return image;
-        }
-        CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
-        UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
-        CGContextRef context = UIGraphicsGetCurrentContext();
-        CGContextSetFillColorWithColor(context, self.CGColor);
-        CGContextFillRect(context, rect);
-        image = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
+- (UIImage *)ajImageWithSize:(CGSize)size {
+    UIImage *image = nil;
+    if (size.width <= 0 || size.height <= 0) {
         return image;
-    };
-    return block;
+    }
+    CGRect rect = CGRectMake(0.0f, 0.0f, size.width, size.height);
+    UIGraphicsBeginImageContextWithOptions(rect.size, NO, 0);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, self.CGColor);
+    CGContextFillRect(context, rect);
+    image = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return image;
 }
 
 @end

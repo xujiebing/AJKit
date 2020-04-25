@@ -51,9 +51,8 @@ NS_ASSUME_NONNULL_BEGIN
 - (UIImage *)ajImage;
 
 /// 颜色转换成图片
-/// @param CGSize 大小
-/// @return 图片
-- (UIImage * (^)(CGSize size))ajImageWithSize;
+/// @param size size
+- (UIImage *)ajImageWithSize:(CGSize)size;
 
 @end
 

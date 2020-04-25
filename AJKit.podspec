@@ -15,11 +15,13 @@ TODO: Add long description of the pod here.
   s.source           = { :git => 'https://github.com/xujiebing/AJKit.git', :tag => s.version.to_s }
   # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
 
-  s.ios.deployment_target = '8.0'
+  s.ios.deployment_target = '9.0'
 
   s.source_files = 'AJKit/Classes/**/*.{h,m}'
   s.prefix_header_file = 'AJKit/Classes/AJKit.pch'
-  s.resource = 'AJKit/Assets/AJAPPKit.bundle'
+  s.resource_bundles = {
+      'AJKit' => ['AJKit/Assets/Image.xcassets']
+  }
   s.dependency 'SVProgressHUD', '2.2.5'
   s.dependency 'MJRefresh', '3.2.3'
   s.dependency 'ReactiveObjC', '3.1.1'

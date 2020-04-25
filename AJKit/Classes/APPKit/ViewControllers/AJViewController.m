@@ -23,8 +23,10 @@
 - (void)p_ajInitView {
     self.navigationController.navigationBar.translucent = NO;
     if (self.navigationController.viewControllers.count > 1) {
-        UIImage *image = [UIImage imageWithContentsOfFile:[NSString stringWithFormat:@"%@/%@",[[NSBundle mainBundle] pathForResource:@"AJAPPKit" ofType:@"bundle"], @"ajappkit_icon_back"]];;
-        self.navigationItem.ajAddLeftButtonWithImage(image, self, @selector(p_ajBack));
+        kAJWeakSelf
+        [self.navigationItem ajAddLeftButtonWithImage:AJImage(@"icon_back", AJKitModuleName) callback:^{
+            [ajSelf p_ajBack];
+        }];
     }
     [self.navigationController.navigationBar setTintColor:UIColor.blackColor];
 }

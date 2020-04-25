@@ -31,8 +31,6 @@ NS_ASSUME_NONNULL_BEGIN
 /// 设备名称， 如："iPhone 5s" "iPad mini 2"
 @property (class, nonatomic, copy, readonly) NSString *ajMachineModelName;
 
-
-
 @end
 
 NS_ASSUME_NONNULL_END

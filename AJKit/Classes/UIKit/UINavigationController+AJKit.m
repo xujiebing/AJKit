@@ -9,26 +9,18 @@
 
 @implementation UINavigationController (AJKit)
 
-- (void (^)(UIViewController * _Nonnull))ajReplaceLastViewController {
-    kAJWeakSelf
-    void (^block)(UIViewController *) = ^(UIViewController *newVC){
-        NSMutableArray *array = [NSMutableArray arrayWithArray:ajSelf.viewControllers];
-        [array removeLastObject];
-        [array addObject:newVC];
-        ajSelf.viewControllers = array;
-    };
-    return block;
+- (void)ajReplaceLastViewController:(UIViewController *)viewController {
+    NSMutableArray *array = [NSMutableArray arrayWithArray:self.viewControllers];
+    [array removeLastObject];
+    [array addObject:viewController];
+    self.viewControllers = array;
 }
 
-- (void (^)(UIViewController * _Nonnull))ajAddViewController {
-    kAJWeakSelf
-    void (^block)(UIViewController *) = ^(UIViewController *newVC){
-        NSMutableArray *array = [NSMutableArray arrayWithArray:ajSelf.viewControllers];
-        [array addObject:newVC];
-        [newVC addChildViewController:newVC];
-        ajSelf.viewControllers = array;
-    };
-    return block;
+- (void)ajAddViewController:(UIViewController *)viewController {
+    NSMutableArray *array = [NSMutableArray arrayWithArray:self.viewControllers];
+    [array addObject:viewController];
+    [viewController addChildViewController:viewController];
+    self.viewControllers = array;
 }
 
 

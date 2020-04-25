@@ -52,4 +52,26 @@ static id AJLocalConfig4(NSString *key1, NSString *debugKey, NSString *releaseKe
     return [AJTools getKeysValueConfigKey:AJLocalConfigKey, key1, debugKey, releaseKey, key4, nil];
 }
 
+static NSString * const AJKitModuleName = @"AJKit";
+
+#pragma mark - 图片
+
+/// 图片对象
+/// @param imageName 图片名
+/// @param bundleName bundle名
+static UIImage *AJImage(NSString *imageName, NSString *bundleName) {
+    if (bundleName.length == 0) {
+        UIImage *image = [UIImage imageNamed:imageName];
+        return image;
+    }
+    UIImage *image = [UIImage imageNamed:imageName];
+    if (image) {
+        return image;
+    }
+    NSString *bundlePath = [NSBundle.mainBundle pathForResource:bundleName ofType:@"bundle"];
+    NSBundle *bundle = [NSBundle bundleWithPath:bundlePath];
+    image = [UIImage imageNamed:imageName inBundle:bundle compatibleWithTraitCollection:nil];
+    return image;
+}
+
 #endif /* AJKitConfig_h */

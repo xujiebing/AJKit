@@ -12,12 +12,12 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UINavigationController (AJKit)
 
 /// 替换最后一个ViewController
-/// @param UIViewController* 新的ViewController
-- (void (^)(UIViewController *))ajReplaceLastViewController;
+/// @param viewController 新的ViewController
+- (void)ajReplaceLastViewController:(UIViewController *)viewController;
 
 /// 在最后一个ViewController上在增加一个ViewController
-/// @param UIViewController* 新的ViewController
-- (void (^)(UIViewController *))ajAddViewController;
+/// @param viewController 新的ViewController
+- (void)ajAddViewController:(UIViewController *)viewController;
 
 @end
 

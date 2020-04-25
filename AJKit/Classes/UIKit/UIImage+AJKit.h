@@ -12,25 +12,22 @@ NS_ASSUME_NONNULL_BEGIN
 @interface UIImage (AJKit)
 
 /// 根据CGRect、contentMode 画对应的图片
-/// @param CGRect 大小
-/// @param UIViewContentMode contentMode
-- (void (^)(CGRect rect, UIViewContentMode contentMode))ajDrawInRectAndContentMode;
+/// @param rect 大小
+/// @param contentMode contentMode
+- (void)ajDrawInRect:(CGRect)rect contentModel:(UIViewContentMode)contentMode;
 
 /// 生成一张圆角图片
-/// @param CGRect 大小
-/// @param NSInteger 圆角弧度
-/// @return UIImage* 圆角图片
-- (UIImage * (^)(CGRect rect, NSInteger radius))ajRoundImageWithFrameAndRadius;
+/// @param rect 大小
+/// @param radius 圆角弧度
+- (UIImage *)ajRoundImageWithFrame:(CGRect)rect radius:(NSInteger)radius;
 
 /// 图片压缩到指定大小
-/// @param CGSize 大小
-/// @return UIImage* 压缩后的图片
-- (UIImage * (^)(CGSize size))ajCompressToSize;
+/// @param size 大小
+- (UIImage *)ajCompressToSize:(CGSize)size;
 
 /// 图片压缩到指定大小（不失真）
-/// @param CGSize 大小
-/// @return UIImage* 压缩后的图片
-- (UIImage * (^)(CGSize size))ajRealCompressToSize;
+/// @param size 大小
+- (UIImage *)ajRealCompressToSize:(CGSize)size;
 
 /// image to data
 - (NSData *)ajDataValue;
