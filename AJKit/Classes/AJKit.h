@@ -24,7 +24,7 @@
 #import <AJKit/AJViewController.h>
 #import <AJKit/AJViewModel.h>
 #import <AJKit/AJNavigationController.h>
-#import <AJKit/AJTableViewMode1l.h>
+#import <AJKit/AJTableViewModel.h>
 #import <AJKit/AJArrayDataSource.h>
 #import <AJKit/AJAlert.h>
 #import <AJKit/AJToast.h>
