@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL autoLoad;
 
 /// 关闭上/下拉刷新 YES-关闭 NO-开启 默认开启
-@property (assign, nonatomic) BOOL closeRefresh;
+@property (nonatomic, assign) BOOL closeRefresh;
 
 /// 设置头部下拉刷新组件是否隐藏
 /// @param visible YES-设置可见 NO-设置不可见
