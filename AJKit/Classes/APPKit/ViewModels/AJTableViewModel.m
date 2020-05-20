@@ -11,7 +11,6 @@
 
 @property (nonatomic, strong, readwrite) NSArray *items;
 @property (nonatomic, strong, readwrite) RACCommand *requestRemoteDataCommand;
-@property (nonatomic, strong, readwrite) NSArray *dataSource;
 
 @end
 
@@ -21,7 +20,6 @@
 
 - (void)ajInit {
 
-    self.currentPage = 1;
     self.pageSize = 10;
 
     @weakify(self)
@@ -57,30 +55,6 @@
 
 - (void)handlerError:(NSError *)error {
     AJLog(@"error ===== %@", error);
-}
-
-- (void)addDataSource:(NSArray *)items {
-    if (!items || items.count == 0) {
-        return;
-    }
-    
-
-    if (self.dataSource == nil) {
-        self.dataSource = items;
-        return;
-    }
-
-    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.dataSource];
-    if (self.currentPage == 1) {
-        [tempArray removeAllObjects];
-    }
-    [tempArray addObjectsFromArray:items];
-
-    self.dataSource = tempArray;
-}
-
-- (void)clearDataSource {
-    self.dataSource = @[];
 }
 
 @end

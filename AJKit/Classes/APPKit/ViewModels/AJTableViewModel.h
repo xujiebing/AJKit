@@ -12,14 +12,13 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AJTableViewModel : AJViewModel
 
-/// TableView数据源
 @property (nonatomic, strong, readonly) NSArray * _Nullable dataSource;
+@property (nonatomic, assign) NSInteger currentPage;
+
+
 
 /// 是否有下一页 YES-有 NO-无
 @property (nonatomic, assign) BOOL hasNextPage;
-
-/// 当前页
-@property (nonatomic, assign) NSInteger currentPage;
 
 /// 总页
 @property (nonatomic, assign) NSInteger totalPage;

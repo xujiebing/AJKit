@@ -27,12 +27,12 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, assign) BOOL closeRefresh;
 
 /// 设置头部下拉刷新组件是否隐藏
-/// @param visible YES-设置可见 NO-设置不可见
-- (void)headerRefreshViewVisible:(BOOL)visible;
+/// @param hidden
+- (void)headerRefreshViewHidden:(BOOL)hidden;
 
 /// 设置尾部上拉刷新组件是否隐藏
-/// @param visible  YES-设置可见 NO-设置不可见
-- (void)footerRefreshViewVisible:(BOOL)visible;
+/// @param hidden
+- (void)footerRefreshViewHidden:(BOOL)hidden;
 
 /// 重新刷新表格
 - (void)reloadTableView;

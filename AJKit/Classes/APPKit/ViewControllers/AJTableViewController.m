@@ -10,7 +10,7 @@
 @interface AJTableViewController ()
 
 @property (nonatomic, strong) AJTableViewModel *aj_viewModel;
-@property (nonatomic, strong) AJArrayDataSource *dataSourceAdapter;
+@property (nonatomic, strong) AJArrayDataSource *tableViewDataSource;
 
 @end
 
@@ -19,15 +19,7 @@
 #pragma mark - 生命周期方法
 
 - (void)dealloc {
-    self.dataSourceAdapter = nil;
-}
-
-- (instancetype)init {
-    self = [super init];
-    if (self) {
-        [self aj_init];
-    }
-    return self;
+    self.tableViewDataSource = nil;
 }
 
 - (void)viewDidLoad {
@@ -36,7 +28,7 @@
     [self aj_initData];
 }
 
-#pragma mark - 私有方法
+#pragma mark - 公共方法
 
 - (void)setAutoLoad:(BOOL)autoLoad {
     _autoLoad = autoLoad;
@@ -53,7 +45,7 @@
         self.emptyView.hidden = YES;
     }
 
-    [self.dataSourceAdapter changeItems:self.aj_viewModel.dataSource];
+    [self.tableViewDataSource changeItems:self.aj_viewModel.dataSource];
     [self.tableView reloadData];
     
 }
@@ -79,7 +71,7 @@
                   cells:(NSArray *)cells {
     self.tableView.dataSource = dataSource;
     self.aj_viewModel = viewModel;
-    self.dataSourceAdapter = dataSource;
+    self.tableViewDataSource = dataSource;
     kAJWeakSelf
     [cells enumerateObjectsUsingBlock:^(NSString *cellName, NSUInteger idx, BOOL * _Nonnull stop) {
         Class class = NSClassFromString(cellName);
@@ -92,7 +84,7 @@
                    nibs:(NSArray *)nibs {
     self.tableView.dataSource = dataSource;
     self.aj_viewModel = viewModel;
-    self.dataSourceAdapter = dataSource;
+    self.tableViewDataSource = dataSource;
     kAJWeakSelf
     [nibs enumerateObjectsUsingBlock:^(NSString *nibName, NSUInteger idx, BOOL * _Nonnull stop) {
         UINib *nib = [UINib nibWithNibName:nibName bundle:nil];
@@ -106,7 +98,7 @@
                  bundle:(NSBundle *)bundle {
     self.tableView.dataSource = dataSource;
     self.aj_viewModel = viewModel;
-    self.dataSourceAdapter = dataSource;
+    self.tableViewDataSource = dataSource;
     kAJWeakSelf
     [nibs enumerateObjectsUsingBlock:^(NSString *nibName, NSUInteger idx, BOOL * _Nonnull stop) {
         UINib *nib = [UINib nibWithNibName:nibName bundle:bundle];
@@ -114,27 +106,17 @@
     }];
 }
 
-
-- (void)headerRefreshViewVisible:(BOOL)visible {
-    [self p_headerViewVisible:visible];
+- (void)headerRefreshViewHidden:(BOOL)hidden {
+    self.tableView.mj_header.hidden = hidden;
 }
 
-- (void)footerRefreshViewVisible:(BOOL)visible {
-    [self p_footerViewVisible:visible];
+- (void)footerRefreshViewHidden:(BOOL)hidden {
+    self.tableView.mj_header.hidden = hidden;
 }
-
 
 #pragma mark - 对内方法
 
-- (void)aj_init {
-    // 初始化默认数据
-    _autoLoad = YES;
-    _closeRefresh = NO;
-    _tableViewStyle = UITableViewStylePlain;
-}
-
 - (void)aj_initView {
-
     self.view.backgroundColor = AJUIColorFrom10RGB(248, 248, 248);
     [self.view addSubview:self.tableView];
     [self configTableViewSource];
@@ -145,7 +127,10 @@
 }
 
 - (void)aj_initData {
-
+    // 初始化默认数据
+    _autoLoad = YES;
+    _closeRefresh = NO;
+    _tableViewStyle = UITableViewStylePlain;
     // 数据更新后刷新视图
     @weakify(self)
     [[[RACObserve(self.aj_viewModel, dataSource)
@@ -197,7 +182,6 @@
     }
 }
 
-
 - (void)p_addFooter {
     kAJWeakSelf
     self.tableView.mj_footer = [MJRefreshAutoNormalFooter footerWithRefreshingBlock:^{
@@ -218,15 +202,6 @@
     self.aj_viewModel.currentPage++;
     [self.aj_viewModel.requestRemoteDataCommand execute:@(self.aj_viewModel.currentPage)];
 }
-
-- (void)p_headerViewVisible:(BOOL)visible {
-    self.tableView.mj_header.hidden = !visible;
-}
-
-- (void)p_footerViewVisible:(BOOL)visible {
-    self.tableView.mj_footer.hidden = !visible;
-}
-
 
 - (void)handlerError:(NSError *)error {
     AJLog(@"error === %@", error);
