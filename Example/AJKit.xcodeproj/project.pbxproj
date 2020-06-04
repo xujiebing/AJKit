@@ -22,6 +22,11 @@
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
 		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 873B8AEA1B1F5CCA007FD442 /* Main.storyboard */; };
+		9B30BDBC2488F33B005A8EE3 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B30BDB42488F33B005A8EE3 /* TableViewCell.m */; };
+		9B30BDBD2488F33B005A8EE3 /* TableViewCell2.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B30BDB62488F33B005A8EE3 /* TableViewCell2.xib */; };
+		9B30BDBE2488F33B005A8EE3 /* TableViewCell2.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B30BDB82488F33B005A8EE3 /* TableViewCell2.m */; };
+		9B30BDBF2488F33B005A8EE3 /* TableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B30BDBA2488F33B005A8EE3 /* TableViewController.m */; };
+		9B30BDC02488F33B005A8EE3 /* TableViewCell1.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B30BDBB2488F33B005A8EE3 /* TableViewCell1.m */; };
 		B19C7199D5D08F33A68F3828 /* Pods_AJKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4956601E48FB21D144D674E2 /* Pods_AJKit_Tests.framework */; };
 		C243CF3E066BB9D709928E26 /* Pods_AJKit_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F8E30873716B6E1D42CEBFA7 /* Pods_AJKit_Example.framework */; };
 /* End PBXBuildFile section */
@@ -63,6 +68,15 @@
 		7FE8682D3BF8AECEFA25ADFA /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		81D82300447B1C7807602051 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		873B8AEA1B1F5CCA007FD442 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Main.storyboard; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9B30BDB32488F33B005A8EE3 /* TableViewCell2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell2.h; sourceTree = "<group>"; };
+		9B30BDB42488F33B005A8EE3 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
+		9B30BDB52488F33B005A8EE3 /* TableViewCell1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell1.h; sourceTree = "<group>"; };
+		9B30BDB62488F33B005A8EE3 /* TableViewCell2.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TableViewCell2.xib; sourceTree = "<group>"; };
+		9B30BDB72488F33B005A8EE3 /* TableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewController.h; sourceTree = "<group>"; };
+		9B30BDB82488F33B005A8EE3 /* TableViewCell2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell2.m; sourceTree = "<group>"; };
+		9B30BDB92488F33B005A8EE3 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		9B30BDBA2488F33B005A8EE3 /* TableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewController.m; sourceTree = "<group>"; };
+		9B30BDBB2488F33B005A8EE3 /* TableViewCell1.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell1.m; sourceTree = "<group>"; };
 		C1CC975488D8C1E2CABD0A0B /* Pods-AJKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AJKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-AJKit_Tests/Pods-AJKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C34B4C05EA6DD312D360B902 /* Pods-AJKit_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AJKit_Example.debug.xcconfig"; path = "Target Support Files/Pods-AJKit_Example/Pods-AJKit_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E7AB1FC25D4DBD7DAC4A09C3 /* Pods-AJKit_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AJKit_Tests.debug.xcconfig"; path = "Target Support Files/Pods-AJKit_Tests/Pods-AJKit_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -132,6 +146,7 @@
 		6003F593195388D20070C39A /* Example for AJKit */ = {
 			isa = PBXGroup;
 			children = (
+				9B30BDB22488F33B005A8EE3 /* tableview */,
 				6003F59C195388D20070C39A /* AJAppDelegate.h */,
 				6003F59D195388D20070C39A /* AJAppDelegate.m */,
 				873B8AEA1B1F5CCA007FD442 /* Main.storyboard */,
@@ -194,6 +209,22 @@
 				C1CC975488D8C1E2CABD0A0B /* Pods-AJKit_Tests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		9B30BDB22488F33B005A8EE3 /* tableview */ = {
+			isa = PBXGroup;
+			children = (
+				9B30BDB32488F33B005A8EE3 /* TableViewCell2.h */,
+				9B30BDB42488F33B005A8EE3 /* TableViewCell.m */,
+				9B30BDB52488F33B005A8EE3 /* TableViewCell1.h */,
+				9B30BDB62488F33B005A8EE3 /* TableViewCell2.xib */,
+				9B30BDB72488F33B005A8EE3 /* TableViewController.h */,
+				9B30BDB82488F33B005A8EE3 /* TableViewCell2.m */,
+				9B30BDB92488F33B005A8EE3 /* TableViewCell.h */,
+				9B30BDBA2488F33B005A8EE3 /* TableViewController.m */,
+				9B30BDBB2488F33B005A8EE3 /* TableViewCell1.m */,
+			);
+			path = tableview;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,6 +307,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B30BDBD2488F33B005A8EE3 /* TableViewCell2.xib in Resources */,
 				873B8AEB1B1F5CCA007FD442 /* Main.storyboard in Resources */,
 				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
 				6003F5A9195388D20070C39A /* Images.xcassets in Resources */,
@@ -369,7 +401,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B30BDBE2488F33B005A8EE3 /* TableViewCell2.m in Sources */,
+				9B30BDBF2488F33B005A8EE3 /* TableViewController.m in Sources */,
 				6003F59E195388D20070C39A /* AJAppDelegate.m in Sources */,
+				9B30BDC02488F33B005A8EE3 /* TableViewCell1.m in Sources */,
+				9B30BDBC2488F33B005A8EE3 /* TableViewCell.m in Sources */,
 				6003F5A7195388D20070C39A /* AJDemoViewController.m in Sources */,
 				6003F59A195388D20070C39A /* main.m in Sources */,
 			);

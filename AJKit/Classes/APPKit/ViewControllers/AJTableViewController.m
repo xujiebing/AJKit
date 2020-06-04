@@ -9,7 +9,7 @@
 
 @interface AJTableViewController ()<UITableViewDelegate>
 
-@property (nonatomic, strong) AJArrayDataSource *ajDataSource;
+@property (nonatomic, strong) AJTableViewDataSource *ajDataSource;
 
 @end
 
@@ -167,9 +167,9 @@
     return _emptyView;
 }
 
-- (AJArrayDataSource *)ajDataSource {
+- (AJTableViewDataSource *)ajDataSource {
     if (!_ajDataSource) {
-        _ajDataSource = AJArrayDataSource.new;
+        _ajDataSource = AJTableViewDataSource.new;
     }
     return _ajDataSource;
 }

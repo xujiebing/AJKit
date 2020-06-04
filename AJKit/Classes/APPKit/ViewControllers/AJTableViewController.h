@@ -6,7 +6,7 @@
 //
 
 #import "AJViewController.h"
-#import "AJArrayDataSource.h"
+#import "AJTableViewDataSource.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -27,7 +27,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 关闭上/下拉刷新 YES-关闭 NO-开启 默认开启
 @property (nonatomic, assign) BOOL closeRefresh;
 
-@property (nonatomic, strong, readonly) AJArrayDataSource *ajDataSource;
+@property (nonatomic, strong, readonly) AJTableViewDataSource *ajDataSource;
 
 /// 设置头部下拉刷新组件是否隐藏
 /// @param hidden

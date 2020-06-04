@@ -1,5 +1,5 @@
 //
-//  AJArrayDataSource.h
+//  AJTableViewDataSource.h
 //  AJKit
 //
 //  Created by 徐结兵 on 2019/12/8.
@@ -13,7 +13,7 @@ typedef void (^AJEditingCellCallback)(NSIndexPath *indexPath);
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface AJArrayDataSource : NSObject <UITableViewDataSource>
+@interface AJTableViewDataSource : NSObject <UITableViewDataSource>
 
 /// tableView数据源
 @property (nonatomic, strong, readonly) NSArray *itemsArray;

@@ -7,7 +7,8 @@
 //
 
 #import "AJDemoViewController.h"
-#import <AJKit/AJFoundation.h>
+#import "TableViewController.h"
+#import <AJKit/AJKit.h>
 
 @interface AJDemoViewController ()
 
@@ -18,15 +19,11 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSArray *string = nil;
-    BOOL a = string.ajNonEmpty;
-    AJLog(@"")
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (IBAction)tableViewEvent:(id)sender {
+    TableViewController *vc = TableViewController.new;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 @end

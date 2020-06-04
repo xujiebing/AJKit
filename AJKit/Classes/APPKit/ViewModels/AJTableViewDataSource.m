@@ -1,13 +1,13 @@
 //
-//  AJArrayDataSource.m
+//  AJTableViewDataSource.m
 //  AJKit
 //
 //  Created by 徐结兵 on 2019/12/8.
 //
 
-#import "AJArrayDataSource.h"
+#import "AJTableViewDataSource.h"
 
-@interface AJArrayDataSource ()
+@interface AJTableViewDataSource ()
 
 @property (nonatomic, assign) BOOL hasSection;              // 是否有分组
 @property (nonatomic, assign) BOOL isCanEdit;               // cell是否可编辑
@@ -20,12 +20,12 @@
 
 @end
 
-@implementation AJArrayDataSource
+@implementation AJTableViewDataSource
 
 #pragma mark - 系统方法
 
 - (void)dealloc {
-    NSLog(@"AJArrayDataSource dealloc");
+    NSLog(@"AJTableViewDataSource dealloc");
 }
 
 - (instancetype)init {

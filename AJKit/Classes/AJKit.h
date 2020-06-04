@@ -22,10 +22,11 @@
 /* APPKit */
 #import <AJKit/AJTableViewCell.h>
 #import <AJKit/AJViewController.h>
+#import <AJKit/AJTableViewController.h>
 #import <AJKit/AJViewModel.h>
 #import <AJKit/AJNavigationController.h>
 #import <AJKit/AJTableViewModel.h>
-#import <AJKit/AJArrayDataSource.h>
+#import <AJKit/AJTableViewDataSource.h>
 #import <AJKit/AJAlert.h>
 #import <AJKit/AJToast.h>
 

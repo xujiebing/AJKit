@@ -16,67 +16,24 @@
     "tag": "0.4.1"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "9.0"
   },
-  "default_subspecs": "Foundation",
-  "subspecs": [
-    {
-      "name": "Foundation",
-      "prefix_header_file": "AJKit/Classes/Foundation/AJFoundation.pch",
-      "source_files": "AJKit/Classes/Foundation/*.{h,m}"
-    },
-    {
-      "name": "UIKit",
-      "prefix_header_file": "AJKit/Classes/UIKit/AJUIKit.pch",
-      "source_files": "AJKit/Classes/UIKit/*.{h,m}",
-      "dependencies": {
-        "AJKit/Foundation": [
-
-        ]
-      }
-    },
-    {
-      "name": "Runtime",
-      "prefix_header_file": "AJKit/Classes/Runtime/AJRuntime.pch",
-      "source_files": "AJKit/Classes/Runtime/*.{h,m}",
-      "dependencies": {
-        "AJKit/Foundation": [
-
-        ]
-      }
-    },
-    {
-      "name": "Algorithm",
-      "prefix_header_file": "AJKit/Classes/Algorithm/AJAlgorithm.pch",
-      "source_files": "AJKit/Classes/Algorithm/**/*.{h,m}",
-      "dependencies": {
-        "AJKit/Foundation": [
-
-        ]
-      }
-    },
-    {
-      "name": "APPKit",
-      "prefix_header_file": "AJKit/Classes/APPKit/AJAPPKit.pch",
-      "source_files": "AJKit/Classes/APPKit/**/*.{h,m}",
-      "resources": "AJKit/Assets/AJAPPKit.bundle",
-      "dependencies": {
-        "AJKit/Foundation": [
-
-        ],
-        "AJKit/UIKit": [
-
-        ],
-        "SVProgressHUD": [
-          "2.2.5"
-        ],
-        "MJRefresh": [
-          "3.2.3"
-        ],
-        "ReactiveObjC": [
-          "3.1.1"
-        ]
-      }
-    }
-  ]
+  "source_files": "AJKit/Classes/**/*.{h,m}",
+  "prefix_header_file": "AJKit/Classes/AJKit.pch",
+  "resource_bundles": {
+    "AJKit": [
+      "AJKit/Assets/Image.xcassets"
+    ]
+  },
+  "dependencies": {
+    "SVProgressHUD": [
+      "2.2.5"
+    ],
+    "MJRefresh": [
+      "3.2.3"
+    ],
+    "ReactiveObjC": [
+      "3.1.1"
+    ]
+  }
 }
