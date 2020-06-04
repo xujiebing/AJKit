@@ -6,6 +6,7 @@
 //
 
 #import "AJViewController.h"
+#import "AJArrayDataSource.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -26,6 +27,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 关闭上/下拉刷新 YES-关闭 NO-开启 默认开启
 @property (nonatomic, assign) BOOL closeRefresh;
 
+@property (nonatomic, strong, readonly) AJArrayDataSource *ajDataSource;
+
 /// 设置头部下拉刷新组件是否隐藏
 /// @param hidden
 - (void)headerRefreshViewHidden:(BOOL)hidden;
@@ -43,44 +46,48 @@ NS_ASSUME_NONNULL_BEGIN
 /// 结束刷新视图, 下拉刷新/上拉分页 都可调用此方法
 - (void)endRefreshing;
 
-/// 配置TableView相关数据
-/// @param dataSource 数据源代理
-/// @param viewModel viewModel
-/// @param nibs 需要注册cell的xib
-- (void)configTableView:(AJArrayDataSource *)dataSource
-              viewModel:(AJTableViewModel *)viewModel
-                   nibs:(NSArray *)nibs;
-
-/// 配置TableView相关数据
-/// @param dataSource 数据源代理
-/// @param viewModel viewModel
-/// @param nibs 需要注册cell的xib
-/// @param bundle xib所在的bundle
-- (void)configTableView:(AJArrayDataSource *)dataSource
-              viewModel:(AJTableViewModel *)viewModel
-                   nibs:(NSArray *)nibs
-                 bundle:(NSBundle *)bundle;
-
-/// 配置TableView相关数据
-/// @param dataSource 数据源代理
-/// @param viewModel viewModel
-/// @param cells 需要注册cell的view
-- (void)configTableView:(AJArrayDataSource *)dataSource
-              viewModel:(AJTableViewModel *)viewModel
-                  cells:(NSArray *)cells;
-
 #pragma mark - 以下方法子类需要重写
 
 /// 配置TableView的数据源
 - (void)configTableViewSource;
 
-/// 处理异常状态
-/// @param error 异常
-- (void)handlerError:(NSError *)error;
+/// 获取数据源
+/// @param page 当前页面
+- (void)requestDataSourceWithPage:(NSInteger)page;
 
 /// 选中单个cell时回调的方法
 /// @param indexPath indexPath
 - (void)selectRowAtIndexPath:(NSIndexPath *)indexPath;
+
+/// 设置cell高度
+/// @param indexPath indexPath
+- (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath;
+
+/// 设置header高度
+/// @param section 索引
+- (CGFloat)heightForHeaderInSection:(NSInteger)section;
+
+/// 设置footer高度
+/// @param section 索引
+- (CGFloat)heightForFooterInSection:(NSInteger)section;
+
+/// 注册headerView
+/// @param section 索引
+- (NSString *)registerViewForHeaderInSection:(NSInteger)section;
+
+/// 注册footerView
+/// @param section 索引
+- (NSString *)registeriewForFooterInSection:(NSInteger)section;
+
+/// 设置headerView
+/// @param section 索引
+/// @param headerView headerView
+- (void)viewForHeaderInSection:(NSInteger)section headerView:(UITableViewHeaderFooterView *)headerView;
+
+/// 设置footerView
+/// @param section 索引
+/// @param footerView footerView
+- (void)viewForFooterInSection:(NSInteger)section footerView:(UITableViewHeaderFooterView *)footerView;
 
 @end
 

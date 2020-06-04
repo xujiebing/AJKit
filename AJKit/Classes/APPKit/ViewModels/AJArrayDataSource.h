@@ -7,15 +7,16 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^AJCellConfigureCallback)(id cell, id item, NSIndexPath *indexPath);
-typedef void (^AJCellEditingCallback)(NSIndexPath *indexPath);
+typedef NSString * (^AJRegisterCellCallback)(NSIndexPath *indexPath);
+typedef void (^AJConfigCellCallback)(id cell, id item, NSIndexPath *indexPath);
+typedef void (^AJEditingCellCallback)(NSIndexPath *indexPath);
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface AJArrayDataSource : NSObject <UITableViewDataSource>
 
 /// tableView数据源
-@property (nonatomic, strong, readonly) NSArray *dataSource;
+@property (nonatomic, strong, readonly) NSArray *itemsArray;
 
 /// 当前页
 @property (nonatomic, assign) NSInteger currentPage;
@@ -23,37 +24,41 @@ NS_ASSUME_NONNULL_BEGIN
 /// 分组数
 @property (nonatomic, assign) NSUInteger sectionCount;
 
-/// 初始化数据源类
-/// @param dataSource 数据源
-/// @param cellIdentifier cell identifier
-/// @param callback 回调
-- (AJArrayDataSource *)initWithDataSourcce:(NSArray *)dataSource
-                            cellIdentifier:(NSString *)cellIdentifier
-                                  callback:(AJCellConfigureCallback)callback;
+/// 是否有下一页 YES-有 NO-无
+@property (nonatomic, assign) BOOL hasNextPage;
 
-/// 初始化数据源类，此方法初始化有分组的 tableview
-/// @param dataSource 数据源
-/// @param cellIdentifier cell identifier
-/// @param hasSection 是否有分组 yes-有 no-没有
-/// @param sectionCount 总共有多少组
-/// @param callback 回调
-- (AJArrayDataSource *)initWithDataSourcce:(NSArray *)dataSource
-                            cellIdentifier:(NSString *)cellIdentifier
-                                hasSection:(BOOL)hasSection
-                              sectionCount:(NSInteger)sectionCount
-                                  callback:(AJCellConfigureCallback)callback;
+/// 总页
+@property (nonatomic, assign) NSInteger totalPage;
 
-/// 替换所有的数据
-/// @param array 数据源
-- (void)changeItems:(NSArray *)array;
+/// 每页显示数量
+@property (nonatomic, assign) NSInteger pageSize;
+
+/// 注册cell
+/// @param callback 回调
+- (void)registerCellCallback:(AJRegisterCellCallback)callback;
 
 /// 设置cell侧滑删除后回调的block
-/// @param block 回调
-- (void)configureCellEditBlock:(AJCellEditingCallback)block;
+/// @param callback 回调
+- (void)editCellCallback:(AJEditingCellCallback)callback;
+
+/// 设置cell content
+/// @param callback 回调
+- (void)configCellCallback:(AJConfigCellCallback)callback;
 
 /// 获取cell数据源
 /// @param indexPath 索引
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath;
+
+/// 添加数据源
+/// @param items 数据
+- (void)addItems:(NSArray *)items;
+
+/// 重置数据源
+/// @param items 数据
+- (void)resetItems:(NSArray *)items;
+
+/// 删除数据源
+- (void)removeItems;
 
 @end
 

@@ -14,19 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic, strong, readonly) NSArray * _Nullable dataSource;
 @property (nonatomic, assign) NSInteger currentPage;
-
-
-
-/// 是否有下一页 YES-有 NO-无
 @property (nonatomic, assign) BOOL hasNextPage;
-
-/// 总页
 @property (nonatomic, assign) NSInteger totalPage;
-
-/// 每页显示数量
 @property (nonatomic, assign) NSInteger pageSize;
 
-/// 网络请求
+
 @property (nonatomic, strong, readonly) RACCommand * _Nonnull  requestRemoteDataCommand;
 
 

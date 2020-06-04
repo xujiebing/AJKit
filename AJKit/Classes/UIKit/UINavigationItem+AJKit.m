@@ -54,6 +54,8 @@ static AJTitleStackView *_sharedInstance = nil;
 @property (nonatomic, strong, readonly) AJTitleStackView *titleStackView;
 @property (nonatomic, copy,readwrite) NSString *ajTitle;
 
+@property (nonatomic, copy) AJNavigationItemCallback leftCallback;
+
 @end
 
 static NSString * const AJLeftButtonCallbackKey = @"AJLeftButtonCallbackKey";
@@ -61,19 +63,11 @@ static NSString * const AJRightButtonCallbackKey = @"AJRightButtonCallbackKey";
 
 @implementation UINavigationItem (AJKit)
 
-+ (BOOL)resolveInstanceMethod:(SEL)sel {
-    NSString *selectorString = NSStringFromSelector(sel);
-}
-
-id ajDictionaryGetter(id self, SEL _cmd) {
-    
-}
-
 #pragma mark - 导航栏左边按钮
 
 - (void)ajAddLeftButtonWithImage:(UIImage *)image callback:(AJNavigationItemCallback)callback {
     if (callback) {
-        [self setValue:callback forKey:AJLeftButtonCallbackKey];
+        objc_setAssociatedObject(self, &AJLeftButtonCallbackKey, callback, OBJC_ASSOCIATION_COPY_NONATOMIC);
     }
     UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(p_ajLeftButtonSelector)];
     self.leftBarButtonItem = btnItem;
@@ -81,7 +75,7 @@ id ajDictionaryGetter(id self, SEL _cmd) {
 
 - (void)ajAddLeftButtonWithTitle:(NSString *)title callback:(AJNavigationItemCallback)callback {
     if (callback) {
-        [self setValue:callback forKey:AJLeftButtonCallbackKey];
+        objc_setAssociatedObject(self, &AJLeftButtonCallbackKey, callback, OBJC_ASSOCIATION_COPY_NONATOMIC);
     }
     UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(p_ajLeftButtonSelector)];
     self.leftBarButtonItem = btnItem;
@@ -92,10 +86,10 @@ id ajDictionaryGetter(id self, SEL _cmd) {
 }
 
 - (void)p_ajLeftButtonSelector {
-    AJNavigationItemCallback callback = [self valueForKey:AJLeftButtonCallbackKey];
+    AJNavigationItemCallback callback = objc_getAssociatedObject(self, &AJLeftButtonCallbackKey);
     if (callback) {
         callback();
-        [self setValue:nil forKey:AJLeftButtonCallbackKey];
+        objc_setAssociatedObject(self, &AJLeftButtonCallbackKey, nil, OBJC_ASSOCIATION_COPY_NONATOMIC);
     }
 }
 
@@ -103,7 +97,7 @@ id ajDictionaryGetter(id self, SEL _cmd) {
 
 - (void)ajAddRightButtonWithImage:(UIImage *)image callback:(AJNavigationItemCallback)callback {
     if (callback) {
-        [self setValue:callback forKey:AJRightButtonCallbackKey];
+        objc_setAssociatedObject(self, &AJRightButtonCallbackKey, callback, OBJC_ASSOCIATION_COPY_NONATOMIC);
     }
     UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:self action:@selector(p_ajRightButtonSelector)];
     self.rightBarButtonItem = btnItem;
@@ -111,7 +105,7 @@ id ajDictionaryGetter(id self, SEL _cmd) {
 
 - (void)ajAddRightButtonWithTitle:(NSString *)title callback:(AJNavigationItemCallback)callback {
     if (callback) {
-        [self setValue:callback forKey:AJRightButtonCallbackKey];
+        objc_setAssociatedObject(self, &AJRightButtonCallbackKey, callback, OBJC_ASSOCIATION_COPY_NONATOMIC);
     }
     UIBarButtonItem *btnItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:self action:@selector(p_ajRightButtonSelector)];
     self.rightBarButtonItem = btnItem;
@@ -121,10 +115,10 @@ id ajDictionaryGetter(id self, SEL _cmd) {
     self.rightBarButtonItem = nil;
 }
 - (void)p_ajRightButtonSelector {
-    AJNavigationItemCallback callback = [self valueForKey:AJRightButtonCallbackKey];
+    AJNavigationItemCallback callback = objc_getAssociatedObject(self, &AJRightButtonCallbackKey);
     if (callback) {
         callback();
-        [self setValue:nil forKey:AJRightButtonCallbackKey];
+        objc_setAssociatedObject(self, &AJRightButtonCallbackKey, nil, OBJC_ASSOCIATION_COPY_NONATOMIC);
     }
 }
 

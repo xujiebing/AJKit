@@ -12,14 +12,11 @@
 @property (nonatomic, assign) BOOL hasSection;              // 是否有分组
 @property (nonatomic, assign) BOOL isCanEdit;               // cell是否可编辑
 
-@property (nonatomic, copy) AJCellEditingCallback editBlock;
-@property (nonatomic, copy) AJCellConfigureCallback configureCellBlock;
+@property (nonatomic, copy) AJRegisterCellCallback registerCellBlock;
+@property (nonatomic, copy) AJEditingCellCallback editingCellBlock;
+@property (nonatomic, copy) AJConfigCellCallback configCellBlock;
 
-@property (nonatomic, strong) NSArray *items;
-@property (nonatomic, copy) NSString *cellIdentifier;
-
-
-@property (nonatomic, strong) NSArray *dataSource;
+@property (nonatomic, strong) NSArray *itemsArray;
 
 @end
 
@@ -31,137 +28,141 @@
     NSLog(@"AJArrayDataSource dealloc");
 }
 
-- (id)init {
-    NSAssert(0, @"该方法禁用，是使用自定义初始化方法");
-    return nil;
-}
-
-#pragma mark - 公共方法
-
-- (AJArrayDataSource *)initWithDataSourcce:(NSArray *)dataSource
-                            cellIdentifier:(NSString *)cellIdentifier
-                                  callback:(AJCellConfigureCallback)callback {
-    return [self initWithDataSourcce:dataSource cellIdentifier:cellIdentifier hasSection:NO sectionCount:1 callback:callback];
-}
-
-- (AJArrayDataSource *)initWithDataSourcce:(NSArray *)dataSource
-                            cellIdentifier:(NSString *)cellIdentifier
-                                hasSection:(BOOL)hasSection
-                              sectionCount:(NSInteger)sectionCount
-                                  callback:(AJCellConfigureCallback)callback {
+- (instancetype)init {
     self = [super init];
     if (self) {
-        self.currentPage = 1;
-        self.items = dataSource;
-        self.cellIdentifier = cellIdentifier;
-        self.configureCellBlock = callback;
-        self.hasSection = hasSection;
-        self.sectionCount = sectionCount < 1 ? 1 : sectionCount;
+        [self aj_initData];
     }
     return self;
 }
 
-- (void)changeItems:(NSArray *)array {
-    if (!array) {
-        return;
-    }
-    self.items = array;
+- (void)aj_initData {
+    self.hasSection = NO;
+    self.sectionCount = 0;
+    self.currentPage = 1;
+    self.pageSize = 10;
 }
 
-- (void)configureCellEditBlock:(AJCellEditingCallback)block {
-    _editBlock = block;
-    _isCanEdit = (block != nil);
+#pragma mark - 公共方法
+
+- (void)registerCellCallback:(AJRegisterCellCallback)callback {
+    self.registerCellBlock = callback;
+}
+
+- (void)editCellCallback:(AJEditingCellCallback)callback {
+    self.editingCellBlock = callback;
+    _isCanEdit = (callback != nil);
+}
+
+- (void)configCellCallback:(AJConfigCellCallback)callback {
+    self.configCellBlock = callback;
 }
 
 - (id)itemAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.sectionCount > 0 && self.hasSection) {
-        return self.items[indexPath.section][indexPath.row];
+    if (self.hasSection) {
+        return [[self.itemsArray ajObjectAtIndex:indexPath.section] ajObjectAtIndex:indexPath.row];
     }
-    return self.items[indexPath.row];
+    return [self.itemsArray ajObjectAtIndex:indexPath.row];
 }
 
 - (void)setSectionCount:(NSUInteger)count {
-    _sectionCount = count < 1 ? 1 : count;
+    if (count > 0) {
+        _sectionCount = count;
+        self.hasSection = YES;
+    }
 }
 
-- (void)addDataSource:(NSArray *)items {
+- (void)addItems:(NSArray *)items {
     if (NSArray.ajIsEmpty(items)) {
         return;
     }
-    if (NSArray.ajIsEmpty(self.dataSource)) {
-        self.dataSource = items;
+    if (NSArray.ajIsEmpty(self.itemsArray)) {
+        self.itemsArray = items;
         return;
     }
-    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.dataSource];
+    NSMutableArray *tempArray = [NSMutableArray arrayWithArray:self.itemsArray];
     if (self.currentPage == 1) {
         [tempArray removeAllObjects];
     }
     [tempArray addObjectsFromArray:items];
 
-    self.dataSource = tempArray;
+    self.itemsArray = tempArray;
 }
 
-- (void)clearDataSource {
-    self.dataSource = @[];
+- (void)resetItems:(NSArray *)items {
+    if (NSArray.ajIsEmpty(items)) {
+        return;
+    }
+    self.itemsArray = items;
+}
+
+- (void)removeItems {
+    self.itemsArray = @[];
 }
 
 #pragma mark - UITableViewDataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    if (NSArray.ajIsEmpty(self.items)) {
+    if (NSArray.ajIsEmpty(self.itemsArray)) {
         return 0;
     }
     if (!self.hasSection) {
-        return self.items.count;
+        return self.itemsArray.count;
     }
-    NSArray *array = self.items[section];
-    if ([array isKindOfClass:[NSArray class]]) {
-        return array.count;
+    NSArray *array = self.itemsArray[section];
+    if (NSArray.ajIsEmpty(array)) {
+        return 0;
     }
-    return 0;
+    return array.count;
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return self.sectionCount;
+    if (self.hasSection) {
+        return self.sectionCount;
+    }
+    return 1;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    NSString *cellIdentifier;
+    if (self.registerCellBlock) {
+        cellIdentifier = self.registerCellBlock(indexPath);
+    }
     UITableViewCell *cell = nil;
-    if(self.cellIdentifier) {
-        cell = [tableView dequeueReusableCellWithIdentifier:self.cellIdentifier forIndexPath:indexPath];
+    if(NSString.ajIsEmpty(cellIdentifier)) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ajKitCell"];
     } else {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"cell"];
+        cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     }
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
-
-    id item = [self itemAtIndexPath:indexPath];
-    self.configureCellBlock(cell, item, indexPath);
+    if (self.configCellBlock) {
+        id item = [self itemAtIndexPath:indexPath];
+        self.configCellBlock(cell, item, indexPath);
+    }
     return cell;
 }
-
 
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     return self.isCanEdit;
 }
 
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    
     if (editingStyle == UITableViewCellEditingStyleDelete) {
-        self.editBlock(indexPath);
+        if (self.editingCellBlock) {
+            self.editingCellBlock(indexPath);
+        }
     } else if (editingStyle == UITableViewCellEditingStyleInsert) {
         
     }
 }
 
-
 #pragma mark - 懒加载方法
 
-- (NSArray *)items {
-    if (!_items) {
-        _items = [[NSArray alloc] init];
+- (NSArray *)itemsArray {
+    if (!_itemsArray) {
+        _itemsArray = [[NSArray alloc] init];
     }
-    return _items;
+    return _itemsArray;
 }
 
 @end

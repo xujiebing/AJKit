@@ -29,6 +29,10 @@
   return [NSString stringWithUTF8String:class_getName([self class])];
 }
 
++ (NSString *)ajClassName {
+    return NSStringFromClass(self);
+}
+
 + (BOOL)ajSwizzleMethod:(SEL)origMethod
               withMethod:(SEL)withMethod {
     Method origMethodInstance = class_getInstanceMethod(self, origMethod);

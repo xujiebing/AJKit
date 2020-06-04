@@ -7,10 +7,9 @@
 
 #import "AJTableViewController.h"
 
-@interface AJTableViewController ()
+@interface AJTableViewController ()<UITableViewDelegate>
 
-@property (nonatomic, strong) AJTableViewModel *aj_viewModel;
-@property (nonatomic, strong) AJArrayDataSource *tableViewDataSource;
+@property (nonatomic, strong) AJArrayDataSource *ajDataSource;
 
 @end
 
@@ -19,13 +18,13 @@
 #pragma mark - 生命周期方法
 
 - (void)dealloc {
-    self.tableViewDataSource = nil;
+    self.ajDataSource = nil;
 }
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self aj_initView];
     [self aj_initData];
+    [self aj_initView];
 }
 
 #pragma mark - 公共方法
@@ -35,17 +34,13 @@
 }
 
 - (void)reloadTableView {
-
-    // 添加为空时显示的View
-    if (self.aj_viewModel.dataSource.count == 0) {
+    if (self.ajDataSource.itemsArray.count == 0) {
         [self.tableView addSubview:self.emptyView];
         self.emptyView.hidden = NO;
     } else {
         [self.emptyView removeFromSuperview];
         self.emptyView.hidden = YES;
     }
-
-    [self.tableViewDataSource changeItems:self.aj_viewModel.dataSource];
     [self.tableView reloadData];
     
 }
@@ -55,55 +50,14 @@
 }
 
 - (void)endRefreshing {
-    if (self.aj_viewModel.currentPage > 1 && [self.tableView.mj_footer isRefreshing]) {
+    if (self.ajDataSource.currentPage > 1 && self.tableView.mj_footer.isRefreshing) {
         [self.tableView.mj_footer endRefreshing];
         return;
     }
 
-    if([self.tableView.mj_header isRefreshing]) {
+    if(self.tableView.mj_header.isRefreshing) {
         [self.tableView.mj_header endRefreshing];
     }
- 
-}
-
-- (void)configTableView:(AJArrayDataSource *)dataSource
-              viewModel:(AJTableViewModel *)viewModel
-                  cells:(NSArray *)cells {
-    self.tableView.dataSource = dataSource;
-    self.aj_viewModel = viewModel;
-    self.tableViewDataSource = dataSource;
-    kAJWeakSelf
-    [cells enumerateObjectsUsingBlock:^(NSString *cellName, NSUInteger idx, BOOL * _Nonnull stop) {
-        Class class = NSClassFromString(cellName);
-        [ajSelf.tableView registerClass:class forCellReuseIdentifier:cellName];
-    }];
-}
-
-- (void)configTableView:(AJArrayDataSource *)dataSource
-              viewModel:(AJTableViewModel *)viewModel
-                   nibs:(NSArray *)nibs {
-    self.tableView.dataSource = dataSource;
-    self.aj_viewModel = viewModel;
-    self.tableViewDataSource = dataSource;
-    kAJWeakSelf
-    [nibs enumerateObjectsUsingBlock:^(NSString *nibName, NSUInteger idx, BOOL * _Nonnull stop) {
-        UINib *nib = [UINib nibWithNibName:nibName bundle:nil];
-        [ajSelf.tableView registerNib:nib forCellReuseIdentifier:nibName];
-    }];
-}
-
-- (void)configTableView:(AJArrayDataSource *)dataSource
-              viewModel:(AJTableViewModel *)viewModel
-                   nibs:(NSArray *)nibs
-                 bundle:(NSBundle *)bundle {
-    self.tableView.dataSource = dataSource;
-    self.aj_viewModel = viewModel;
-    self.tableViewDataSource = dataSource;
-    kAJWeakSelf
-    [nibs enumerateObjectsUsingBlock:^(NSString *nibName, NSUInteger idx, BOOL * _Nonnull stop) {
-        UINib *nib = [UINib nibWithNibName:nibName bundle:bundle];
-        [ajSelf.tableView registerNib:nib forCellReuseIdentifier:nibName];
-    }];
 }
 
 - (void)headerRefreshViewHidden:(BOOL)hidden {
@@ -119,7 +73,6 @@
 - (void)aj_initView {
     self.view.backgroundColor = AJUIColorFrom10RGB(248, 248, 248);
     [self.view addSubview:self.tableView];
-    [self configTableViewSource];
     if (!self.closeRefresh) {
         [self p_addHeader];
         [self p_addFooter];
@@ -130,43 +83,19 @@
     // 初始化默认数据
     _autoLoad = YES;
     _closeRefresh = NO;
-    _tableViewStyle = UITableViewStylePlain;
+    [self configTableViewSource];
     // 数据更新后刷新视图
-    @weakify(self)
-    [[[RACObserve(self.aj_viewModel, dataSource)
-       distinctUntilChanged]
-       deliverOnMainThread]
-       subscribeNext:^(id x) {
-         @strongify(self)
-         [self reloadTableView];
-     }];
+    kAJRACWeakSelf
+    [RACObserve(self.ajDataSource, itemsArray) subscribeNext:^(id x) {
+        kAJRACStrongSelf
+        [self endRefreshing];
+        [self reloadTableView];
+    }];
 
     // 绑定上拉分页是否可用
-    [[RACObserve(self.aj_viewModel, hasNextPage)
-        distinctUntilChanged]
-        subscribeNext:^(NSNumber *hasNextPage) {
-        @strongify(self)
+    [[RACObserve(self.ajDataSource, hasNextPage) distinctUntilChanged] subscribeNext:^(NSNumber *hasNextPage) {
+        kAJRACStrongSelf
         self.tableView.mj_footer.hidden = !hasNextPage.boolValue;
-    }];
-
-    // 网络请求返回后刷新组件结束刷新
-    [[self.aj_viewModel.requestRemoteDataCommand.executionSignals
-      switchToLatest]
-      subscribeNext:^(id  _Nullable x) {
-        @strongify(self);
-        [self endRefreshing];
-    } error:^(NSError * _Nullable error) {
-        AJLog(@"error === %@", error);
-    }];
-
-    // 网络返回错误异常监听
-    [[[self.aj_viewModel rac_signalForSelector:@selector(handlerError:)]
-        deliverOnMainThread]
-        subscribeNext:^(RACTuple * _Nullable x) {
-            @strongify(self);
-            [self endRefreshing];
-            RACTupleUnpack(NSError *error) = x;
-            [self handlerError:error];
     }];
     
 }
@@ -191,30 +120,25 @@
     self.tableView.mj_footer.hidden = YES;
 }
 
-
 - (void)p_headerWithRefreshing {
-    self.aj_viewModel.currentPage = 1;
-    [self.aj_viewModel.requestRemoteDataCommand execute:@(1)];
+    self.ajDataSource.currentPage = 1;
+    [self requestDataSourceWithPage:1];
 }
-
 
 - (void)p_footerWithRefreshing {
-    self.aj_viewModel.currentPage++;
-    [self.aj_viewModel.requestRemoteDataCommand execute:@(self.aj_viewModel.currentPage)];
-}
-
-- (void)handlerError:(NSError *)error {
-    AJLog(@"error === %@", error);
+    self.ajDataSource.currentPage++;
+    [self requestDataSourceWithPage:self.ajDataSource.currentPage];
 }
 
 #pragma mark - 懒加载方法
 
 - (UITableView *)tableView {
     if (!_tableView) {
-        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.ajWidth, UIScreen.ajViewHeight) style:_tableViewStyle];
+        UITableView *tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, UIScreen.ajWidth, UIScreen.ajViewHeight) style:self.tableViewStyle];
         tableView.backgroundColor = AJUIColorFrom10RGB(237,246,255);
         tableView.backgroundView = nil;
         tableView.delegate = self;
+        tableView.dataSource = self.ajDataSource;
         tableView.tableFooterView = [[UIView alloc] init];
         tableView.backgroundColor = [UIColor clearColor];
         tableView.rowHeight = 70.f;
@@ -224,34 +148,38 @@
         }
         _tableView = tableView;
     }
-    
     return _tableView;
 }
 
-/* 目前基本可以兼容有表头的tableView
- * 无表头的话  请在所使用的类里加上self.emptyView.frame = self.tableView.frame;
- */
 - (UIView *)emptyView {
     if (!_emptyView) {
-        
         CGFloat posY = self.tableView.tableHeaderView.frame.size.height;
         CGFloat height = 0.0;
         
         if (self.tableView.tableHeaderView.frame.size.height != 0.0) {
-            height = self.tableView.frame.size.height - self.tableView.tableHeaderView.frame.size.height;
+            height = self.tableView.ajHeight - self.tableView.tableHeaderView.ajHeight;
         } else {
-            height = self.tableView.frame.size.height;
+            height = self.tableView.ajHeight;
         }
         
-        _emptyView = [[UIView alloc]initWithFrame:CGRectMake(0.0, posY, self.tableView.frame.size.width, height)];
+        _emptyView = [[UIView alloc]initWithFrame:CGRectMake(0.0, posY, self.tableView.ajWidth, height)];
     }
     return _emptyView;
 }
 
+- (AJArrayDataSource *)ajDataSource {
+    if (!_ajDataSource) {
+        _ajDataSource = AJArrayDataSource.new;
+    }
+    return _ajDataSource;
+}
 
-
-
-
+- (UITableViewStyle)tableViewStyle {
+    if (!_tableViewStyle) {
+        _tableViewStyle = UITableViewStylePlain;
+    }
+    return _tableViewStyle;
+}
 
 #pragma mark - UITableViewDelegate
 
@@ -259,23 +187,62 @@
     [self selectRowAtIndexPath:indexPath];
 }
 
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return [self heightForRowAtIndexPath:indexPath];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section {
+    return [self heightForHeaderInSection:section];
+}
+
+- (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
+    return [self heightForFooterInSection:section];
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
+    UITableViewHeaderFooterView *headerFooterView = [UITableViewHeaderFooterView.alloc initWithFrame:CGRectMake(0, 0, tableView.ajWidth, [self heightForHeaderInSection:section])];
+    [self viewForHeaderInSection:section headerView:headerFooterView];
+    return headerFooterView;
+}
+
+- (UIView *)tableView:(UITableView *)tableView viewForFooterInSection:(NSInteger)section {
+    UITableViewHeaderFooterView *headerFooterView = [UITableViewHeaderFooterView.alloc initWithFrame:CGRectMake(0, 0, tableView.ajWidth, [self heightForHeaderInSection:section])];
+    [self viewForFooterInSection:section footerView:headerFooterView];
+    return headerFooterView;
+}
 
 #pragma mark - 以下方法子类需要重写
 
-
-/**
- *  配置TableView的数据源
- */
+/// 配置TableView的数据源
 - (void)configTableViewSource {
     NSAssert(0, @"");
 }
 
-/**
- *  选中单个cell时回调的方法
- *
- *  @param indexPath
- */
+- (void)requestDataSourceWithPage:(NSInteger)page {
+    NSAssert(0, @"子类重写");
+}
+
 - (void)selectRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (CGFloat)heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return 50;
+}
+
+- (CGFloat)heightForHeaderInSection:(NSInteger)section {
+    return 20;
+}
+
+- (CGFloat)heightForFooterInSection:(NSInteger)section {
+    return 0.001;
+}
+
+- (void)viewForHeaderInSection:(NSInteger)section headerView:(UITableViewHeaderFooterView *)headerView {
+    
+}
+
+- (void)viewForFooterInSection:(NSInteger)section footerView:(UITableViewHeaderFooterView *)footerView {
     
 }
 

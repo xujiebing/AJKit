@@ -25,6 +25,8 @@ NS_ASSUME_NONNULL_BEGIN
 /// 获取对象名
 - (NSString *)ajClassName;
 
++ (NSString *)ajClassName;
+
 /// 交换方法
 /// @param origMethod 原有的方法
 /// @param withMethod 替换的方法

@@ -16,6 +16,9 @@
 
 #define kAJWeakSelf __weak __typeof(self)ajSelf = self;
 
+#define kAJRACWeakSelf @weakify(self);
+#define kAJRACStrongSelf @strongify(self);
+
 #define AJAssert(condition, desc) NSAssert(condition, desc);
 
 static id AJNil(id value) {
