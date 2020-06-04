@@ -14,8 +14,6 @@
 
 @interface TableViewController ()
 
-@property (nonatomic, copy) AJTableViewDataSource *dataSource;
-
 @end
 
 @implementation TableViewController
@@ -107,12 +105,5 @@
 }
 
 #pragma mark - Getter方法
-
-- (AJTableViewDataSource *)dataSource {
-    if (!_dataSource) {
-        _dataSource = AJTableViewDataSource.new;
-    }
-    return _dataSource;;
-}
 
 @end
