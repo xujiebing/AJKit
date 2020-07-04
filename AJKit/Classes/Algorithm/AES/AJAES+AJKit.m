@@ -41,6 +41,22 @@
     return [self decrype128:data key:key];
 }
 
++ (NSString *)encrypt128Base64:(NSString *)key message:(NSString *)message {
+    if (NSString.ajIsEmpty(key) || NSString.ajIsEmpty(key)) {
+        return nil;
+    }
+    NSData *encrypeData = [self encrype128:message key:key];
+    if (!encrypeData) {
+        return nil;
+    }
+    return [encrypeData ajBase64Encoding];
+}
+
++ (NSString *)decrypt128Base64:(NSString *)key message:(NSString *)message {
+    NSData *data = message.ajBase64EncodingData;
+    return [self decrype128:data key:key];
+}
+
 + (NSString *)p_hexString:(NSData *)data {
     NSUInteger length = data.length;
     NSMutableString *result = [NSMutableString stringWithCapacity:length * 2];
