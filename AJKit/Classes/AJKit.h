@@ -29,6 +29,7 @@
 #import <AJKit/AJTableViewDataSource.h>
 #import <AJKit/AJAlert.h>
 #import <AJKit/AJToast.h>
+#import <AJKit/AJModel.h>
 
 /* Foundation */
 #import "NSArray+AJKit.h"

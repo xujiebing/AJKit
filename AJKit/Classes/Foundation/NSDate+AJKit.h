@@ -11,6 +11,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 static NSString *AJMMDD = @"MM/dd";
 static NSString *AJYYYYMMdd = @"yyyy-MM-dd";
+static NSString *AJYYYYMMdd1 = @"yyyyMMdd";
 static NSString *AJYYYYMMddHHmm = @"yyyy-MM-dd HH:mm";
 static NSString *AJYYYYMMddHHmm1 = @"yyyy/MM/dd HH:mm";
 static NSString *AJYYYYMMddHHmmss = @"yyyy-MM-dd HH:mm:ss";

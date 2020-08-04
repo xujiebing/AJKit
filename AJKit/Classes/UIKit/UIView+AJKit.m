@@ -102,7 +102,7 @@
     self.layer.mask = maskLayer;
 }
 
-- (void)ajAddBorder:(CGFloat)width rectCorners:(UIColor *)color {
+- (void)ajAddBorder:(CGFloat)width color:(UIColor *)color {
     self.layer.borderColor = color.CGColor;
     self.layer.borderWidth = width;
 }

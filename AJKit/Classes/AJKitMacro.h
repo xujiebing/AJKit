@@ -39,7 +39,7 @@ if(nibNameOrNil == nil) { \
 nibNameOrNil = self.ajClassName; \
 } \
 if (nibBundleOrNil == nil) { \
-nibBundleOrNil = [NSBundle bundleWithBundleName:bundleName className:nibNameOrNil]; \
+nibBundleOrNil = [NSBundle ajBundleWithBundleName:bundleName className:nibNameOrNil]; \
 } \
 self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]; \
 return self; \
@@ -51,6 +51,16 @@ return self; \
 + (nonnull instancetype)sharedInstance;
 
 #define AJSINGLETON_M(classname) \
+static classname *_sharedInstance = nil; \
++ (classname *)sharedInstance { \
+    static dispatch_once_t onceToken; \
+    dispatch_once(&onceToken, ^{\
+        _sharedInstance = [[self alloc] init];\
+    });\
+    return _sharedInstance;\
+}\
+
+#define AJSINGLETON_MO(classname) \
 static classname *_sharedInstance = nil; \
 + (classname *)sharedInstance { \
     static dispatch_once_t onceToken; \

@@ -19,6 +19,16 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (class, nonatomic, readonly) CGFloat ajViewHeight;
 
+@property (class, nonatomic, assign, readonly) BOOL ajIsIphone4;
+
+@property (class, nonatomic, assign, readonly) BOOL ajIsIphone5;
+
+@property (class, nonatomic, assign,readonly) BOOL ajIsIphone6;
+
+@property (class, nonatomic, assign, readonly) BOOL ajIsIphone6P;
+
+@property (class, nonatomic, assign, readonly) BOOL ajIsIphoneX;
+
 @end
 
 NS_ASSUME_NONNULL_END

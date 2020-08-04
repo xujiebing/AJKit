@@ -31,7 +31,7 @@ NS_ASSUME_NONNULL_BEGIN
 /// 添加边框
 /// @param width 边框宽度
 /// @param color 颜色
-- (void)ajAddBorder:(CGFloat)width rectCorners:(UIColor *)color;
+- (void)ajAddBorder:(CGFloat)width color:(UIColor *)color;
 
 @end
 
