@@ -30,6 +30,7 @@
 #import <AJKit/AJAlert.h>
 #import <AJKit/AJToast.h>
 #import <AJKit/AJModel.h>
+#import <AJKit/AJLimitInput.h>
 
 /* Foundation */
 #import "NSArray+AJKit.h"
@@ -55,10 +56,8 @@
 
 /* SSKeychain */
 #import "AJSSKeychain.h"
-#import "AJSSKeychain+AJKit.h"
 
 /* Tool */
-#import "AJConfigInfo.h"
 #import "AJTools.h"
 #import "AJCountDownManager.h"
 
@@ -76,5 +75,6 @@
 #import "UITextView+AJKit.h"
 #import "UIView+AJKit.h"
 #import "UIViewController+AJKit.h"
+#import "UIControl+AJKit.h"
 
 #endif /* AJKit_h */

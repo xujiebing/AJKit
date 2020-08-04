@@ -49,65 +49,6 @@ static NSString *prefsKey = @"ajonprefs"; ///<密钥 加解密的密钥必须相
     return dic;
 }
 
-+ (id)getKeysValueConfigKey:(NSString *)key, ... {
-    if (!key) {
-        return nil;
-    }
-    NSString *plistName = key;
-    va_list args;
-    NSString *arg;
-    va_start(args, key);
-    NSString *key1 = nil;
-    NSString *key2 = nil;
-    NSString *key3 = nil;
-    NSString *key4 = nil;
-    while ((arg = va_arg(args, NSString *))) {
-        if (!key1) {
-            key1 = arg;
-            continue;
-        }
-        if (!key2) {
-            key2 = arg;
-            continue;
-        }
-        if (!key3) {
-            key3 = arg;
-            continue;
-        }
-        if (!key4) {
-            key4 = arg;
-            continue;
-        }
-    }
-    va_end(args);
-    
-    id result = nil;
-    if (key1 && !key2) {
-        result = [self plistContentWithName:plistName];
-        return [self p_keyValueConfig:plistName key1:plistName key2:key1 result:result];
-    }
-    
-    if (key1 && key2 && !key3 ) {
-        result = [AJTools getKeysValueConfigKey:plistName, key1, nil];
-        return [self p_keyValueConfig:plistName key1:key1 key2:key2 result:result];
-    }
-    
-    if (key1 && key2 && key3 && !key4 ) {
-        result = [AJTools getKeysValueConfigKey:plistName, key1, key2, nil];
-        return [self p_keyValueConfig:plistName key1:key2 key2:key3 result:result];
-    }
-    
-    if (key1 && key2 && key3 && key4 ) {
-        if (AJConfigInfo.isDebugKey) {
-            result = [AJTools getKeysValueConfigKey:plistName, key1, key2, nil];
-        } else {
-            result = [AJTools getKeysValueConfigKey:plistName, key1, key3, nil];
-        }
-        return [self p_keyValueConfig:plistName key1:key3 key2:key4 result:result];
-    }
-    return nil;
-}
-
 + (void)openLocationSettingPage {
     if (![CLLocationManager locationServicesEnabled]) {
         NSURL *url = [NSURL URLWithString:[AJTools getPrefskeyWith:@"AppLocationUrl"]];
@@ -250,31 +191,6 @@ void ajPrefString(unsigned char *str, unsigned char key)
 {
     unsigned char *p = str;
     while( ((*p) ^=  key) != '\0')  p++;
-}
-
-+ (id)p_keyValueConfig:(NSString *)plistName
-                  key1:(NSString *)key1
-                  key2:(NSString *)key2
-                result:(NSDictionary *)result {
-    if (!result) {
-        return nil;
-    }
-    if (![result isKindOfClass:NSDictionary.class]) {
-        NSString *log = [NSString stringWithFormat:@"主工程中%@.plist文件配置的【%@】格式不正确", plistName, key1];
-        AJAssert(0, log);
-        return nil;
-    }
-    NSDictionary *dic = result;
-    result = [dic objectForKey:key2];
-    if (!result) {
-        if ([plistName isEqualToString:key1]) {
-            return nil;
-        }
-        NSString *log = [NSString stringWithFormat:@"主工程中%@.plist文件未配置【%@】", plistName, key2];
-        AJAssert(0, log);
-        return nil;
-    }
-    return result;
 }
 
 @end

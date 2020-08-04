@@ -9,18 +9,26 @@
 
 @implementation NSError (AJKit)
 
-- (BOOL)ajMethodUndefinedCrash {
+- (BOOL)bwtMethodUndefinedCrash {
     return NO;
 }
 
 - (NSString *)errorCode {
+    return NSString.ajStringFromInteger(self.code);
+}
+
+- (NSString *)businessCode {
     id description = self.localizedDescription;
     if (!NSString.ajIsEmpty(description)) {
         return NSString.ajStringFromInteger(self.code);
     }
-    // FIXME 这里用kindOfClass 会匹配不上，目前还未找到原因，所以用字符串来匹配(这里会有问题，在AppDelegate中又正常)
+    if ([description isKindOfClass:NSDictionary.class]) {
+        if ([description ajContainsObjectForKey:kBusinessCode]) {
+            return [description ajObjectForKey:kBusinessCode];
+        }
+    }
     RACTuple *tuple = description;
-    if([tuple.ajClassName rangeOfString:@"Tuple"].location != NSNotFound) {
+    if ([tuple isKindOfClass:RACTuple.class]) {
         return tuple.errorCode;
     }
     return nil;
@@ -31,9 +39,13 @@
     if (!NSString.ajIsEmpty(description)) {
         return self.localizedDescription;
     }
-    // FIXME 这里用kindOfClass 会匹配不上，目前还未找到原因，所以用字符串来匹配(这里会有问题，在AppDelegate中又正常)
+    if ([description isKindOfClass:NSDictionary.class]) {
+        if ([description ajContainsObjectForKey:kErrorMessage]) {
+            return [description ajObjectForKey:kErrorMessage];
+        }
+    }
     RACTuple *tuple = description;
-    if([tuple.ajClassName rangeOfString:@"Tuple"].location != NSNotFound) {
+    if ([tuple isKindOfClass:RACTuple.class]) {
         return tuple.errorMessage;
     }
     return nil;

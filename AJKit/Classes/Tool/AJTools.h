@@ -56,10 +56,6 @@ static inline uint64_t CurrentTimeMillis() {
  */
 + (nullable NSDictionary *)plistContentWithName:(nonnull NSString *)fileName;
 
-/// 获取相关配置keys数据
-/// @param key 数据字段名
-+ (nullable id)getKeysValueConfigKey:(nonnull NSString *)key, ...NS_REQUIRES_NIL_TERMINATION;
-
 /**
 判断IPA二进制文件是否被篡改(破解)
 IPA完整性检测
