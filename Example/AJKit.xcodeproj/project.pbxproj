@@ -214,15 +214,15 @@
 		9B30BDB22488F33B005A8EE3 /* tableview */ = {
 			isa = PBXGroup;
 			children = (
-				9B30BDB32488F33B005A8EE3 /* TableViewCell2.h */,
+				9B30BDB92488F33B005A8EE3 /* TableViewCell.h */,
 				9B30BDB42488F33B005A8EE3 /* TableViewCell.m */,
 				9B30BDB52488F33B005A8EE3 /* TableViewCell1.h */,
+				9B30BDBB2488F33B005A8EE3 /* TableViewCell1.m */,
+				9B30BDB32488F33B005A8EE3 /* TableViewCell2.h */,
+				9B30BDB82488F33B005A8EE3 /* TableViewCell2.m */,
 				9B30BDB62488F33B005A8EE3 /* TableViewCell2.xib */,
 				9B30BDB72488F33B005A8EE3 /* TableViewController.h */,
 				9B30BDBA2488F33B005A8EE3 /* TableViewController.m */,
-				9B30BDB82488F33B005A8EE3 /* TableViewCell2.m */,
-				9B30BDB92488F33B005A8EE3 /* TableViewCell.h */,
-				9B30BDBB2488F33B005A8EE3 /* TableViewCell1.m */,
 			);
 			path = tableview;
 			sourceTree = "<group>";

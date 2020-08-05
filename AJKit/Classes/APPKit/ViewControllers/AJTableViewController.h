@@ -30,11 +30,9 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong, readonly) AJTableViewDataSource *ajDataSource;
 
 /// 设置头部下拉刷新组件是否隐藏
-/// @param hidden
 - (void)headerRefreshViewHidden:(BOOL)hidden;
 
 /// 设置尾部上拉刷新组件是否隐藏
-/// @param hidden
 - (void)footerRefreshViewHidden:(BOOL)hidden;
 
 /// 重新刷新表格

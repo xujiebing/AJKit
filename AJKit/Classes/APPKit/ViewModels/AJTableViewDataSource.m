@@ -73,8 +73,14 @@
 }
 
 - (void)addItems:(NSArray *)items {
-    if (NSArray.ajIsEmpty(items)) {
+    if (NSArray.ajIsEmpty(items) && self.currentPage == 1) {
+        self.itemsArray = @[];
         return;
+    }
+    if (items.count < self.pageSize) {
+        self.hasNextPage = NO;
+    } else {
+        self.hasNextPage = YES;
     }
     if (NSArray.ajIsEmpty(self.itemsArray)) {
         self.itemsArray = items;

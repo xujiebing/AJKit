@@ -15,12 +15,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self ajInitData];
+    [self ajInitView];
 }
 
 - (void)layoutSubviews {
     [super layoutSubviews];
-    [self ajInitData];
-    [self ajInitView];
 }
 
 - (void)ajInitData {

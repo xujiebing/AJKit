@@ -18,7 +18,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface AJAlert : NSObject
 
-/// alert
+/// alert 两个按钮
 /// @param title 标题
 /// @param content 内容
 /// @param done 确定按钮
@@ -29,6 +29,17 @@ NS_ASSUME_NONNULL_BEGIN
                   done:(NSString * _Nullable )done
                 cancel:(NSString * _Nullable )cancel
                handler:(AJAlertHandler _Nullable )handler;
+
+/// alert 一个按钮
+/// @param title 标题
+/// @param content 内容
+/// @param done 确定按钮
+/// @param handler 回调
++ (void)alertWithTitle:(NSString * _Nullable )title
+               content:(NSString * _Nullable )content
+                  done:(NSString * _Nullable )done
+               handler:(AJAlertHandler _Nullable )handler;
+
 
 @end
 
