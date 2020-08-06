@@ -49,6 +49,7 @@
 
 /* QuartzCore */
 #import "CALayer+AJKit.h"
+#import "CAGradientLayer+AJKit.h"
 
 /* Reachability */
 #import "AJReachability.h"

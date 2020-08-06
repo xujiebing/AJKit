@@ -107,5 +107,4 @@
     self.layer.borderWidth = width;
 }
 
-
 @end

@@ -518,4 +518,21 @@ static NSString *AJDeviceUUIDKey = @"DeviceUUID";
     return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0f];
 }
 
+- (NSMutableAttributedString *)ajAttributedString:(NSString *)targetString
+                                            color:(UIColor *)color
+                                             font:(UIFont *)font {
+    NSRange targetRange = [self rangeOfString:targetString];
+    if (targetRange.length == 0) {
+        NSMutableAttributedString *arrString = [[NSMutableAttributedString alloc]initWithString:self];
+        return arrString;
+    }
+    NSMutableAttributedString *arrString = [[NSMutableAttributedString alloc]initWithString:self];
+    // 设置前面几个字串的格式:字号字体、颜色
+    [arrString addAttributes:@{NSFontAttributeName:font,
+                               NSForegroundColorAttributeName:color
+                               }
+                       range:targetRange];
+    return arrString;
+}
+
 @end

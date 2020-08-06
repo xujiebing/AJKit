@@ -118,6 +118,14 @@ NS_ASSUME_NONNULL_BEGIN
 /// @return UIColor* color对象
 - (UIColor *)ajToColor;
 
+/// 富文本处理
+/// @param targetString 目标文本
+/// @param color 目标文本字体颜色
+/// @param font 目标文本字体大小
+- (NSMutableAttributedString *)ajAttributedString:(NSString *)targetString
+                                            color:(UIColor *)color
+                                             font:(UIFont *)font;
+
 @end
 
 NS_ASSUME_NONNULL_END

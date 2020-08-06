@@ -50,8 +50,11 @@
     for (UIView *view in self.subviews) {
       for (UIView *subview in view.subviews) {
         if ([subview isKindOfClass:NSClassFromString(@"UISearchBarBackground")]) {
-          [subview removeFromSuperview];
-          
+            if (@available(iOS 13.0, *)) {
+                subview.hidden = YES;
+            } else {
+                [subview removeFromSuperview];
+            }
           UIView *bgview = [[UIView alloc] initWithFrame:self.frame];
           view.backgroundColor = color;
           [subview.superview addSubview:bgview];

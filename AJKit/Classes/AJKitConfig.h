@@ -10,6 +10,10 @@
 
 static NSString * const AJKitModuleName = @"AJKit";
 
+static UIFont *AJFont(CGFloat font) {
+    return [UIFont systemFontOfSize:font];
+}
+
 #pragma mark - 图片
 
 /// 图片对象
