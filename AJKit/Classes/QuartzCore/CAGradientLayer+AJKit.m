@@ -21,7 +21,7 @@
     gl.endPoint = CGPointMake(1, 1);
     gl.colors = @[(__bridge id)startColor.CGColor,(__bridge id)endColor.CGColor];
     gl.locations = @[@(0.0),@(1.0f)];
-    [view.layer addSublayer:gl];
+    [view.layer insertSublayer:gl atIndex:0];
 }
 
 @end
