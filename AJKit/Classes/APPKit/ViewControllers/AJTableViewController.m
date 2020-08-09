@@ -161,8 +161,31 @@
         } else {
             height = self.tableView.ajHeight;
         }
+        _emptyView = [[UIView alloc] initWithFrame:CGRectMake(0.0, posY, self.tableView.ajWidth, height)];
         
-        _emptyView = [[UIView alloc]initWithFrame:CGRectMake(0.0, posY, self.tableView.ajWidth, height)];
+        UIImageView *imgView = [UIImageView.alloc init];
+        CGFloat width = UIScreen.ajWidth - 30;
+        imgView.ajWidth = width;
+        imgView.ajHeight = 238.5/315 * width;
+        imgView.center = _emptyView.center;
+        imgView.image = AJImage(@"tableview_empty", AJKitModuleName);
+        [_emptyView addSubview:imgView];
+        
+        UILabel *titleLabel = [UILabel.alloc init];
+        titleLabel.ajWidth = imgView.ajWidth;;
+        titleLabel.ajHeight = 17;
+        titleLabel.ajY = 188.5/315 * width;
+        titleLabel.ajX = 0;
+        titleLabel.textColor = AJUIColorFrom10RGB(102, 102, 102);
+        titleLabel.font = AJFont(18);
+        titleLabel.textAlignment = NSTextAlignmentCenter;
+        NSString *title = @"您还没有任何记录~";
+        if (self.emptyTitle) {
+            title = self.emptyTitle;
+        }
+        titleLabel.text = title;
+        [imgView addSubview:titleLabel];
+        
     }
     return _emptyView;
 }

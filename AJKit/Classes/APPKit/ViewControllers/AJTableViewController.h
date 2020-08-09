@@ -21,6 +21,9 @@ NS_ASSUME_NONNULL_BEGIN
 /// 无数据时显示的视图
 @property (nonatomic, strong) UIView *emptyView;
 
+/// 无数据时显示的提示
+@property (nonatomic, copy) NSString *emptyTitle;
+
 /// 开启自动加载数据 YES-开启 NO-关闭 默认开启
 @property (nonatomic, assign) BOOL autoLoad;
 
