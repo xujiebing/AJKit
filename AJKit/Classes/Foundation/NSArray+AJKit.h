@@ -28,7 +28,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 /// 可变数组中添加对象
 /// @param anObject 对象
-- (void)ajIndexOfObject:(id)anObject;
+- (void)ajInsertOfObject:(id)anObject;
 
 /// 移除数组中第一个对象，如果数组为空，则忽略此操作
 - (void)ajRemoveFirstObject;

@@ -42,7 +42,7 @@
 
 @implementation NSMutableArray (AJKit)
 
-- (void)ajIndexOfObject:(id)anObject {
+- (void)ajInsertOfObject:(id)anObject {
     if (!anObject) {
         return;
     }
