@@ -21,14 +21,12 @@
 }
 
 - (void)p_ajInitView {
-    self.navigationController.navigationBar.translucent = NO;
     if (self.navigationController.viewControllers.count > 1) {
         kAJWeakSelf
         [self.navigationItem ajAddLeftButtonWithImage:AJImage(@"icon_back", AJKitModuleName) callback:^{
             [ajSelf p_ajBack];
         }];
     }
-    [self.navigationController.navigationBar setTintColor:UIColor.blackColor];
 }
 
 - (void)ajInitData {
