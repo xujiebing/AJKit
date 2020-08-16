@@ -125,6 +125,7 @@ static NSString * const AJRightButtonCallbackKey = @"AJRightButtonCallbackKey";
 #pragma mark - 导航栏中间旋转菊花
 
 - (void)ajStartAnimating {
+    self.titleView = self.titleStackView;
     [self.titleStackView.indicatorView startAnimating];
 }
 
