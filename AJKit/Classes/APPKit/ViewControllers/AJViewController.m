@@ -37,6 +37,10 @@
     
 }
 
+- (void)ajHiddenNavigationBar {
+    self.hbd_barHidden = YES;
+}
+
 - (void)p_ajBack {
     if(self.presentingViewController && self.navigationController.viewControllers.count == 1) {
         [self dismissViewControllerAnimated:YES completion:nil];

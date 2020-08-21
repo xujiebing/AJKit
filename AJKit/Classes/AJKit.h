@@ -9,6 +9,9 @@
 #define AJKit_h
 
 #import <MJRefresh/MJRefresh.h>
+#import <HBDNavigationBar/HBDNavigationBar.h>
+#import <HBDNavigationBar/HBDNavigationController.h>
+#import <HBDNavigationBar/UIViewController+HBD.h>
 
 #import "AJKitConfig.h"
 #import "AJKitMacro.h"

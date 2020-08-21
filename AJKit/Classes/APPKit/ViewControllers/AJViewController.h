@@ -17,6 +17,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)ajInitView;
 
+- (void)ajHiddenNavigationBar;
+
 @end
 
 NS_ASSUME_NONNULL_END

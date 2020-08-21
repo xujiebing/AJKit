@@ -143,7 +143,9 @@
     cell.selectionStyle = UITableViewCellSelectionStyleGray;
     if (self.configCellBlock) {
         id item = [self itemAtIndexPath:indexPath];
-        self.configCellBlock(cell, item, indexPath);
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.configCellBlock(cell, item, indexPath);
+        });
     }
     return cell;
 }

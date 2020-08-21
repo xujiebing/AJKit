@@ -11,11 +11,16 @@
 
 - (void)ajSetTextFiledBackgroundColor:(UIColor *)color {
     for (UIView *view in self.subviews) {
-      for (id subview in view.subviews) {
-        if ([subview isKindOfClass:UITextField.class] ){
-          [(UITextField *)subview setBackgroundColor:color];
-          break;
-        }
+      for (UIView *subview in view.subviews) {
+          if (![subview isKindOfClass:NSClassFromString(@"_UISearchBarSearchContainerView")]) {
+              continue;
+          }
+          for (UIView *subview1 in subview.subviews) {
+              if (![subview1 isKindOfClass:NSClassFromString(@"UISearchBarTextField")]) {
+                  continue;
+              }
+              subview1.backgroundColor = color;
+          }
       }
     }
 }
@@ -23,8 +28,8 @@
 - (void)ajSetTextFiledTextColor:(UIColor *)color {
     for (UIView *view in self.subviews) {
         for (id subview in view.subviews) {
-            if ([subview isKindOfClass:[UITextField class]]) {
-                UITextField *textField = (UITextField *)subview;
+            if ([subview isKindOfClass:[UISearchTextField class]]) {
+                UISearchTextField *textField = (UISearchTextField *)subview;
                 textField.textColor = color;
             }
         }

@@ -25,5 +25,6 @@ TODO: Add long description of the pod here.
   s.dependency 'SVProgressHUD', '2.2.5'
   s.dependency 'MJRefresh', '3.2.3'
   s.dependency 'ReactiveObjC', '3.1.1'
+  s.dependency 'HBDNavigationBar', '1.7.7'
   
 end
