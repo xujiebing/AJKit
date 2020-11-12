@@ -136,7 +136,8 @@
     }
     UITableViewCell *cell = nil;
     if(NSString.ajIsEmpty(cellIdentifier)) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"ajKitCell"];
+        NSString *reuseIdentifier = [@"ajKitCell" stringByAppendingFormat:@"%d", indexPath.row];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:reuseIdentifier];
     } else {
         cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
     }
