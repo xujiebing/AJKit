@@ -82,7 +82,6 @@
 - (void)aj_initData {
     // 初始化默认数据
     _autoLoad = YES;
-    _closeRefresh = NO;
     [self configTableViewSource];
     // 数据更新后刷新视图
     kAJRACWeakSelf

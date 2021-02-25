@@ -80,5 +80,6 @@
 #import "UIView+AJKit.h"
 #import "UIViewController+AJKit.h"
 #import "UIControl+AJKit.h"
+#import "UITableViewCell+AJKit.h"
 
 #endif /* AJKit_h */

@@ -53,9 +53,10 @@ IMPLEMENT_PROPERTY(UITextView)
 -(id) init {
     self = [super init];
     if (self) {
-        
+#ifdef RELEASE
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldViewDidChange:) name:UITextFieldTextDidChangeNotification object: nil];
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textViewDidChange:) name:UITextViewTextDidChangeNotification object: nil];
+#endif
     }
     
     return self;
